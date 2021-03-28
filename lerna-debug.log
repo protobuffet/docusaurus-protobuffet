@@ -1,0 +1,15 @@
+0 silly argv { _: [ 'bootstrap' ], lernaVersion: '4.0.0', '$0': 'lerna' }
+1 notice cli v4.0.0
+2 verbose rootPath /Users/anthonybobsin/Workspace/docusaurus-protobuffet
+3 error JSONError: Unexpected token "}" (0x7D) in JSON at position 423 while parsing near "...^2.0.0-alpha.70\",\n  }\n}\n" in packages/docusaurus-protobuffet-plugin/package.json
+3 error
+3 error [0m [90m 13 |[39m     [32m"@docusaurus/types"[39m[33m:[39m [32m"^2.0.0-alpha.70"[39m[33m,[39m[0m
+3 error [0m [90m 14 |[39m     [32m"@docusaurus/utils"[39m[33m:[39m [32m"^2.0.0-alpha.70"[39m[33m,[39m[0m
+3 error [0m[31m[1m>[22m[39m[90m 15 |[39m   }[0m
+3 error [0m [90m    |[39m   [31m[1m^[22m[39m[0m
+3 error [0m [90m 16 |[39m }[0m
+3 error [0m [90m 17 |[39m[0m
+3 error
+3 error     at parseJson (/Users/anthonybobsin/Workspace/docusaurus-protobuffet/node_modules/parse-json/index.js:29:21)
+3 error     at parse (/Users/anthonybobsin/Workspace/docusaurus-protobuffet/node_modules/load-json-file/index.js:15:9)
+3 error     at module.exports (/Users/anthonybobsin/Workspace/docusaurus-protobuffet/node_modules/load-json-file/index.js:18:47)
