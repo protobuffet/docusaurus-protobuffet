@@ -1,5 +1,7 @@
 import { Plugin, LoadContext } from "@docusaurus/types"
 
+import fileDescriptors from "./example_file_descriptors.json";
+
 export interface PluginOptions {
   // fileDescriptorsPath: string
 }
@@ -25,7 +27,7 @@ export default function myPlugin(
       cli
         .command("dothing")
         .description("Does something")
-        .action(() => { console.log("hello")})
+        .action(() => { console.log(fileDescriptors)})
     },
   }
 }
