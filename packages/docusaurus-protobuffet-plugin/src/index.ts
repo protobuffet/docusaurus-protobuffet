@@ -1,15 +1,15 @@
 import { Plugin, LoadContext } from "@docusaurus/types"
 
 export interface PluginOptions {
-  fileDescriptorsPath: string
+  // fileDescriptorsPath: string
 }
 
 export type LoadedContent = never
 
 export function validateOptions({ options, validate }: { options: PluginOptions, validate: () => void }) {
-  if (options.fileDescriptorsPath === undefined) {
-    throw new Error("Options missing fileDescriptorsPath.");
-  }
+  // if (options.fileDescriptorsPath === undefined) {
+  //   throw new Error("Options missing fileDescriptorsPath.");
+  // }
 
   return options;
 };
@@ -25,7 +25,7 @@ export default function myPlugin(
       cli
         .command("dothing")
         .description("Does something")
-        .action(() => {})
+        .action(() => { console.log("hello")})
     },
   }
 }
