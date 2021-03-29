@@ -26,7 +26,6 @@ const ProtoFile = (props: Props) => {
   return (
     <>
       <h1>{fileDescriptor.name}</h1>
-      <h2>{fileDescriptor.package}</h2>
       <p style={{ whiteSpace: 'pre-wrap' }}>{fileDescriptor.description}</p>
       {fileDescriptor.messages.map((message, i) => (
         <ProtoMessage message={message} key={i} />

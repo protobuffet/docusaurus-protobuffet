@@ -1,4 +1,5 @@
 import { FileDescriptor, FileDescriptors, GeneratedDocFile } from './types';
+import { shortenFileName } from './utils';
 
 export const generateDocFiles = (fileDescriptors: FileDescriptors): GeneratedDocFile[] => {
   const { files }  = fileDescriptors;
@@ -13,13 +14,18 @@ const generateDocFile = (fileDescriptor: FileDescriptor): GeneratedDocFile => ({
 
 const generateDocFileContents = (fileDescriptor: FileDescriptor): string => {
   // TODO: improve formatting
-  return `
+  return (
+  `---
+title: ${shortenFileName(fileDescriptor.name)}
+hide_title: true
+---
+
 import ProtoFile from '@theme/ProtoFile';
 
 export const fileDescriptor = ${JSON.stringify(fileDescriptor)};
 
 <ProtoFile fileDescriptor={fileDescriptor} />
-  `
+  `);
 };
 
 export const generateSidebarFileContents = (docFiles: GeneratedDocFile[]): string => {
