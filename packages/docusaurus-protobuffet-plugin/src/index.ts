@@ -1,5 +1,5 @@
 import { Plugin, LoadContext } from "@docusaurus/types"
-import { readFileSync, writeFileSync } from 'fs';
+import { fstat, mkdirSync, readFileSync, writeFileSync } from 'fs';
 import path from 'path';
 
 import { generateDocFiles, generateSidebarFileContents } from './generators';
@@ -40,9 +40,16 @@ export default function myPlugin(
           const docFiles = generateDocFiles(fileDescriptors);
 
           // write files to appropriate directories
-          docFiles.forEach(docFile =>
-            writeFileSync(`${options.protoDocsPath}/${docFile.fileName}.mdx`, docFile.fileContents)
-          );
+          docFiles.forEach(docFile => {
+            const fileName = `${options.protoDocsPath}/${docFile.fileName}.mdx`;
+            const fileDir = path.dirname(fileName);
+
+            // ensure directory exists
+            mkdirSync(fileDir, { recursive: true });
+
+            // write file
+            writeFileSync(fileName, docFile.fileContents);
+          });
 
           // generate sidebar object for all files
           const sidebarFileContents = generateSidebarFileContents(docFiles);
