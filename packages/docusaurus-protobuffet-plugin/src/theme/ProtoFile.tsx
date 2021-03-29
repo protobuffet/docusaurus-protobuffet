@@ -1,11 +1,15 @@
 import React from 'react';
 import { FileDescriptor, Message, MessageField } from '../types';
 
+interface ComponentProps {
+  id?: string;
+}
+
 interface ComponentsProps {
-  h1: React.FC;
-  h2: React.FC;
-  h3: React.FC;
-  h4: React.FC;
+  h1: React.FC<ComponentProps>;
+  h2: React.FC<ComponentProps>;
+  h3: React.FC<ComponentProps>;
+  h4: React.FC<ComponentProps>;
 }
 
 interface MessageFieldsProps {
@@ -56,7 +60,7 @@ const ProtoMessage = (props: MessageProps) => {
 
   return (
     <>
-      <components.h2>{message.name}</components.h2>
+      <components.h2 id={message.name}>{message.name}</components.h2>
       <p style={{ whiteSpace: 'pre-wrap' }}>{message.description}</p>
       <ProtoMessageFields fields={message.fields} components={components} />
     </>

@@ -1,5 +1,5 @@
 import { Plugin, LoadContext } from "@docusaurus/types"
-import { fstat, mkdirSync, readFileSync, writeFileSync } from 'fs';
+import { mkdirSync, readFileSync, writeFileSync } from 'fs';
 import path from 'path';
 
 import { generateDocFiles, generateSidebarFileContents } from './generators';
@@ -21,7 +21,7 @@ export function validateOptions({ options, validate }: { options: PluginOptions,
   return options;
 };
 
-export default function myPlugin(
+export default function plugin(
   context: LoadContext,
   options: PluginOptions,
 ): Plugin<LoadedContent> {
