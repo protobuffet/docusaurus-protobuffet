@@ -12,6 +12,7 @@ const generateDocFile = (fileDescriptor: FileDescriptor): GeneratedDocFile => ({
 });
 
 const generateDocFileContents = (fileDescriptor: FileDescriptor): string => {
+  // TODO: improve formatting
   return `
 import ProtoFile from '@theme/ProtoFile';
 
@@ -21,6 +22,26 @@ export const fileDescriptor = ${JSON.stringify(fileDescriptor)};
   `
 };
 
-export const generateSidebarObject = (docFiles: GeneratedDocFile[]) => {
+export const generateSidebarFileContents = (docFiles: GeneratedDocFile[]): string => {
+  // TODO: improve formatting
+  return `
+module.exports = ${JSON.stringify(generateSidebarObject(docFiles))};
+  `
+};
 
+const generateSidebarObject = (docFiles: GeneratedDocFile[]) => {
+  return {
+    protodocs: [
+      generateSidebarFileCategory(docFiles)
+    ]
+  };
 }
+
+const generateSidebarFileCategory = (docFiles: GeneratedDocFile[])  => {
+  return {
+    type: 'category',
+    label: 'Files',
+    items: docFiles.map(file => file.fileName),
+  };
+};
+

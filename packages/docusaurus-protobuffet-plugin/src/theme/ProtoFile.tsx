@@ -24,7 +24,6 @@ const ProtoFile = (props: Props) => {
   const { fileDescriptor } = props;
 
   return (
-    // useDocusaurusContext to get components
     <>
       <h1>{fileDescriptor.name}</h1>
       <h2>{fileDescriptor.package}</h2>

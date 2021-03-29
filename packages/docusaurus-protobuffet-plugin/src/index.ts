@@ -3,11 +3,12 @@ import { writeFileSync } from 'fs';
 import path from 'path';
 
 import fileDescriptors from "./example_file_descriptors.json";
-import { generateDocFiles } from './generators';
+import { generateDocFiles, generateSidebarFileContents } from './generators';
 
 export interface PluginOptions {
   // fileDescriptorsPath: string
   protoDocsPath: string;
+  sidebarPath: string;
 }
 
 export type LoadedContent = never
@@ -35,11 +36,15 @@ export default function myPlugin(
           // generate markdown files for each in fileDescriptors
           const docFiles = generateDocFiles(fileDescriptors);
           // write files to appropriate directories
-          docFiles.forEach(docFile => writeFileSync(`${options.protoDocsPath}/${docFile.fileName}.mdx`, docFile.fileContents));
+          docFiles.forEach(docFile =>
+            writeFileSync(`${options.protoDocsPath}/${docFile.fileName}.mdx`, docFile.fileContents)
+          );
 
-          // TODO
-          // - generate sidebar object for all files
-          // - write sidebar object
+          // generate sidebar object for all files
+          const sidebarFileContents = generateSidebarFileContents(docFiles);
+
+          // write sidebar object
+          writeFileSync(options.sidebarPath, sidebarFileContents);
         })
     },
 

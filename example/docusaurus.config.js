@@ -110,6 +110,7 @@ module.exports = {
       'docusaurus-protobuffet-plugin',
       {
         protoDocsPath: "./protodocs",
+        sidebarPath: require.resolve('./sidebarsProtodocs.js'),
       }
     ],
     [
