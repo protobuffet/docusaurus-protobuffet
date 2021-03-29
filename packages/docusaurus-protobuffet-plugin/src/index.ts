@@ -1,12 +1,11 @@
 import { Plugin, LoadContext } from "@docusaurus/types"
-import { writeFileSync } from 'fs';
+import { readFileSync, writeFileSync } from 'fs';
 import path from 'path';
 
-import fileDescriptors from "./example_file_descriptors.json";
 import { generateDocFiles, generateSidebarFileContents } from './generators';
 
 export interface PluginOptions {
-  // fileDescriptorsPath: string
+  fileDescriptorsPath: string
   protoDocsPath: string;
   sidebarPath: string;
 }
@@ -14,9 +13,10 @@ export interface PluginOptions {
 export type LoadedContent = never
 
 export function validateOptions({ options, validate }: { options: PluginOptions, validate: () => void }) {
-  // if (options.fileDescriptorsPath === undefined) {
-  //   throw new Error("Options missing fileDescriptorsPath.");
-  // }
+  // TODO: add validations. use joi
+  // fileDescriptorsPath is an existing json file
+  // protoDocsPath is a directory
+  // sidebarPath is a js file
 
   return options;
 };
@@ -33,8 +33,12 @@ export default function myPlugin(
         .command("generate-proto-docs")
         .description("Generate documentation for a protobuf workspace.")
         .action(() => {
+          // read file descriptors JSON file
+          const fileDescriptors = JSON.parse(readFileSync(options.fileDescriptorsPath).toString());
+
           // generate markdown files for each in fileDescriptors
           const docFiles = generateDocFiles(fileDescriptors);
+
           // write files to appropriate directories
           docFiles.forEach(docFile =>
             writeFileSync(`${options.protoDocsPath}/${docFile.fileName}.mdx`, docFile.fileContents)

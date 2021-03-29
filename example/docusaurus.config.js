@@ -109,6 +109,7 @@ module.exports = {
     [
       'docusaurus-protobuffet-plugin',
       {
+        fileDescriptorsPath: "./fixtures/example_file_descriptors.json",
         protoDocsPath: "./protodocs",
         sidebarPath: require.resolve('./sidebarsProtodocs.js'),
       }
