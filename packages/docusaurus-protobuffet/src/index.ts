@@ -1,6 +1,5 @@
 import { LoadContext } from '@docusaurus/types';
 
-// TODO: import from library
 interface PluginOptions {
   fileDescriptorsPath: string
   protoDocsPath?: string;
