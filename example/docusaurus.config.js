@@ -104,24 +104,13 @@ module.exports = {
         },
       },
     ],
-  ],
-  plugins: [
     [
-      'docusaurus-protobuffet-plugin',
+      'docusaurus-protobuffet',
       {
-        fileDescriptorsPath: "./fixtures/example_file_descriptors.json",
-        protoDocsPath: "./protodocs",
-        sidebarPath: require.resolve('./sidebarsProtodocs.js'),
+        protobuffet: {
+          fileDescriptorsPath: './fixtures/example_file_descriptors.json',
+        }
       }
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'protodocs',
-        path: 'protodocs',
-        routeBasePath: 'protodocs',
-        sidebarPath: require.resolve('./sidebarsProtodocs.js'),
-      },
-    ],
+    ]
   ]
 };
