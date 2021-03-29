@@ -21,10 +21,11 @@ hide_title: true
 ---
 
 import ProtoFile from '@theme/ProtoFile';
+import MDXComponents from '@theme/MDXComponents';
 
 export const fileDescriptor = ${JSON.stringify(fileDescriptor)};
 
-<ProtoFile fileDescriptor={fileDescriptor} />
+<ProtoFile fileDescriptor={fileDescriptor} components={MDXComponents}/>
   `);
 };
 
