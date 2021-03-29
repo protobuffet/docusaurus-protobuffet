@@ -1,9 +1,13 @@
 import { Plugin, LoadContext } from "@docusaurus/types"
+import { writeFileSync } from 'fs';
+import path from 'path';
 
 import fileDescriptors from "./example_file_descriptors.json";
+import { generateDocFile } from './generators';
 
 export interface PluginOptions {
   // fileDescriptorsPath: string
+  protoDocsPath: string;
 }
 
 export type LoadedContent = never
@@ -25,9 +29,25 @@ export default function myPlugin(
 
     extendCli(cli) {
       cli
-        .command("dothing")
-        .description("Does something")
-        .action(() => { console.log(fileDescriptors)})
+        .command("generate-proto-docs")
+        .description("Generate documentation for a protobuf workspace.")
+        .action(() => {
+          // - generate markdown files for each in fileDescriptors
+          const docFile = generateDocFile(fileDescriptors);
+          console.log(docFile);
+
+          writeFileSync(options.protoDocsPath + "/test.mdx", docFile);
+
+          // TODO
+          // - generate markdown files for each in fileDescriptors
+          // - write files to appropriate directories
+          // - generate sidebar object for all files
+          // - write sidebar object
+        })
     },
+
+    getThemePath() {
+      return path.resolve(__dirname, "./theme");
+    }
   }
 }

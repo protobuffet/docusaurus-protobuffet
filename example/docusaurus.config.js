@@ -103,6 +103,7 @@ module.exports = {
     [
       'docusaurus-protobuffet-plugin',
       {
+        protoDocsPath: "./src/pages"
       }
     ]
   ]
