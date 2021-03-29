@@ -23,6 +23,12 @@ module.exports = {
           label: 'Docs',
           position: 'left',
         },
+        {
+          // TODO: we need a home page for nav
+          to: 'protodocs/Booking.proto',
+          label: 'Protodocs',
+          position: 'left',
+        },
         {to: 'blog', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/facebook/docusaurus',
@@ -103,8 +109,17 @@ module.exports = {
     [
       'docusaurus-protobuffet-plugin',
       {
-        protoDocsPath: "./src/pages"
+        protoDocsPath: "./protodocs",
       }
-    ]
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'protodocs',
+        path: 'protodocs',
+        routeBasePath: 'protodocs',
+        sidebarPath: require.resolve('./sidebarsProtodocs.js'),
+      },
+    ],
   ]
 };

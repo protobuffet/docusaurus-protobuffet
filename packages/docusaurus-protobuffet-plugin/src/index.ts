@@ -3,7 +3,7 @@ import { writeFileSync } from 'fs';
 import path from 'path';
 
 import fileDescriptors from "./example_file_descriptors.json";
-import { generateDocFile } from './generators';
+import { generateDocFiles } from './generators';
 
 export interface PluginOptions {
   // fileDescriptorsPath: string
@@ -32,15 +32,12 @@ export default function myPlugin(
         .command("generate-proto-docs")
         .description("Generate documentation for a protobuf workspace.")
         .action(() => {
-          // - generate markdown files for each in fileDescriptors
-          const docFile = generateDocFile(fileDescriptors);
-          console.log(docFile);
-
-          writeFileSync(options.protoDocsPath + "/test.mdx", docFile);
+          // generate markdown files for each in fileDescriptors
+          const docFiles = generateDocFiles(fileDescriptors);
+          // write files to appropriate directories
+          docFiles.forEach(docFile => writeFileSync(`${options.protoDocsPath}/${docFile.fileName}.mdx`, docFile.fileContents));
 
           // TODO
-          // - generate markdown files for each in fileDescriptors
-          // - write files to appropriate directories
           // - generate sidebar object for all files
           // - write sidebar object
         })

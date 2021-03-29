@@ -1,20 +1,26 @@
-import { FileDescriptors } from './types';
+import { FileDescriptor, FileDescriptors, GeneratedDocFile } from './types';
 
-const PROTO_FILE_MDX = `
-import ProtoFile from '@theme/ProtoFile';
+export const generateDocFiles = (fileDescriptors: FileDescriptors): GeneratedDocFile[] => {
+  const { files }  = fileDescriptors;
+  return files.map(generateDocFile);
+};
 
-<ProtoFile fileDescriptor={} />
-`;
+const generateDocFile = (fileDescriptor: FileDescriptor): GeneratedDocFile => ({
+  fileContents: generateDocFileContents(fileDescriptor),
+  // TODO: add folder prefix
+  fileName: fileDescriptor.name,
+});
 
-
-export const generateDocFile = (fileDescriptors: FileDescriptors) => {
-  const { files } = fileDescriptors;
-
+const generateDocFileContents = (fileDescriptor: FileDescriptor): string => {
   return `
 import ProtoFile from '@theme/ProtoFile';
 
-export const fileDescriptor = ${JSON.stringify(files[0])};
+export const fileDescriptor = ${JSON.stringify(fileDescriptor)};
 
 <ProtoFile fileDescriptor={fileDescriptor} />
   `
+};
+
+export const generateSidebarObject = (docFiles: GeneratedDocFile[]) => {
+
 }

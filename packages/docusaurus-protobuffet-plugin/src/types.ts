@@ -46,3 +46,8 @@ export interface FileDescriptor {
 export interface FileDescriptors {
   files: FileDescriptor[];
 }
+
+export interface GeneratedDocFile {
+  fileContents: string;
+  fileName: string;
+}
