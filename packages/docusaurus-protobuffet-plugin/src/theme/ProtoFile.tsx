@@ -33,8 +33,8 @@ const ProtoMessageFields = (props: MessageFieldsProps) => {
     <tbody>
       {fields.map(field => (
         <tr>
-          <td>{field.name}</td>
-          <td>{field.type}</td>
+          <td><code>{field.name}</code></td>
+          <td><code>{field.type}</code></td>
           <td style={{ whiteSpace: 'pre-wrap' }}>{field.description}</td>
         </tr>
       ))}
