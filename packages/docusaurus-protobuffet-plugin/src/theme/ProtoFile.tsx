@@ -35,7 +35,7 @@ const ProtoMessageFields = (props: MessageFieldsProps) => {
         <tr>
           <td>{field.name}</td>
           <td>{field.type}</td>
-          <td>{field.description}</td>
+          <td style={{ whiteSpace: 'pre-wrap' }}>{field.description}</td>
         </tr>
       ))}
     </tbody>
