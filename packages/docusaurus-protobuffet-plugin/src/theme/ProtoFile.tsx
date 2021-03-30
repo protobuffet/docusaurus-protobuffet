@@ -28,11 +28,17 @@ export const ProtoServiceMethod = ({ method }: ServiceMethodProps) => (
     </tr>
     <tr>
       <th style={leftHeaderStyles}>Request</th>
-      <td><code>{method.requestType}</code></td>
+      <td>
+        <code>{method.requestType}</code>
+        {method.requestStreaming === true ? ' stream' : ''}
+      </td>
     </tr>
     <tr>
       <th style={leftHeaderStyles}>Response</th>
-      <td><code>{method.responseType}</code></td>
+      <td>
+        <code>{method.responseType}</code>
+        {method.responseStreaming === true ? ' stream' : ''}
+      </td>
     </tr>
     <tr>
       <th style={leftHeaderStyles}>Description</th>
