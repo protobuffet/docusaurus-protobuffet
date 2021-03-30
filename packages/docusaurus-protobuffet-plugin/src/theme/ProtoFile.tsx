@@ -14,11 +14,10 @@ interface ComponentsProps {
 
 interface MessageFieldsProps {
   fields: MessageField[];
-  components: ComponentsProps;
 }
 
 const ProtoMessageFields = (props: MessageFieldsProps) => {
-  const { fields, components } = props;
+  const { fields } = props;
 
   const Headers = () => (
     <thead>
@@ -52,17 +51,15 @@ const ProtoMessageFields = (props: MessageFieldsProps) => {
 
 interface MessageProps {
   message: Message;
-  components: ComponentsProps;
 }
 
-const ProtoMessage = (props: MessageProps) => {
-  const { message, components } = props;
+export const ProtoMessage = (props: MessageProps) => {
+  const { message } = props;
 
   return (
     <>
-      <components.h2 id={message.name}>{message.name}</components.h2>
       <p style={{ whiteSpace: 'pre-wrap' }}>{message.description}</p>
-      <ProtoMessageFields fields={message.fields} components={components} />
+      <ProtoMessageFields fields={message.fields} />
     </>
   );
 }
@@ -80,7 +77,7 @@ const ProtoFile = (props: Props) => {
       <components.h1>{fileDescriptor.name}</components.h1>
       <p style={{ whiteSpace: 'pre-wrap' }}>{fileDescriptor.description}</p>
       {fileDescriptor.messages.map((message, i) => (
-        <ProtoMessage message={message} components={components} key={i} />
+        <ProtoMessage message={message} key={i} />
       ))}
     </>
   );

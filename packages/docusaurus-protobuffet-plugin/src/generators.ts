@@ -8,7 +8,6 @@ export const generateDocFiles = (fileDescriptors: FileDescriptors): GeneratedDoc
 
 const generateDocFile = (fileDescriptor: FileDescriptor): GeneratedDocFile => ({
   fileContents: generateDocFileContents(fileDescriptor),
-  // TODO: add folder prefix
   fileName: fileDescriptor.name,
 });
 
@@ -20,12 +19,18 @@ title: ${shortenFileName(fileDescriptor.name)}
 hide_title: true
 ---
 
-import ProtoFile from '@theme/ProtoFile';
-import MDXComponents from '@theme/MDXComponents';
+import { ProtoMessage } from '@theme/ProtoFile';
 
-export const fileDescriptor = ${JSON.stringify(fileDescriptor)};
+# ${fileDescriptor.name}
 
-<ProtoFile fileDescriptor={fileDescriptor} components={MDXComponents}/>
+${fileDescriptor.description}
+
+${fileDescriptor.messages.map((message, i) => (
+`
+## ${message.name}
+<ProtoMessage key={${i}} message={${JSON.stringify(message)}} />
+`
+)).join("\n")}
   `);
 };
 
