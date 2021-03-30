@@ -19,9 +19,9 @@ title: ${shortenFileName(fileDescriptor.name).replace(/\//g, '.')}
 hide_title: true
 ---
 
-import { ProtoMessage } from '@theme/ProtoFile';
+import { ProtoMessage, ProtoServiceMethod } from '@theme/ProtoFile';
 
-## ${getLeafFileName(fileDescriptor.name)}
+## \`${getLeafFileName(fileDescriptor.name)}\`
 _**path** ${fileDescriptor.name}_
 
 _**package** ${fileDescriptor.package}_
@@ -34,10 +34,32 @@ ${fileDescriptor.description}
 
 ${fileDescriptor.messages.map((message, i) => (
 `
-### ${message.name}
+### \`${message.name}\`
 <ProtoMessage key={${i}} message={${JSON.stringify(message)}} />
 `
 )).join("\n")}
+
+---
+
+## Services
+
+${fileDescriptor.services.map((service, i) => (
+`
+### \`${service.name}\`
+
+${service.description}
+
+${service.methods.map((method, i) => (
+`
+#### \`${method.name}\`
+<ProtoServiceMethod key={'${method.name}-${i}'} method={${JSON.stringify(method)}} />
+`
+)).join("\n")}
+`
+)).join("\n")}
+
+---
+
   `);
 };
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileDescriptor, Message, MessageField } from '../types';
+import { FileDescriptor, Message, MessageField, Service, ServiceMethod } from '../types';
 
 interface ComponentProps {
   id?: string;
@@ -10,6 +10,66 @@ interface ComponentsProps {
   h2: React.FC<ComponentProps>;
   h3: React.FC<ComponentProps>;
   h4: React.FC<ComponentProps>;
+}
+
+const leftHeaderStyles: React.CSSProperties = {
+  textAlign: "left",
+};
+
+interface ServiceMethodProps {
+  method: ServiceMethod;
+}
+
+export const ProtoServiceMethod = ({ method }: ServiceMethodProps) => (
+  <table>
+    <tr>
+      <th style={leftHeaderStyles}>Method</th>
+      <td><code>{method.name}</code></td>
+    </tr>
+    <tr>
+      <th style={leftHeaderStyles}>Request</th>
+      <td><code>{method.requestType}</code></td>
+    </tr>
+    <tr>
+      <th style={leftHeaderStyles}>Response</th>
+      <td><code>{method.responseType}</code></td>
+    </tr>
+    <tr>
+      <th style={leftHeaderStyles}>Description</th>
+      <td>{method.description}</td>
+    </tr>
+  </table>
+)
+
+interface ServiceMethodsProps {
+  methods: ServiceMethod[];
+}
+
+const ProtoServiceMethods = (props: ServiceMethodsProps) => {
+  const { methods } = props;
+
+  return (
+    <>
+      {methods.map((method, i) => (
+        <ProtoServiceMethod method={method} key={`${method.name}-${i}`} />
+      ))}
+    </>
+  );
+}
+
+interface ServiceProps {
+  service: Service;
+}
+
+export const ProtoService = (props: ServiceProps) => {
+  const { service } = props;
+
+  return (
+    <>
+      <p style={{ whiteSpace: 'pre-wrap' }}>{service.description}</p>
+      <ProtoServiceMethods methods={service.methods} />
+    </>
+  )
 }
 
 interface MessageFieldsProps {
@@ -42,7 +102,7 @@ const ProtoMessageFields = (props: MessageFieldsProps) => {
   );
 
   return (
-    <table style={{ display: 'inline-table' }}>
+    <table>
       <Headers />
       <FieldRows />
     </table>
