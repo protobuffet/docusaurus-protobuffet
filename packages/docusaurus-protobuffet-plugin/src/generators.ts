@@ -1,5 +1,5 @@
 import { FileDescriptor, FileDescriptors, GeneratedDocFile } from './types';
-import { shortenFileName } from './utils';
+import { getLeafFileName, shortenFileName } from './utils';
 
 export const generateDocFiles = (fileDescriptors: FileDescriptors): GeneratedDocFile[] => {
   const { files }  = fileDescriptors;
@@ -15,19 +15,26 @@ const generateDocFileContents = (fileDescriptor: FileDescriptor): string => {
   // TODO: improve formatting
   return (
   `---
-title: ${shortenFileName(fileDescriptor.name)}
+title: ${shortenFileName(fileDescriptor.name).replace(/\//g, '.')}
 hide_title: true
 ---
 
 import { ProtoMessage } from '@theme/ProtoFile';
 
-# ${fileDescriptor.name}
+## ${getLeafFileName(fileDescriptor.name)}
+_**path** ${fileDescriptor.name}_
+
+_**package** ${fileDescriptor.package}_
 
 ${fileDescriptor.description}
 
+---
+
+## Messages
+
 ${fileDescriptor.messages.map((message, i) => (
 `
-## ${message.name}
+### ${message.name}
 <ProtoMessage key={${i}} message={${JSON.stringify(message)}} />
 `
 )).join("\n")}

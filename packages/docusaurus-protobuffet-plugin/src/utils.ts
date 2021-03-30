@@ -7,3 +7,10 @@ export const shortenFileName = (fileName: string): string => {
     .map((name, i) => i == (splitName.length - 1) ? name : name.substr(0, 3))
     .join("/");
 }
+
+// convert google/protobuf/any.proto to any.proto
+export const getLeafFileName = (fileName: string): string => {
+  const splitName = fileName.split("/");
+
+  return splitName[splitName.length - 1];
+}
