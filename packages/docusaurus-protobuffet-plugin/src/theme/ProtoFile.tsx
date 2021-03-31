@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
-import { FileDescriptor, Message, MessageField, Service, ServiceMethod } from '../types';
+import { Enum, FileDescriptor, Message, MessageField, Service, ServiceMethod } from '../types';
 
 interface ComponentProps {
   id?: string;
@@ -15,6 +15,46 @@ interface ComponentsProps {
 
 const leftHeaderStyles: React.CSSProperties = {
   textAlign: "left",
+};
+
+interface EnumProps {
+  enumb: Enum;
+}
+
+export const ProtoEnum = (props: EnumProps) => {
+  const { enumb } = props;
+
+  const ValueHeaders = () => (
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Number</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+  );
+
+  const ValueRows = () => (
+    <tbody>
+      {enumb.values.map(enumValue => (
+        <tr key={enumValue.name}>
+          <td><code>{enumValue.name}</code></td>
+          <td><code>{enumValue.number}</code></td>
+          <td style={{ whiteSpace: 'pre-wrap' }}>{enumValue.description}</td>
+        </tr>
+      ))}
+    </tbody>
+  );
+
+  return (
+    <>
+      <p style={{ whiteSpace: 'pre-wrap' }}>{enumb.description}</p>
+      <table>
+        <ValueHeaders />
+        <ValueRows />
+      </table>
+    </>
+  );
 };
 
 interface ServiceMethodProps {

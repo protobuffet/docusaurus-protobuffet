@@ -3,7 +3,7 @@ title: Vehicle.proto
 hide_title: true
 ---
 
-import { ProtoMessage, ProtoServiceMethod } from '@theme/ProtoFile';
+import { ProtoMessage, ProtoServiceMethod, ProtoEnum } from '@theme/ProtoFile';
 
 ## `Vehicle.proto`
 _**path** Vehicle.proto_
@@ -39,6 +39,7 @@ Messages describing manufacturers / vehicles.
 
 
 ### `Manufacturer.Category`
+<ProtoEnum key={0} enumb={{"name":"Category","longName":"Manufacturer.Category","fullName":"com.example.Manufacturer.Category","description":"Manufacturer category. A manufacturer may be either inhouse or external.","values":[{"name":"CATEGORY_INHOUSE","number":"0","description":"The manufacturer is inhouse."},{"name":"CATEGORY_EXTERNAL","number":"1","description":"The manufacturer is external."}]}} />
 
 
 ---

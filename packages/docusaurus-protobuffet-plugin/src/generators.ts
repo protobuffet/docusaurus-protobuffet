@@ -19,7 +19,7 @@ title: ${shortenFileName(fileDescriptor.name).replace(/\//g, '.')}
 hide_title: true
 ---
 
-import { ProtoMessage, ProtoServiceMethod } from '@theme/ProtoFile';
+import { ProtoMessage, ProtoServiceMethod, ProtoEnum } from '@theme/ProtoFile';
 
 ## \`${getLeafFileName(fileDescriptor.name)}\`
 _**path** ${fileDescriptor.name}_
@@ -46,6 +46,7 @@ ${fileDescriptor.messages.map((message, i) => (
 ${fileDescriptor.enums.map((enumb, i) => (
 `
 ### \`${enumb.longName}\`
+<ProtoEnum key={${i}} enumb={${JSON.stringify(enumb)}} />
 `
 )).join("\n")}
 
