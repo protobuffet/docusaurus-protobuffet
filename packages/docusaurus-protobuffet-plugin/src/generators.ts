@@ -1,4 +1,4 @@
-import { FileDescriptor, FileDescriptors, GeneratedDocFile } from './types';
+import { Enum, FileDescriptor, FileDescriptors, GeneratedDocFile, Message, Service } from './types';
 import { getLeafFileName, shortenFileName } from './utils';
 
 export const generateDocFiles = (fileDescriptors: FileDescriptors): GeneratedDocFile[] => {
@@ -12,7 +12,7 @@ const generateDocFile = (fileDescriptor: FileDescriptor): GeneratedDocFile => ({
 });
 
 const generateDocFileContents = (fileDescriptor: FileDescriptor): string => {
-  // TODO: improve formatting
+  // TODO: run through prettier for consistent formatting.
   return (
   `---
 title: ${shortenFileName(fileDescriptor.name).replace(/\//g, '.')}
@@ -30,31 +30,60 @@ ${fileDescriptor.description}
 
 ---
 
-## Messages
+${
+  [
+    generateMessageSectionMdx(fileDescriptor.messages),
+    generateEnumSectionMdx(fileDescriptor.enums),
+    generateServiceSectionMdx(fileDescriptor.services),
+  ].filter(Boolean).map(section => section + "\n---\n").join("")
+}
 
-${fileDescriptor.messages.map((message, i) => (
+  `);
+};
+
+const generateMessageSectionMdx = (messages: Message[]): string|null => {
+  if (messages.length == 0) {
+    return null;
+  }
+
+  return (
+    `## Messages
+
+${messages.map((message, i) => (
 `
 ### \`${message.longName}\`
 <ProtoMessage key={${i}} message={${JSON.stringify(message)}} />
 `
-)).join("\n")}
+)).join("\n")}`
+  );
+};
 
----
+const generateEnumSectionMdx = (enums: Enum[]): string|null => {
+  if (enums.length == 0) {
+    return null;
+  }
 
-## Enums
+  return (
+    `## Enums
 
-${fileDescriptor.enums.map((enumb, i) => (
+${enums.map((enumb, i) => (
 `
 ### \`${enumb.longName}\`
 <ProtoEnum key={${i}} enumb={${JSON.stringify(enumb)}} />
 `
-)).join("\n")}
+)).join("\n")}`
+  );
+}
 
----
+const generateServiceSectionMdx = (services: Service[]): string|null => {
+  if (services.length == 0) {
+    return null;
+  }
 
-## Services
+  return (
+    `## Services
 
-${fileDescriptor.services.map((service, i) => (
+${services.map((service, i) => (
 `
 ### \`${service.name}\`
 
@@ -67,15 +96,12 @@ ${service.methods.map((method, i) => (
 `
 )).join("\n")}
 `
-)).join("\n")}
-
----
-
-  `);
-};
+)).join("\n")}`
+  );
+}
 
 export const generateSidebarFileContents = (docFiles: GeneratedDocFile[]): string => {
-  // TODO: improve formatting
+  // TODO: run through prettier for consistent formatting.
   return `
 module.exports = ${JSON.stringify(generateSidebarObject(docFiles))};
   `
