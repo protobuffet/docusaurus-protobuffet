@@ -1,3 +1,17 @@
+export interface EnumValue {
+  name: string;
+  number: string;
+  description: string;
+}
+
+export interface Enum {
+  name: string;
+  longName: string;
+  fullName: string;
+  description: string;
+  values: EnumValue[];
+}
+
 export interface MessageField {
   name: string;
   description: string;
@@ -41,13 +55,13 @@ export interface Service {
 }
 
 export interface FileDescriptor {
-  // TODO: does name include folders prefix?
   name: string;
   description: string;
   package: string;
   messages: Message[];
   services: Service[];
-  // TODO: add enums, extensions
+  enums: Enum[];
+  // TODO: add extensions
 }
 
 export interface FileDescriptors {

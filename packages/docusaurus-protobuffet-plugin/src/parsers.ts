@@ -10,6 +10,7 @@ export const parseFileDescriptors = (source: object): FileDescriptors => {
 
   const messageLinkMap: LinkMap = {}
   const serviceLinkMap: LinkMap = {}
+  const enumLinkMap: LinkMap = {}
 
   const generateLink = (fileName: string, objName: string): string => {
     // TODO: reference option for base path
@@ -25,13 +26,17 @@ export const parseFileDescriptors = (source: object): FileDescriptors => {
     file.services.forEach(srv => {
       serviceLinkMap[srv.fullName] = generateLink(file.name, srv.name);
     })
+
+    file.enums.forEach(enumb => {
+      enumLinkMap[enumb.fullName] = generateLink(file.name, enumb.longName);
+    });
   });
 
   // assign links based on derived maps
   parsed.files.forEach(file => {
     file.messages.forEach(msg => {
       msg.fields.forEach(field => {
-        field.typeLink = messageLinkMap[field.fullType];
+        field.typeLink = messageLinkMap[field.fullType] || enumLinkMap[field.fullType];
       });
     });
 

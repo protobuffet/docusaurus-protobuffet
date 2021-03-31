@@ -41,6 +41,16 @@ ${fileDescriptor.messages.map((message, i) => (
 
 ---
 
+## Enums
+
+${fileDescriptor.enums.map((enumb, i) => (
+`
+### \`${enumb.longName}\`
+`
+)).join("\n")}
+
+---
+
 ## Services
 
 ${fileDescriptor.services.map((service, i) => (

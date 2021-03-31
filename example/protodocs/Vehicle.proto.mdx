@@ -18,7 +18,7 @@ Messages describing manufacturers / vehicles.
 
 
 ### `Manufacturer`
-<ProtoMessage key={0} message={{"name":"Manufacturer","longName":"Manufacturer","fullName":"com.example.Manufacturer","description":"Represents a manufacturer of cars.","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"id","description":"The unique manufacturer ID.","label":"required","type":"int32","longType":"int32","fullType":"int32","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""},{"name":"code","description":"A manufacturer code, e.g. \"DKL4P\".","label":"required","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""},{"name":"details","description":"Manufacturer details (minimum orders et.c.).","label":"optional","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""},{"name":"category","description":"Manufacturer category.","label":"optional","type":"Category","longType":"Manufacturer.Category","fullType":"com.example.Manufacturer.Category","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":"CATEGORY_EXTERNAL"}]}} />
+<ProtoMessage key={0} message={{"name":"Manufacturer","longName":"Manufacturer","fullName":"com.example.Manufacturer","description":"Represents a manufacturer of cars.","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"id","description":"The unique manufacturer ID.","label":"required","type":"int32","longType":"int32","fullType":"int32","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""},{"name":"code","description":"A manufacturer code, e.g. \"DKL4P\".","label":"required","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""},{"name":"details","description":"Manufacturer details (minimum orders et.c.).","label":"optional","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""},{"name":"category","description":"Manufacturer category.","label":"optional","type":"Category","longType":"Manufacturer.Category","fullType":"com.example.Manufacturer.Category","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":"CATEGORY_EXTERNAL","typeLink":"/protodocs/Vehicle.proto#manufacturercategory"}]}} />
 
 
 ### `Model`
@@ -31,6 +31,14 @@ Messages describing manufacturers / vehicles.
 
 ### `Vehicle.Category`
 <ProtoMessage key={3} message={{"name":"Category","longName":"Vehicle.Category","fullName":"com.example.Vehicle.Category","description":"Represents a vehicle category. E.g. \"Sedan\" or \"Truck\".","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"code","description":"Category code. E.g. \"S\".","label":"required","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""},{"name":"description","description":"Category name. E.g. \"Sedan\".","label":"required","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""}]}} />
+
+
+---
+
+## Enums
+
+
+### `Manufacturer.Category`
 
 
 ---
