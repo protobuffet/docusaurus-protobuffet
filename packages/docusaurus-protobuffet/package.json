@@ -1,6 +1,6 @@
 {
   "name": "docusaurus-protobuffet",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Docusaurus preset for generating Protobuffet views",
   "main": "dist/index.js",
   "scripts": {
@@ -10,7 +10,9 @@
   "author": "Anthony Bobsin",
   "license": "ISC",
   "dependencies": {
-    "@docusaurus/types": "^2.0.0-alpha.72",
     "docusaurus-protobuffet-plugin": "file:../docusaurus-protobuffet-plugin"
+  },
+  "devDependencies": {
+    "@docusaurus/types": "^2.0.0-alpha.72"
   }
 }
