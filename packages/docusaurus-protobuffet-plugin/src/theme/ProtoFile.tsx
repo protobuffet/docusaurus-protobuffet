@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from '@docusaurus/Link';
 import { FileDescriptor, Message, MessageField, Service, ServiceMethod } from '../types';
 
 interface ComponentProps {
@@ -30,14 +31,14 @@ export const ProtoServiceMethod = ({ method }: ServiceMethodProps) => (
       <tr>
         <th style={leftHeaderStyles}>Request</th>
         <td>
-          <code>{method.requestType}</code>
+          <Link to={method.requestTypeLink}><code>{method.requestType}</code></Link>
           {method.requestStreaming === true ? ' stream' : ''}
         </td>
       </tr>
       <tr>
         <th style={leftHeaderStyles}>Response</th>
         <td>
-          <code>{method.responseType}</code>
+          <Link to={method.responseTypeLink}><code>{method.responseType}</code></Link>
           {method.responseStreaming === true ? ' stream' : ''}
         </td>
       </tr>
@@ -97,12 +98,22 @@ const ProtoMessageFields = (props: MessageFieldsProps) => {
     </thead>
   )
 
+  const FieldTypeCell = ({ field }: { field: MessageField}) => {
+    const rawCell = (
+      <code>{field.longType}</code>
+    );
+
+    return (
+      field.typeLink === undefined ? rawCell : <Link to={field.typeLink}>{rawCell}</Link>
+    );
+  }
+
   const FieldRows = () => (
     <tbody>
       {fields.map(field => (
         <tr key={field.name}>
           <td><code>{field.name}</code></td>
-          <td><code>{field.type}</code></td>
+          <td><FieldTypeCell field={field} /></td>
           <td style={{ whiteSpace: 'pre-wrap' }}>{field.description}</td>
         </tr>
       ))}

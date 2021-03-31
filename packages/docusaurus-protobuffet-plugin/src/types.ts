@@ -3,13 +3,16 @@ export interface MessageField {
   description: string;
   label: string;
   type: string;
+  longType: string;
   fullType: string;
   ismap: boolean;
   isoneof: boolean;
+  typeLink?: string;
 }
 
 export interface Message {
   name: string;
+  longName: string;
   fullName: string;
   description: string;
   fields: MessageField[];
@@ -20,10 +23,14 @@ export interface ServiceMethod {
   description: string;
   requestType: string;
   requestLongType: string;
+  requestFullType: string;
   requestStreaming: boolean;
   responseType: string;
   responseLongType: string;
+  responseFullType: string;
   responseStreaming: boolean;
+  requestTypeLink?: string;
+  responseTypeLink?: string;
 }
 
 export interface Service {

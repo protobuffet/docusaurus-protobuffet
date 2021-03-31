@@ -3,6 +3,7 @@ import { mkdirSync, readFileSync, writeFileSync } from 'fs';
 import path from 'path';
 
 import { generateDocFiles, generateSidebarFileContents } from './generators';
+import { parseFileDescriptors } from './parsers';
 
 export interface PluginOptions {
   fileDescriptorsPath: string
@@ -34,7 +35,8 @@ export default function plugin(
         .description("Generate documentation for a protobuf workspace.")
         .action(() => {
           // read file descriptors JSON file
-          const fileDescriptors = JSON.parse(readFileSync(options.fileDescriptorsPath).toString());
+          const fileDescriptorsInput = JSON.parse(readFileSync(options.fileDescriptorsPath).toString());
+          const fileDescriptors = parseFileDescriptors(fileDescriptorsInput);
 
           // generate markdown files for each in fileDescriptors
           const docFiles = generateDocFiles(fileDescriptors);

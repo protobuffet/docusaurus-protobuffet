@@ -34,7 +34,7 @@ ${fileDescriptor.description}
 
 ${fileDescriptor.messages.map((message, i) => (
 `
-### \`${message.name}\`
+### \`${message.longName}\`
 <ProtoMessage key={${i}} message={${JSON.stringify(message)}} />
 `
 )).join("\n")}

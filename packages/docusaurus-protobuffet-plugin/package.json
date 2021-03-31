@@ -10,7 +10,6 @@
   "author": "Anthony Bobsin",
   "license": "ISC",
   "dependencies": {
-    "@docusaurus/types": "^2.0.0-alpha.72",
     "@docusaurus/utils": "^2.0.0-alpha.72",
     "react": "^17.0.2"
   },
