@@ -10,7 +10,7 @@
   "author": "Anthony Bobsin",
   "license": "ISC",
   "dependencies": {
-    "docusaurus-protobuffet-plugin": "file:../docusaurus-protobuffet-plugin"
+    "docusaurus-protobuffet-plugin": "^0.1.0"
   },
   "devDependencies": {
     "@docusaurus/types": "^2.0.0-alpha.72"
