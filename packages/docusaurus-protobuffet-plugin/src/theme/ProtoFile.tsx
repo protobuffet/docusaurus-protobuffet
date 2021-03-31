@@ -22,28 +22,30 @@ interface ServiceMethodProps {
 
 export const ProtoServiceMethod = ({ method }: ServiceMethodProps) => (
   <table>
-    <tr>
-      <th style={leftHeaderStyles}>Method</th>
-      <td><code>{method.name}</code></td>
-    </tr>
-    <tr>
-      <th style={leftHeaderStyles}>Request</th>
-      <td>
-        <code>{method.requestType}</code>
-        {method.requestStreaming === true ? ' stream' : ''}
-      </td>
-    </tr>
-    <tr>
-      <th style={leftHeaderStyles}>Response</th>
-      <td>
-        <code>{method.responseType}</code>
-        {method.responseStreaming === true ? ' stream' : ''}
-      </td>
-    </tr>
-    <tr>
-      <th style={leftHeaderStyles}>Description</th>
-      <td>{method.description}</td>
-    </tr>
+    <tbody>
+      <tr>
+        <th style={leftHeaderStyles}>Method</th>
+        <td><code>{method.name}</code></td>
+      </tr>
+      <tr>
+        <th style={leftHeaderStyles}>Request</th>
+        <td>
+          <code>{method.requestType}</code>
+          {method.requestStreaming === true ? ' stream' : ''}
+        </td>
+      </tr>
+      <tr>
+        <th style={leftHeaderStyles}>Response</th>
+        <td>
+          <code>{method.responseType}</code>
+          {method.responseStreaming === true ? ' stream' : ''}
+        </td>
+      </tr>
+      <tr>
+        <th style={leftHeaderStyles}>Description</th>
+        <td>{method.description}</td>
+      </tr>
+    </tbody>
   </table>
 )
 
@@ -98,7 +100,7 @@ const ProtoMessageFields = (props: MessageFieldsProps) => {
   const FieldRows = () => (
     <tbody>
       {fields.map(field => (
-        <tr>
+        <tr key={field.name}>
           <td><code>{field.name}</code></td>
           <td><code>{field.type}</code></td>
           <td style={{ whiteSpace: 'pre-wrap' }}>{field.description}</td>
