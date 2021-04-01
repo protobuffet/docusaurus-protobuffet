@@ -19,7 +19,7 @@ program
 
 program
   .command('init [siteName]')
-  .description('Initialize Docusaurus website with Protobuffet presets.')
+  .description('Initialize Docusaurus website with Protobuffet preset.')
   .action((siteName = 'test-project') => {
     wrapCommand(init)(siteName);
   });
