@@ -25,7 +25,7 @@ cd <project_name>
 npm run start
 ```
 
-Proto doc files were generated for the sample fixture during project initialization. This will need to be run whenever the `fileDescriptorsPath` file (defaulted to `./fixtures/proto_workspace.json`) is updated. Read [`docusaurus-protobuffet CLI documentation`](https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet#cli-commands) for details.
+Proto doc files were generated for the sample fixture during project initialization. These will need to be generated whenever the `fileDescriptorsPath` file (defaulted to `./fixtures/proto_workspace.json`) is updated. Read [`docusaurus-protobuffet CLI documentation`](https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet#cli-commands) for details.
 
 ```sh
 npx docusaurus generate-proto-docs
