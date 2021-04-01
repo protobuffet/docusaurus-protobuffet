@@ -40,7 +40,7 @@ module.exports = {
   // ...
   presets: [
     [
-      'docusaurus-protobuffet,
+      'docusaurus-protobuffet',
       {
         protobuffet: {
           fileDescriptorsPath: './fixtures/proto_workspace.json'
