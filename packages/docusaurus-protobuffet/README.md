@@ -16,20 +16,11 @@ Install this preset.
 npm install --save docusaurus-protobuffet
 ```
 
-Generate a JSON representation of your Protobuf files. This relies on [protoc-gen-doc](https://github.com/pseudomuto/protoc-gen-doc).
+Generate a JSON representation of your Protobuf files. This depends on the `protoc-gen-doc` compiler plugin. Find details and installation steps in the [usage section](#generating-json-file).
 
 ```sh
-# install protoc. change for your OS as necessary.
-brew install protobuf
-
-# install protoc-gen-doc. this depends on golang.
-go get -u github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc
-
 # use protoc to generate the JSON representation of your Protobuf workspace.
-protoc --doc_out=./doc --doc_opt=json,proto_workspace.json protos/**/*.proto
-
-# copy the generated file to your Docusaurus project.
-cp doc/proto_workspace.json ./fixtures/proto_workspace.json
+protoc --doc_out=./fixtures --doc_opt=json,proto_workspace.json protos/**/*.proto
 ```
 
 Add the preset to your project's `docusaurus.config.js` file. View the [Configuration](#configuration) section for all available options.
@@ -94,7 +85,7 @@ Pass in all plugin options. See [`docusaurus-protobuffet-plugin`](https://github
 
 | Option | Description | Required | Default |
 | --- | --- | --- | --- |
-| `fileDescriptorsPath` | Path to JSON file containing generated proto documentation through [protoc-gen-doc](https://github.com/pseudomuto/protoc-gen-doc). See [Installation](#installation) section for details. | ✅ | `./fixtures/proto_workspace.json` |
+| `fileDescriptorsPath` | Path to JSON file containing generated proto documentation through [protoc-gen-doc](https://github.com/pseudomuto/protoc-gen-doc). See [usage section](#generating-json-file) for details. | ✅ | `./fixtures/proto_workspace.json` |
 | `protoDocsPath` | Directory where CLI will create doc files. |  | `./protodocs` |
 | `sidebarPath` | Path to file where CLI will write the generated Sidebar object. |  | `./sidebarsProtodocs.js` |
 ---
@@ -114,6 +105,48 @@ npx docusaurus generate-proto-docs
 Generate documentation for all Protobuf files within the configured `fileDescriptorsPath` JSON file. The generated files are written to `protoDocsPath`. A sidebar object is written to the configured `sidebarPath`.
 
 You can view some [generated doc files in the example project](https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master/example/protodocs).
+
+### Generating the `fileDescriptorsPath` File {#generating-json-file}
+This project depends on a snapshot of all the files within your Protobuf workspace. The formatting and generation of this snapshot currently depends on the `protoc-gen-doc` Protobuf compiler plugin. `protoc-gen-doc` can generate a JSON representation of your Protobuf files, which we parse to build an enhanced view of your documentation.
+
+To use `protoc-gen-doc` we must install golang and protoc. These are already common dependencies when working with Protobuf files, but I'm happy to investigate alternatives if we decide this is a barrier for users.
+
+```sh
+# install protoc. change for your OS as necessary.
+brew install protobuf
+
+# install protoc-gen-doc. this depends on golang.
+go get -u github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc
+
+# use protoc to generate the JSON representation of your Protobuf workspace.
+protoc --doc_out=./fixtures --doc_opt=json,proto_workspace.json protos/**/*.proto
+```
+
+### Recommended Extensions
+
+#### [`docusaurus-search-local`](https://github.com/easyops-cn/docusaurus-search-local)
+
+This plugin enables search bar functionality based on a generated local index of your Protobuf documentation. It depends on `@docusaurus/preset-classic` or any preset that leverages the `@theme/SearchBar` component. You can reach more about how Docusaurus handles search [here](https://docusaurus.io/docs/search).
+
+This must be installed within your project, so add the plugin to your `docusaurus.config.js` file. Make sure `docsRouteBasePath` and `docsDir` are configured to match your `protoDocsPath` option.
+
+```js
+// file: docusaurus.config.js
+module.exports = {
+  // ...
+  plugins: [
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      {
+        hashed: true,
+        docsRouteBasePath: 'protodocs',
+        docsDir: 'protodocs',
+        indexBlog: false,
+      },
+    ]
+  ],
+}
+```
 
 ---
 
