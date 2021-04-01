@@ -8,7 +8,7 @@ See [`example`](https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/mas
 
 ## Installation
 
-This section assumes an existing Docusaurus project. I'll be providing a template site generator soon for those not already on Docusaurus. You can view their [installation docs](https://docusaurus.io/docs/installation) to set one up in the mean time.
+This section assumes an existing Docusaurus project. For those without an existing setup, you can use [`docusaurus-protobuffet-init`](https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet-init#usage) to scaffold a Docusaurus project with this preset installed.
 
 Install this preset.
 
