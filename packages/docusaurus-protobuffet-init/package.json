@@ -1,8 +1,8 @@
 {
-  "name": "docusaurus-protobuffet-plugin",
+  "name": "docusaurus-protobuffet-init",
   "version": "0.1.5",
-  "description": "Protobuf documentation plugin for Docusaurus",
-  "author": "Anthony Bobsin",
+  "description": "Create Docusaurus projects with Protobuffet preset enabled",
+  "author": "Anthony Bobsin <bobsinj@gmail.com>",
   "license": "ISC",
   "repository": {
     "type": "git",
@@ -24,14 +24,6 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {
-    "@docusaurus/utils": "^2.0.0-alpha.72"
-  },
-  "devDependencies": {
-    "@types/react": "^17.0.3",
-    "react": "^17.0.2"
-  },
-  "gitHead": "dc80124069867af85aa9d5ee5a52d42dbba49f3b"
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  }
 }
