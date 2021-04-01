@@ -1,4 +1,4 @@
-# Protobuf Docusaurus Toolset
+# Docusaurus Protobuf Toolset
 
 [Docusaurus](https://docusaurus.io/) toolset for Protobuf contract documentation. Provides a set of components and MDX doc file generators for Docusaurus sites.
 
@@ -16,20 +16,23 @@ Install this preset.
 npm install --save docusaurus-protobuffet
 ```
 
-Generate a JSON representation of your Protobuf files. This depends on [protoc-gen-doc](https://github.com/pseudomuto/protoc-gen-doc).
+Generate a JSON representation of your Protobuf files. This relies on [protoc-gen-doc](https://github.com/pseudomuto/protoc-gen-doc).
 
 ```sh
 # install protoc. change for your OS as necessary.
 brew install protobuf
+
 # install protoc-gen-doc. this depends on golang.
 go get -u github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc
+
 # use protoc to generate the JSON representation of your Protobuf workspace.
 protoc --doc_out=./doc --doc_opt=json,proto_workspace.json protos/**/*.proto
+
 # copy the generated file to your Docusaurus project.
 cp doc/proto_workspace.json ./fixtures/proto_workspace.json
 ```
 
-Add the preset to your project's `docusaurus.config.js` file with the appropriate options.
+Add the preset to your project's `docusaurus.config.js` file. View the [Configuration](#configuration) section for all available options.
 
 ```js
 // file: docusaurus.config.js
@@ -49,7 +52,7 @@ module.exports = {
 }
 ```
 
-Invoke the CLI command [`generate-proto-docs`](#generate-proto-docs) to generate your mdx doc files. 
+Invoke the CLI command [`generate-proto-docs`](#generate-proto-docs) to generate your MDX doc files.
 
 ```sh
 npx docusaurus generate-proto-docs
@@ -76,16 +79,22 @@ module.exports = {
 }
 ```
 
---- 
+Boot up your Docusaurus server to view the new Protobuf documentation space.
+
+```sh
+npm run start
+```
+
+---
 
 ##  Configuration
 
 ### `protobuffet`
-Pass in all plugin options. See [`docusaurus-protobuffet-plugin`](https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet) for details.
+Pass in all plugin options. See [`docusaurus-protobuffet-plugin`](https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet-plugin) for details.
 
 | Option | Description | Required | Default |
 | --- | --- | --- | --- |
-| `fileDescriptorsPath` | Path to JSON file containing generated proto documentation through [protoc-gen-doc](https://github.com/pseudomuto/protoc-gen-doc). See Installation section for details. | ✅ | `./fixtures/proto_workspace.json` |
+| `fileDescriptorsPath` | Path to JSON file containing generated proto documentation through [protoc-gen-doc](https://github.com/pseudomuto/protoc-gen-doc). See [Installation](#installation) section for details. | ✅ | `./fixtures/proto_workspace.json` |
 | `protoDocsPath` | Directory where CLI will create doc files. |  | `./protodocs` |
 | `sidebarPath` | Path to file where CLI will write the generated Sidebar object. |  | `./sidebarsProtodocs.js` |
 ---
@@ -110,4 +119,4 @@ You can view some [generated doc files in the example project](https://github.co
 
 ## Contributing
 
-Contributions, issues and feature requests are always welcome. If you are using this package and fixed a bug for yourself, please consider submitting a PR!
+Contributions, issues and feature requests are always welcome!
