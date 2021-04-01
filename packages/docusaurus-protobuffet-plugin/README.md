@@ -1,0 +1,18 @@
+# Protobuf Docusaurus Plugin
+
+[Docusaurus](https://docusaurus.io/) plugin for Protobuf contract documentation. Provides a set of components and MDX doc file generators for Docusaurus sites.
+
+See [`docusaurus-protobuffet`](https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet) for details on usage.
+
+---
+
+## Configuration
+
+This plugin accepts the following options. These options are passed through [`docusaurus-protobuffet`](https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet) preset's `protobuffet` option with some defaults applied.
+
+| Option | Description | Required | Example |
+| --- | --- | --- | --- |
+| `fileDescriptorsPath` | Path to JSON file containing generated proto documentation through [protoc-gen-doc](https://github.com/pseudomuto/protoc-gen-doc). See [`docusaurus-protobuffet`](https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet) Installation section for details. | ✅ | `./fixtures/proto_workspace.json` |
+| `protoDocsPath` | Directory where CLI will create doc files. | ✅ | `./protodocs` |
+| `sidebarPath` | Path to file where CLI will write the generated Sidebar object. | ✅ | `./sidebarsProtodocs.js` |
+

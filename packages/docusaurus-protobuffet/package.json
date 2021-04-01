@@ -1,7 +1,23 @@
 {
   "name": "docusaurus-protobuffet",
   "version": "0.1.1",
-  "description": "Docusaurus preset for generating Protobuffet views",
+  "description": "Protobuf documentation toolset for Docusaurus",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnthonyBobsin/docusaurus-protobuffet.git"
+  },
+  "homepage": "https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet",
+  "keywords": [
+    "docusaurus",
+    "protobuf",
+    "documentation",
+    "api",
+    "protocol buffers",
+    "grpc",
+    "microservices",
+    "markdown",
+    "mdx"
+  ],
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
