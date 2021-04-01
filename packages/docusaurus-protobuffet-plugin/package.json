@@ -1,6 +1,6 @@
 {
   "name": "docusaurus-protobuffet-plugin",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Protobuf documentation plugin for Docusaurus",
   "repository": {
     "type": "git",
@@ -32,5 +32,6 @@
   "devDependencies": {
     "@types/react": "^17.0.3",
     "react": "^17.0.2"
-  }
+  },
+  "gitHead": "dc80124069867af85aa9d5ee5a52d42dbba49f3b"
 }
