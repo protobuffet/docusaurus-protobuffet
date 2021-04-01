@@ -3,5 +3,6 @@
   "compilerOptions": {
     "outDir": "./dist",
     "rootDir": "./src"
-  }
+  },
+  "exclude": ["bin", "dist"]
 }
