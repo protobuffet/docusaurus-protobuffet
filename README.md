@@ -4,6 +4,16 @@
 
 This is a [Lerna](https://lerna.js.org/) project containing all packages.
 
+## Features
+### Existing
+- React components for documenting Protobuf file descriptors including messages, services, and enums.
+- Markdown doc (mdx) generation for the [Docusaurus platform](https://docusaurus.io/).
+- Docusaurus sidebar object generation for a complete documentation workspace.
+
+### Planned
+- Extension support for generated sidebar and mdx files.
+- Service implementation and client documentation.
+
 ## Usage
 
 See [`docusaurus-protobuffet`](https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet#usage) for details on usage.
@@ -23,13 +33,13 @@ Demo site coming soon!
 
 Docusaurus preset to help mount the plugin and render all generated files.
 
-### [`docusaurus-protobuffet-plugin`](https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet-plugin)
-
-Docusaurus plugin containing the CLI commands, file generators, and components.
-
 ### [`docusaurus-protobuffet-init`](https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet-init)
 
 Docusaurus project generator to scaffold a new site with these packages installed in a recommended setup.
+
+### [`docusaurus-protobuffet-plugin`](https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet-plugin)
+
+Docusaurus plugin containing the CLI commands, file generators, and components.
 
 ## Contributing
 

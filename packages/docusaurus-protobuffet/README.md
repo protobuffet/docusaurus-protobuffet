@@ -106,7 +106,9 @@ This toolset provides a suite of CLI commands to generate and manage documentati
 npx docusaurus generate-proto-docs
 ```
 
-Generate documentation for all Protobuf files within the configured `fileDescriptorsPath` JSON file. The generated files are written to `protoDocsPath`. A sidebar object is written to the configured `sidebarPath`.
+Generate documentation for all Protobuf files within the configured `fileDescriptorsPath` JSON file. The generated files are written to `protoDocsPath`. A sidebar object is written to the configured `sidebarPath`. View the [configuration section](#configuration) for details of these options.
+
+This command must be run for every content change of `fileDescriptorsPath`. This will overwrite all previously generated files, so they should not be modified manually. Extension support for these generated files will be coming in the future, so please reach out with your use cases.
 
 You can view some [generated doc files in the example project](https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master/example/protodocs).
 
