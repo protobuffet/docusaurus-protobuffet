@@ -4,6 +4,10 @@
 
 See [`example`](https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master/example) for a sample site.
 
+See the project [demo section](https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master#demo) for an overview of features and visuals.
+
+![Protodocs Overview](../../screenshots/overview.png)
+
 ---
 
 ## Installation
