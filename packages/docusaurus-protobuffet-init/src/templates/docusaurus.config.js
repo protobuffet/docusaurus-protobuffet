@@ -19,6 +19,7 @@ module.exports = {
       items: [
         {
           to: 'protodocs/Booking.proto',
+          activeBasePath: 'protodocs',
           label: 'Protodocs',
           position: 'left',
         },

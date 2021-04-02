@@ -64,6 +64,7 @@ module.exports = {
         // ...
         {
           to: 'protodocs/Booking.proto',
+          activeBasePath: 'protodocs',
           label: 'Protodocs',
           position: 'left',
         }

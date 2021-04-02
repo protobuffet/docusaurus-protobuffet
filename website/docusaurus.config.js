@@ -1,34 +1,34 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'My Protobuf Documentation',
-  tagline: 'The tagline of my Protobuf documentation',
+  title: 'Protobuffet',
+  tagline: 'Documentation Toolset for Your Protobuf Workspace',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'protobuffet',
+  projectName: 'docusaurus-protobuffet', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'My Protobuf Documentation',
+      title: 'Protobuffet',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Protobuffet Logo',
         src: 'img/logo.svg',
       },
       items: [
-        {
-          to: 'protodocs/Booking.proto',
-          label: 'Protodocs',
-          position: 'left',
-        },
         {
           to: 'docs/',
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'left',
         },
-        {to: 'blog', label: 'Blog', position: 'left'},
+        {
+          to: 'protodocs/Booking.proto',
+          activeBasePath: 'protodocs',
+          label: 'Example Workspace',
+          position: 'left',
+        },
         {
           href: 'https://github.com/AnthonyBobsin/docusaurus-protobuffet',
           label: 'GitHub',
@@ -52,34 +52,17 @@ module.exports = {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: 'blog',
-            },
-            {
               label: 'GitHub',
               href: 'https://github.com/AnthonyBobsin/docusaurus-protobuffet',
             },
+            {
+              label: 'Twitter',
+              href: 'https://twitter.com/anthony_bobsin',
+            },
           ],
-        },
+        }
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Protobuf Documentation, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Protobuffet. Built with Docusaurus.`,
     },
   },
   presets: [
@@ -92,12 +75,7 @@ module.exports = {
           editUrl:
             'https://github.com/facebook/docusaurus/edit/master/website/',
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
-        },
+        blog: false,
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
