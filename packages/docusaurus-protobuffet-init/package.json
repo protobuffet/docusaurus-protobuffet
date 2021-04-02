@@ -27,7 +27,7 @@
     "build": "tsc && npm run copy-template-fixtures",
     "test": "echo \"Error: run tests from root\" && exit 1",
     "start": "node dist/index.js",
-    "copy-template-fixtures": "copyfiles -f src/templates/*.json dist/templates/"
+    "copy-template-fixtures": "copyfiles -f src/templates/* dist/templates/"
   },
   "dependencies": {
     "@docusaurus/init": "^2.0.0-alpha.72",
