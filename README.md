@@ -4,6 +4,12 @@
 
 This is a [Lerna](https://lerna.js.org/) project containing all packages.
 
+## Usage
+
+See [`docusaurus-protobuffet`](https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet#usage) for details on usage.
+
+See [`docusaurus-protobuffet-init`](https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet-init#usage) to create a new Docusaurus project with this toolset installed.
+
 ## Features
 ### Existing
 - React components for documenting Protobuf file descriptors including messages, services, and enums.
@@ -14,13 +20,7 @@ This is a [Lerna](https://lerna.js.org/) project containing all packages.
 - Extension support for generated sidebar and mdx files.
 - Service implementation and client documentation.
 
-## Usage
-
-See [`docusaurus-protobuffet`](https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet#usage) for details on usage.
-
-See [`docusaurus-protobuffet-init`](https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet-init#usage) to create a new Docusaurus project with this toolset installed.
-
-## Demo
+### Demo
 
 Demo site coming soon!
 
