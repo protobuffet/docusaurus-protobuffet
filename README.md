@@ -15,9 +15,7 @@ See [`docusaurus-protobuffet-init`](https://github.com/AnthonyBobsin/docusaurus-
 Demo site coming soon!
 
 ![Protodocs Overview](./screenshots/overview.png)
-![Message Sample](./screenshots/message.png)
-![Service Sample](./screenshots/service.png)
-![Enum Sample](./screenshots/enum.png)
+![Service Sample](./screenshots/overview-service.png)
 
 ## Packages
 
