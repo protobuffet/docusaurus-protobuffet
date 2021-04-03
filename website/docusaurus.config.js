@@ -2,13 +2,13 @@
 module.exports = {
   title: 'Protobuffet',
   tagline: 'Documentation Toolset for Your Protobuf Workspace',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  url: 'https://anthonybobsin.github.io',
+  baseUrl: '/docusaurus-protobuffet/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'protobuffet',
-  projectName: 'docusaurus-protobuffet', // Usually your repo name.
+  organizationName: 'AnthonyBobsin',
+  projectName: 'docusaurus-protobuffet',
   themeConfig: {
     navbar: {
       title: 'Protobuffet',
