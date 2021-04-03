@@ -1,6 +1,6 @@
 {
   "name": "docusaurus-protobuffet-init",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Create Docusaurus projects with Protobuffet preset enabled",
   "author": "Anthony Bobsin <bobsinj@gmail.com>",
   "license": "ISC",
