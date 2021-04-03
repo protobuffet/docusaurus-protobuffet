@@ -8,6 +8,7 @@ module.exports = {
         'what/docusaurus',
         'what/protobuf',
         'what/features',
+        'what/demo',
         'what/motivation',
       ],
     },
@@ -16,11 +17,8 @@ module.exports = {
       label: 'How do we use it?',
       items: [
         'how/packages',
-        'how/demo',
         'how/installation',
         'how/usage',
-        'how/docusaurus',
-        'how/advanced'
       ],
     },
     {

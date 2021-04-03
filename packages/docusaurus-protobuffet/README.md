@@ -14,6 +14,8 @@ See the project [features section](https://github.com/AnthonyBobsin/docusaurus-p
 
 This section assumes an existing Docusaurus project. For those without an existing setup, you can use [`docusaurus-protobuffet-init`](https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet-init#usage) to scaffold a Docusaurus project with this preset installed.
 
+NOTE: These commands should be run from your Docusaurus project directory.
+
 Install this preset.
 
 ```sh
@@ -23,7 +25,6 @@ npm install --save docusaurus-protobuffet
 Generate a JSON representation of your Protobuf files. This depends on the [`protoc-gen-doc`](https://github.com/pseudomuto/protoc-gen-doc) compiler plugin. Find details and installation steps in the [usage section](#generating-the-filedescriptorspath-file).
 
 ```sh
-# use protoc to generate the JSON representation of your Protobuf workspace.
 protoc --doc_out=./fixtures --doc_opt=json,proto_workspace.json protos/**/*.proto
 ```
 
