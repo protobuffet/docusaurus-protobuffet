@@ -8,16 +8,7 @@ module.exports = {
         'what/docusaurus',
         'what/protobuf',
         'what/features',
-        'what/users',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Why use it?',
-      items: [
-        'why/documentation-reqs',
-        'why/problems-today',
-        'why/state-of-protobuf',
+        'what/motivation',
       ],
     },
     {
