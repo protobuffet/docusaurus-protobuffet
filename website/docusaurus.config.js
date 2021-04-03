@@ -2,10 +2,10 @@
 module.exports = {
   title: 'Protobuffet',
   tagline: 'Documentation Toolset for Your Protobuf Workspace',
-  url: 'https://protobuffet.github.io',
-  baseUrl: '/docusaurus-protobuffet/',
+  url: 'https://protobuffet.com',
+  baseUrl: '/',
   organizationName: 'protobuffet',
-  projectName: 'docusaurus-protobuffet',
+  projectName: 'protobuffet.github.io',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',

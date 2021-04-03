@@ -24,10 +24,10 @@ See [`docusaurus-protobuffet-init`](https://github.com/protobuffet/docusaurus-pr
 
 ### Demo
 
-Demo site coming soon!
-
 ![Protodocs Overview](./screenshots/overview.png)
 ![Service Sample](./screenshots/overview-service.png)
+
+Visit the [documentation site](https://protobuffet.github.io/docusaurus-protobuffet/docs/what/demo) for an interactive demo.
 
 ## Packages
 
