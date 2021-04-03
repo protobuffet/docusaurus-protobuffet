@@ -18,7 +18,7 @@ module.exports = {
       },
       items: [
         {
-          to: 'docs/',
+          to: 'docs/what/overview',
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'left',
@@ -71,9 +71,8 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+            'https://github.com/AnthonyBobsin/docusaurus-protobuffet/edit/master/website/',
         },
         blog: false,
         theme: {
