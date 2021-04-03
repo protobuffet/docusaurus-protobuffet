@@ -22,7 +22,7 @@
 
 .heroBannerInner {
   margin: 0 auto;
-  max-width: 1050px;
+  max-width: 1000px !important;
 }
 
 @media screen and (max-width: 966px) {
@@ -49,4 +49,10 @@
 .featureImage {
   height: 200px;
   width: 200px;
+}
+
+@media only screen and (max-width: 768px) {
+  .heroTitleTextHtml {
+    font-size: 36px;
+  }
 }
