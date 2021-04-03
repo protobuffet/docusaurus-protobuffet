@@ -1,6 +1,6 @@
 # Docusaurus Protobuf Project
 
-#### Visit the [landing page](https://protobuffet.github.io/docusaurus-protobuffet/) for Protobuffet documentation.
+#### Visit the [landing page](https://protobuffet.com/) for Protobuffet documentation.
 
 [Docusaurus](https://docusaurus.io/) toolset for Protobuf contract documentation. Provides a set of components and MDX doc file generators for Docusaurus sites.
 
@@ -27,7 +27,7 @@ See [`docusaurus-protobuffet-init`](https://github.com/protobuffet/docusaurus-pr
 ![Protodocs Overview](./screenshots/overview.png)
 ![Service Sample](./screenshots/overview-service.png)
 
-Visit the [documentation site](https://protobuffet.github.io/docusaurus-protobuffet/docs/what/demo) for an interactive demo.
+Visit the [documentation site](https://protobuffet.com/docs/what/demo) for an interactive demo.
 
 ## Packages
 

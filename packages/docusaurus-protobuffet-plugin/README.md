@@ -1,6 +1,6 @@
 # Docusaurus Protobuf Plugin
 
-#### Visit the [landing page](https://protobuffet.github.io/docusaurus-protobuffet/) for Protobuffet documentation.
+#### Visit the [landing page](https://protobuffet.com/) for Protobuffet documentation.
 
 [Docusaurus](https://docusaurus.io/) plugin for Protobuf contract documentation. Provides a set of components and MDX doc file generators for Docusaurus sites.
 

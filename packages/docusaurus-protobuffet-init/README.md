@@ -1,6 +1,6 @@
 # Docusaurus Project Generator with Protobuffet Preset
 
-#### Visit the [landing page](https://protobuffet.github.io/docusaurus-protobuffet/) for Protobuffet documentation.
+#### Visit the [landing page](https://protobuffet.com/) for Protobuffet documentation.
 
 Executable project generator based on [`@docusaurus/init`](https://github.com/facebook/docusaurus/tree/master/packages/docusaurus-init). This generator enhances the common template by also initializing the [`docusaurus-protobuffet`](https://github.com/protobuffet/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet) preset with recommended options and sample fixtures.
 
