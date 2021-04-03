@@ -14,7 +14,7 @@ module.exports = {
       title: 'Protobuffet',
       logo: {
         alt: 'Protobuffet Logo',
-        src: 'img/logo.svg',
+        src: 'img/logo.png',
       },
       items: [
         {
