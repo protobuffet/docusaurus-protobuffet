@@ -3,7 +3,7 @@ title: Usage
 slug: /how/usage
 ---
 
-## [`docusaurus-protobuffet`](https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet)
+## [`docusaurus-protobuffet`](https://github.com/protobuffet/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet)
 
 This toolset provides a suite of CLI commands to generate and manage documentation files for your Protobuf workspace. These generated files follow the Docusaurus convention of using MDX files and React components.
 
@@ -19,7 +19,7 @@ Generate documentation for all Protobuf files within the configured `fileDescrip
 
 This command must be run for every content change of `fileDescriptorsPath`. This will overwrite all previously generated files, so they should not be modified manually. Extension support for these generated files will be coming in the future, so please reach out with your use cases.
 
-You can view some [generated doc files in the landing page](https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master/website/protodocs).
+You can view some [generated doc files in the landing page](https://github.com/protobuffet/docusaurus-protobuffet/tree/master/website/protodocs).
 
 ### Generating the `fileDescriptorsPath` File
 This project depends on a snapshot of all the files within your Protobuf workspace. The formatting and generation of this snapshot currently depends on the [`protoc-gen-doc`](https://github.com/pseudomuto/protoc-gen-doc) Protobuf compiler plugin. `protoc-gen-doc` can generate a JSON representation of your Protobuf files, which we parse to build an enhanced view of your documentation.
@@ -60,7 +60,7 @@ module.exports = {
 ```
 
 #### `protobuffet`
-Pass in all plugin options. See [`docusaurus-protobuffet-plugin`](https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet-plugin) for the plugin library. This preset assigns some recommended defaults for missing options.
+Pass in all plugin options. See [`docusaurus-protobuffet-plugin`](https://github.com/protobuffet/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet-plugin) for the plugin library. This preset assigns some recommended defaults for missing options.
 
 | Option | Description | Required | Default |
 | --- | --- | --- | --- |
@@ -69,7 +69,7 @@ Pass in all plugin options. See [`docusaurus-protobuffet-plugin`](https://github
 | `sidebarPath` | Path to file where CLI will write the generated Sidebar object. |  | `./sidebarsProtodocs.js` |
 ---
 
-## [`docusaurus-protobuffet-init`](https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet-init)
+## [`docusaurus-protobuffet-init`](https://github.com/protobuffet/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet-init)
 
 For those without an existing Docusaurus project, this package can scaffold a new site with Protobuffet packages installed in a recommended setup.
 

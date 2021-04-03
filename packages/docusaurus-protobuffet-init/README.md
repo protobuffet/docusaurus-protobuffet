@@ -1,10 +1,10 @@
 # Docusaurus Project Generator with Protobuffet Preset
 
-Executable project generator based on [`@docusaurus/init`](https://github.com/facebook/docusaurus/tree/master/packages/docusaurus-init). This generator enhances the common template by also initializing the [`docusaurus-protobuffet`](https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet) preset with recommended options and sample fixtures.
+Executable project generator based on [`@docusaurus/init`](https://github.com/facebook/docusaurus/tree/master/packages/docusaurus-init). This generator enhances the common template by also initializing the [`docusaurus-protobuffet`](https://github.com/protobuffet/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet) preset with recommended options and sample fixtures.
 
 **Visit the [landing page](https://anthonybobsin.github.io/docusaurus-protobuffet/) for an overview and documentation.**
 
-See [`docusaurus-protobuffet`](https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet#usage) for details on this preset.
+See [`docusaurus-protobuffet`](https://github.com/protobuffet/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet#usage) for details on this preset.
 
 See [Docusaurus docs](https://docusaurus.io/docs/next/installation#scaffold-project-website) for details on the common template.
 
@@ -27,7 +27,7 @@ cd <project_name>
 npm run start
 ```
 
-Proto doc files were generated for the sample fixture during project initialization. These will need to be generated whenever the `fileDescriptorsPath` file (defaulted to `./fixtures/proto_workspace.json`) is updated. Read [`docusaurus-protobuffet CLI documentation`](https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet#cli-commands) for details.
+Proto doc files were generated for the sample fixture during project initialization. These will need to be generated whenever the `fileDescriptorsPath` file (defaulted to `./fixtures/proto_workspace.json`) is updated. Read [`docusaurus-protobuffet CLI documentation`](https://github.com/protobuffet/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet#cli-commands) for details.
 
 ```sh
 npx docusaurus generate-proto-docs
@@ -36,7 +36,7 @@ npx docusaurus generate-proto-docs
 Since this is a normal Docusaurus project, you can follow their documentation for [deployments](https://docusaurus.io/docs/next/deployment) and other details.
 
 ## Configuration
-The default setup configures `fileDescriptorsPath` to `./fixtures/proto_workspace.json`. You can override this with your own Protobuf workspace file or update the options passed to `docusaurus-protobuffet` within your `docusaurus.config.js` file. Please see [`docusaurus-protobuffet` documentation](https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet#configuration) for details.
+The default setup configures `fileDescriptorsPath` to `./fixtures/proto_workspace.json`. You can override this with your own Protobuf workspace file or update the options passed to `docusaurus-protobuffet` within your `docusaurus.config.js` file. Please see [`docusaurus-protobuffet` documentation](https://github.com/protobuffet/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet#configuration) for details.
 
 The navbar configuration within `docusaurus.config.js` points to one of the generated files of the sample fixture (`Booking.proto`). You will need to update this route when using your own Protobuf workspace file.
 

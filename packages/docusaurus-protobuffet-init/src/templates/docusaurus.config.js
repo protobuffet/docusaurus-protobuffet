@@ -31,7 +31,7 @@ module.exports = {
         },
         {to: 'blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/AnthonyBobsin/docusaurus-protobuffet',
+          href: 'https://github.com/protobuffet/docusaurus-protobuffet',
           label: 'GitHub',
           position: 'right',
         },
@@ -75,7 +75,7 @@ module.exports = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/AnthonyBobsin/docusaurus-protobuffet',
+              href: 'https://github.com/protobuffet/docusaurus-protobuffet',
             },
           ],
         },

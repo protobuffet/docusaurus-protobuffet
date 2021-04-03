@@ -4,9 +4,9 @@
   "description": "Protobuf documentation toolset for Docusaurus",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AnthonyBobsin/docusaurus-protobuffet.git"
+    "url": "git+https://github.com/protobuffet/docusaurus-protobuffet.git"
   },
-  "homepage": "https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet",
+  "homepage": "https://github.com/protobuffet/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet",
   "keywords": [
     "docusaurus",
     "protobuf",

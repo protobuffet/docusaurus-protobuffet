@@ -6,9 +6,9 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AnthonyBobsin/docusaurus-protobuffet.git"
+    "url": "git+https://github.com/protobuffet/docusaurus-protobuffet.git"
   },
-  "homepage": "https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet-plugin",
+  "homepage": "https://github.com/protobuffet/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet-plugin",
   "keywords": [
     "docusaurus",
     "plugin",

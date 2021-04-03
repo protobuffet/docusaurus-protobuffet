@@ -2,13 +2,13 @@
 module.exports = {
   title: 'Protobuffet',
   tagline: 'Documentation Toolset for Your Protobuf Workspace',
-  url: 'https://anthonybobsin.github.io',
+  url: 'https://protobuffet.github.io',
   baseUrl: '/docusaurus-protobuffet/',
+  organizationName: 'protobuffet',
+  projectName: 'docusaurus-protobuffet',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'AnthonyBobsin',
-  projectName: 'docusaurus-protobuffet',
   themeConfig: {
     navbar: {
       title: 'Protobuffet',
@@ -30,7 +30,7 @@ module.exports = {
           position: 'left',
         },
         {
-          href: 'https://github.com/AnthonyBobsin/docusaurus-protobuffet',
+          href: 'https://github.com/protobuffet/docusaurus-protobuffet',
           label: 'GitHub',
           position: 'right',
         },
@@ -74,7 +74,7 @@ module.exports = {
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/AnthonyBobsin/docusaurus-protobuffet',
+              href: 'https://github.com/protobuffet/docusaurus-protobuffet',
             },
           ],
         }
@@ -89,7 +89,7 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
-            'https://github.com/AnthonyBobsin/docusaurus-protobuffet/edit/master/website/',
+            'https://github.com/protobuffet/docusaurus-protobuffet/edit/master/website/',
         },
         blog: false,
         theme: {
