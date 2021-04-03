@@ -2,7 +2,7 @@
 
 [Docusaurus](https://docusaurus.io/) toolset for Protobuf contract documentation. Provides a set of components and MDX doc file generators for Docusaurus sites.
 
-See [`example`](https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master/example) for a sample site.
+See the [`landing page`](https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master/website) for a sample site.
 
 See the project [features section](https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master#features) for an overview of features and visuals.
 
@@ -112,7 +112,7 @@ Generate documentation for all Protobuf files within the configured `fileDescrip
 
 This command must be run for every content change of `fileDescriptorsPath`. This will overwrite all previously generated files, so they should not be modified manually. Extension support for these generated files will be coming in the future, so please reach out with your use cases.
 
-You can view some [generated doc files in the example project](https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master/example/protodocs).
+You can view some [generated doc files in the landing page](https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master/website/protodocs).
 
 ### Generating the `fileDescriptorsPath` File
 This project depends on a snapshot of all the files within your Protobuf workspace. The formatting and generation of this snapshot currently depends on the [`protoc-gen-doc`](https://github.com/pseudomuto/protoc-gen-doc) Protobuf compiler plugin. `protoc-gen-doc` can generate a JSON representation of your Protobuf files, which we parse to build an enhanced view of your documentation.
