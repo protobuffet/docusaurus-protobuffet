@@ -2,6 +2,8 @@
 
 Executable project generator based on [`@docusaurus/init`](https://github.com/facebook/docusaurus/tree/master/packages/docusaurus-init). This generator enhances the common template by also initializing the [`docusaurus-protobuffet`](https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet) preset with recommended options and sample fixtures.
 
+Visit the [landing page](https://anthonybobsin.github.io/docusaurus-protobuffet/) for an overview and documentation.
+
 See [`docusaurus-protobuffet`](https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet#usage) for details on this preset.
 
 See [Docusaurus docs](https://docusaurus.io/docs/next/installation#scaffold-project-website) for details on the common template.

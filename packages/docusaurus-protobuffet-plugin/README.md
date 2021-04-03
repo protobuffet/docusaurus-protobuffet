@@ -2,6 +2,8 @@
 
 [Docusaurus](https://docusaurus.io/) plugin for Protobuf contract documentation. Provides a set of components and MDX doc file generators for Docusaurus sites.
 
+Visit the [landing page](https://anthonybobsin.github.io/docusaurus-protobuffet/) for an overview and documentation.
+
 See [`docusaurus-protobuffet`](https://github.com/AnthonyBobsin/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet#usage) for details on usage.
 
 ---
