@@ -3,7 +3,7 @@ module.exports = {
   title: 'Protobuffet',
   tagline: 'Documentation Toolset for Your Protobuf Workspace',
   url: 'https://anthonybobsin.github.io',
-  baseUrl: '/docusaurus-protobuffet/',
+  baseUrl: '/docusaurus-protobuffet',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
