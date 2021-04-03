@@ -40,11 +40,32 @@ module.exports = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Protobuffet',
           items: [
             {
-              label: 'Getting Started',
-              to: 'docs/',
+              label: 'Overview',
+              to: '/docs/what/overview',
+            },
+            {
+              label: 'Features',
+              to: '/docs/what/features',
+            },
+            {
+              label: 'Motivation',
+              to: '/docs/what/motivation',
+            },
+          ],
+        },
+        {
+          title: 'Guides',
+          items: [
+            {
+              label: 'Installation',
+              to: '/docs/how/installation',
+            },
+            {
+              label: 'Usage',
+              to: '/docs/how/usage'
             },
           ],
         },
@@ -54,10 +75,6 @@ module.exports = {
             {
               label: 'GitHub',
               href: 'https://github.com/AnthonyBobsin/docusaurus-protobuffet',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/anthony_bobsin',
             },
           ],
         }
@@ -96,8 +113,8 @@ module.exports = {
       '@easyops-cn/docusaurus-search-local',
       {
         hashed: true,
-        docsRouteBasePath: 'protodocs',
-        docsDir: 'protodocs',
+        docsRouteBasePath: ['docs', 'protodocs'],
+        docsDir: ['docs', 'protodocs'],
         indexBlog: false,
       },
     ],

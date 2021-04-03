@@ -5,11 +5,24 @@
  * and scoped locally.
  */
 
+.heroTitleTextHtml {
+  font-size: 60px;
+}
+
+.heroTitleTextHtml b {
+  color: var(--ifm-color-primary);
+}
+
 .heroBanner {
   padding: 4rem 0;
-  text-align: center;
+  text-align: left;
   position: relative;
   overflow: hidden;
+}
+
+.heroBannerInner {
+  margin: 0 auto;
+  max-width: 1050px;
 }
 
 @media screen and (max-width: 966px) {
@@ -19,6 +32,8 @@
 }
 
 .buttons {
+  --ifm-button-size-multiplier: 1.6;
+  margin-top: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
