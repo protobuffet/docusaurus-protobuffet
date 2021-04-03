@@ -2,7 +2,7 @@
 
 [Docusaurus](https://docusaurus.io/) toolset for Protobuf contract documentation. Provides a set of components and MDX doc file generators for Docusaurus sites.
 
-Visit the [landing page](https://anthonybobsin.github.io/docusaurus-protobuffet/) for an overview and documentation.
+**Visit the [landing page](https://anthonybobsin.github.io/docusaurus-protobuffet/) for an overview and documentation.**
 
 This is a [Lerna](https://lerna.js.org/) project containing all packages.
 
