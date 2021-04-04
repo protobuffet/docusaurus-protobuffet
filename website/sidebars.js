@@ -3,6 +3,7 @@ module.exports = {
     {
       type: 'category',
       label: 'What is Protobuffet?',
+      collapsed: false,
       items: [
         'what/overview',
         'what/features',
@@ -13,6 +14,7 @@ module.exports = {
     {
       type: 'category',
       label: 'How do we use it?',
+      collapsed: false,
       items: [
         'how/packages',
         'how/installation',
