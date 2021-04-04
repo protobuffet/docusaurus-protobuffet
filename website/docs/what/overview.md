@@ -9,9 +9,12 @@ Documentation should be **driven by the code that it documents while being easil
 
 Our documentation starts with an **enhanced view of Protobuf contracts**. The [Protobuffet CLI](https://github.com/protobuffet/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet#cli-commands) parses your Protobuf file workspace to generate modern documentation pages for your organization. This **automated, granular documentation is deep linked and extensible** with our toolset.
 
-View the [example workspace](/protodocs/Booking.proto) for a preview of the generated documentation.
-
-Skip ahead to [installation](/docs/how/installation) if you would like to get started now.
+## Quick Links
+- 🍿 View the [example workspace](/protodocs/protobuffet/example/ad/v1/ads.proto) for a demo.
+- 🚀 Jump to [installation](/docs/how/installation) to get started.
+- 🚢 Jump to [usage](/docs/how/usage) for usage and configuration.
+- 📚 Learn about [Docusaurus dependency](#docusaurus).
+- 📚 Learn about [Protobuf contracts](#protobuf).
 
 ## Docusaurus
 

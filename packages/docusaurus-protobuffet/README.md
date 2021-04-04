@@ -23,7 +23,7 @@ npm install --save docusaurus-protobuffet
 Generate a JSON representation of your Protobuf files. This depends on the [`protoc-gen-doc`](https://github.com/pseudomuto/protoc-gen-doc) compiler plugin. Find details and installation steps in the [usage section](#generating-the-filedescriptorspath-file).
 
 ```sh
-protoc --doc_out=./fixtures --doc_opt=json,proto_workspace.json protos/**/*.proto
+protoc --doc_out=./fixtures --doc_opt=json,proto_workspace.json --proto_path=protos protos/**/*.proto
 ```
 
 Add the preset to your project's `docusaurus.config.js` file. View the [configuration section](#configuration) for all available options.
@@ -125,7 +125,7 @@ brew install protobuf
 go get -u github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc
 
 # use protoc to generate the JSON representation of your Protobuf workspace.
-protoc --doc_out=./fixtures --doc_opt=json,proto_workspace.json protos/**/*.proto
+protoc --doc_out=./fixtures --doc_opt=json,proto_workspace.json --proto_path=protos protos/**/*.proto
 ```
 
 ### Recommended Extensions

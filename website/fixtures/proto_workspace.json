@@ -4,11 +4,40 @@
       "name": "protobuffet/example/ad/v1/ads.proto",
       "description": "",
       "package": "protobuffet.example.ad.v1",
-      "hasEnums": false,
+      "hasEnums": true,
       "hasExtensions": false,
       "hasMessages": true,
       "hasServices": true,
-      "enums": [],
+      "enums": [
+        {
+          "name": "AdType",
+          "longName": "AdType",
+          "fullName": "protobuffet.example.ad.v1.AdType",
+          "description": "Type of ad to render.",
+          "values": [
+            {
+              "name": "UNKNOWN",
+              "number": "0",
+              "description": "Unknown/undefined ad type."
+            },
+            {
+              "name": "FEATURED_PRODUCT",
+              "number": "1",
+              "description": "Featured product ad type."
+            },
+            {
+              "name": "HEADER_PRODUCT",
+              "number": "2",
+              "description": "Header product ad type."
+            },
+            {
+              "name": "BUY_IT_AGAIN_PRODUCT",
+              "number": "3",
+              "description": "Buy it again ad type."
+            }
+          ]
+        }
+      ],
       "extensions": [],
       "messages": [
         {
@@ -23,7 +52,7 @@
           "fields": [
             {
               "name": "redirect_url",
-              "description": "url to redirect to when an ad is clicked.",
+              "description": "URL to redirect to when an ad is clicked.",
               "label": "",
               "type": "string",
               "longType": "string",
@@ -35,11 +64,23 @@
             },
             {
               "name": "text",
-              "description": "short advertisement text to display.",
+              "description": "Short advertisement text to display.",
               "label": "",
               "type": "string",
               "longType": "string",
               "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "type",
+              "description": "Type of ad.",
+              "label": "",
+              "type": "AdType",
+              "longType": "AdType",
+              "fullType": "protobuffet.example.ad.v1.AdType",
               "ismap": false,
               "isoneof": false,
               "oneofdecl": "",

@@ -24,9 +24,24 @@ message AdResponse {
 
 // Represents an Ad that can be displayed to a user. These are generated from a given context.
 message Ad {
-  // url to redirect to when an ad is clicked.
+  // URL to redirect to when an ad is clicked.
   string redirect_url = 1;
 
-  // short advertisement text to display.
+  // Short advertisement text to display.
   string text = 2;
+
+  // Type of ad.
+  AdType type = 3;
+}
+
+// Type of ad to render.
+enum AdType {
+  // Unknown/undefined ad type.
+  UNKNOWN = 0;
+  // Featured product ad type.
+  FEATURED_PRODUCT = 1;
+  // Header product ad type.
+  HEADER_PRODUCT = 2;
+  // Buy it again ad type.
+  BUY_IT_AGAIN_PRODUCT = 3;
 }

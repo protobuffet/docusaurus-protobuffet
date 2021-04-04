@@ -34,7 +34,7 @@ brew install protobuf
 go get -u github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc
 
 # use protoc to generate the JSON representation of your Protobuf workspace.
-protoc --doc_out=./fixtures --doc_opt=json,proto_workspace.json protos/**/*.proto
+protoc --doc_out=./fixtures --doc_opt=json,proto_workspace.json --proto_path=protos protos/**/*.proto
 ```
 
 ### Configuration
