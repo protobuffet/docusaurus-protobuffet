@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package protobuffet.example.payment.v1;
+
+import "protobuffet/example/common/types/v1/money.proto";
+
+// Payments management service. This should be the only domain that knows how to charge customers to keep a clean audit trail.
+service PaymentService {
+  // Charge a credit card by the specified amount.
+  rpc Charge(ChargeRequest) returns (ChargeResponse) {}
+}
+
+// Represents credit card information that we can charge.
+message CreditCardInfo {
+  // Number of credit card.
+  string credit_card_number = 1;
+  // CVV of credit card.
+  int32 credit_card_cvv = 2;
+  // Card expiration (year). Expected formatting YYYY, eg. 2021.
+  int32 credit_card_expiration_year = 3;
+  // Card expiration (month). Expected formatting M, eg. 8, 12.
+  int32 credit_card_expiration_month = 4;
+}
+
+// Request to charge a credit card.
+message ChargeRequest {
+  // Amount to charge. This is expected to be in the user's preferred currency.
+  protobuffet.example.common.types.v1.Money amount = 1;
+  // Credit card to charge.
+  CreditCardInfo credit_card = 2;
+}
+
+// Response of a successful charge.
+message ChargeResponse {
+  // Identifier of this successful charge transaction.
+  string transaction_id = 1;
+}

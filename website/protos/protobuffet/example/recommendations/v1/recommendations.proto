@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package protobuffet.example.recommendations.v1;
+
+// Further product recommendations for user given a set of product IDs.
+service RecommendationService {
+  // List recommendations for a given user and context.
+  rpc ListRecommendations(ListRecommendationsRequest) returns (ListRecommendationsResponse){}
+}
+
+// Request to get product recommendations for a user.
+message ListRecommendationsRequest {
+  // User to lookup recommendations for.
+  string user_id = 1;
+  // Product IDs for the current user context that we are recommending for.
+  repeated string product_ids = 2;
+}
+
+// Response containing product recommendations.
+message ListRecommendationsResponse {
+  // IDs referencing products that we recommend for the received request.
+  // See implementation docs for details on formatting.
+  repeated string product_ids = 1;
+}

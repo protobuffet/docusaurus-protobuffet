@@ -1,0 +1,43 @@
+---
+title: pro.exa.rec.v1.recommendations.proto
+hide_title: true
+---
+
+import { ProtoMessage, ProtoServiceMethod, ProtoEnum } from '@theme/ProtoFile';
+
+## `recommendations.proto`
+_**path** protobuffet/example/recommendations/v1/recommendations.proto_
+
+_**package** protobuffet.example.recommendations.v1_
+
+
+
+---
+
+## Messages
+
+
+### `ListRecommendationsRequest`
+<ProtoMessage key={0} message={{"name":"ListRecommendationsRequest","longName":"ListRecommendationsRequest","fullName":"protobuffet.example.recommendations.v1.ListRecommendationsRequest","description":"Request to get product recommendations for a user.","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"user_id","description":"User to lookup recommendations for.","label":"","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""},{"name":"product_ids","description":"Product IDs for the current user context that we are recommending for.","label":"repeated","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""}]}} />
+
+
+### `ListRecommendationsResponse`
+<ProtoMessage key={1} message={{"name":"ListRecommendationsResponse","longName":"ListRecommendationsResponse","fullName":"protobuffet.example.recommendations.v1.ListRecommendationsResponse","description":"Response containing product recommendations.","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"product_ids","description":"IDs referencing products that we recommend for the received request.\nSee implementation docs for details on formatting.","label":"repeated","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""}]}} />
+
+---
+## Services
+
+
+### `RecommendationService`
+
+Further product recommendations for user given a set of product IDs.
+
+
+#### `ListRecommendations`
+<ProtoServiceMethod key={'ListRecommendations-0'} method={{"name":"ListRecommendations","description":"List recommendations for a given user and context.","requestType":"ListRecommendationsRequest","requestLongType":"ListRecommendationsRequest","requestFullType":"protobuffet.example.recommendations.v1.ListRecommendationsRequest","requestStreaming":false,"responseType":"ListRecommendationsResponse","responseLongType":"ListRecommendationsResponse","responseFullType":"protobuffet.example.recommendations.v1.ListRecommendationsResponse","responseStreaming":false,"requestTypeLink":"/protodocs/protobuffet/example/recommendations/v1/recommendations.proto#listrecommendationsrequest","responseTypeLink":"/protodocs/protobuffet/example/recommendations/v1/recommendations.proto#listrecommendationsresponse"}} />
+
+
+---
+
+
+  

@@ -1,0 +1,47 @@
+---
+title: pro.exa.pay.v1.payment.proto
+hide_title: true
+---
+
+import { ProtoMessage, ProtoServiceMethod, ProtoEnum } from '@theme/ProtoFile';
+
+## `payment.proto`
+_**path** protobuffet/example/payment/v1/payment.proto_
+
+_**package** protobuffet.example.payment.v1_
+
+
+
+---
+
+## Messages
+
+
+### `ChargeRequest`
+<ProtoMessage key={0} message={{"name":"ChargeRequest","longName":"ChargeRequest","fullName":"protobuffet.example.payment.v1.ChargeRequest","description":"Request to charge a credit card.","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"amount","description":"Amount to charge. This is expected to be in the user's preferred currency.","label":"","type":"Money","longType":"protobuffet.example.common.types.v1.Money","fullType":"protobuffet.example.common.types.v1.Money","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":"","typeLink":"/protodocs/protobuffet/example/common/types/v1/money.proto#money"},{"name":"credit_card","description":"Credit card to charge.","label":"","type":"CreditCardInfo","longType":"CreditCardInfo","fullType":"protobuffet.example.payment.v1.CreditCardInfo","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":"","typeLink":"/protodocs/protobuffet/example/payment/v1/payment.proto#creditcardinfo"}]}} />
+
+
+### `ChargeResponse`
+<ProtoMessage key={1} message={{"name":"ChargeResponse","longName":"ChargeResponse","fullName":"protobuffet.example.payment.v1.ChargeResponse","description":"Response of a successful charge.","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"transaction_id","description":"Identifier of this successful charge transaction.","label":"","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""}]}} />
+
+
+### `CreditCardInfo`
+<ProtoMessage key={2} message={{"name":"CreditCardInfo","longName":"CreditCardInfo","fullName":"protobuffet.example.payment.v1.CreditCardInfo","description":"Represents credit card information that we can charge.","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"credit_card_number","description":"Number of credit card.","label":"","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""},{"name":"credit_card_cvv","description":"CVV of credit card.","label":"","type":"int32","longType":"int32","fullType":"int32","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""},{"name":"credit_card_expiration_year","description":"Card expiration (year). Expected formatting YYYY, eg. 2021.","label":"","type":"int32","longType":"int32","fullType":"int32","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""},{"name":"credit_card_expiration_month","description":"Card expiration (month). Expected formatting M, eg. 8, 12.","label":"","type":"int32","longType":"int32","fullType":"int32","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""}]}} />
+
+---
+## Services
+
+
+### `PaymentService`
+
+Payments management service. This should be the only domain that knows how to charge customers to keep a clean audit trail.
+
+
+#### `Charge`
+<ProtoServiceMethod key={'Charge-0'} method={{"name":"Charge","description":"Charge a credit card by the specified amount.","requestType":"ChargeRequest","requestLongType":"ChargeRequest","requestFullType":"protobuffet.example.payment.v1.ChargeRequest","requestStreaming":false,"responseType":"ChargeResponse","responseLongType":"ChargeResponse","responseFullType":"protobuffet.example.payment.v1.ChargeResponse","responseStreaming":false,"requestTypeLink":"/protodocs/protobuffet/example/payment/v1/payment.proto#chargerequest","responseTypeLink":"/protodocs/protobuffet/example/payment/v1/payment.proto#chargeresponse"}} />
+
+
+---
+
+
+  

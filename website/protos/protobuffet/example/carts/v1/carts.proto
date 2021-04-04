@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package protobuffet.example.carts.v1;
+
+// Cart management service. this is a service created for the purpose of demonstration.
+service CartService {
+  // Add an item to a specified cart.
+  rpc AddItem(AddItemRequest) returns (Empty) {}
+  // Get the details for a specified cart.
+  rpc GetCart(GetCartRequest) returns (Cart) {}
+  // Clear out the specified cart.
+  rpc EmptyCart(EmptyCartRequest) returns (Empty) {}
+}
+
+// Single item within a cart. This includes a reference to our
+// catalog and user-provided selection.
+message CartItem {
+  // Product catalog reference.
+  string product_id = 1;
+  // User-provided quantity for this item.
+  int32  quantity = 2;
+}
+
+// Request to add an item to a user's cart. This will automatically initialize a cart for
+// the user if no existing.
+message AddItemRequest {
+  // User to use for cart lookup.
+  string user_id = 1;
+  // Item to add to cart.
+  CartItem item = 2;
+}
+
+// Request to clear out a user's existing cart. No-op if
+// no cart is initialized for the user.
+message EmptyCartRequest {
+  // User to use for cart lookup.
+  string user_id = 1;
+}
+
+// Request to fetch a user's existing cart.
+message GetCartRequest {
+  // User to use for cart lookup.
+  string user_id = 1;
+}
+
+// Represents an existing cart for a specific user.
+message Cart {
+  // User tied to this cart.
+  string user_id = 1;
+  // Items this cart contains.
+  repeated CartItem items = 2;
+}
+
+// Represents successful response with no data required.
+message Empty {}

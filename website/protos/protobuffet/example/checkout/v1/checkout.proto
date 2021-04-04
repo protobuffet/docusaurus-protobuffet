@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+package protobuffet.example.checkout.v1;
+
+import "protobuffet/example/common/types/v1/money.proto";
+import "protobuffet/example/carts/v1/carts.proto";
+import "protobuffet/example/payment/v1/payment.proto";
+import "protobuffet/example/shipping/v1/shipping.proto";
+
+// Checkout management service. Given a user's action of checking out for an order,
+// we orchestrate the necessary dependency calls to make that happen in our system.
+service CheckoutService {
+  // Action taken on user checkout, place the provided order for the user.
+  rpc PlaceOrder(PlaceOrderRequest) returns (PlaceOrderResponse) {}
+}
+
+// Request to place an order for a given user.
+message PlaceOrderRequest {
+  // User to place order for.
+  string user_id = 1;
+  // The currency that the user would like to pay in. See implementation docs for supported values.
+  string user_currency = 2;
+
+  // Address the user would like the order to be shipped to.
+  protobuffet.example.shipping.v1.Address address = 3;
+
+  // Email the user would like order updates to be sent to. See implementation docs for formatting.
+  string email = 5;
+
+  // The user's credit card to charge for this order.
+  protobuffet.example.payment.v1.CreditCardInfo credit_card = 6;
+}
+
+// Response containing a successfully placed order.
+message PlaceOrderResponse {
+  // Successfully placed order.
+  OrderResult order = 1;
+}
+
+// Represents a successfully placed order.
+message OrderResult {
+  // Identifier for this placed order.
+  string order_id = 1;
+  // Reference to help track this placed order through its shipment.
+  string shipping_tracking_id = 2;
+  // Cost for us to ship this order.
+  protobuffet.example.common.types.v1.Money shipping_cost = 3;
+  // Address the order is being shipped to.
+  protobuffet.example.shipping.v1.Address shipping_address = 4;
+  // Items the order contains.
+  repeated OrderItem items = 5;
+}
+
+// Represents a single item within an order.
+message OrderItem {
+  // Associated item within a cart.
+  protobuffet.example.carts.v1.CartItem item = 1;
+  // Cost for this order item record.
+  protobuffet.example.common.types.v1.Money cost = 2;
+}

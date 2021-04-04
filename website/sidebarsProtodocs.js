@@ -1,3 +1,3 @@
 
-module.exports = {"protodocs":[{"type":"category","label":"Files","items":["Booking.proto","Customer.proto","Vehicle.proto"]}]};
+module.exports = {"protodocs":[{"type":"category","label":"Files","items":["protobuffet/example/ad/v1/ads.proto","protobuffet/example/carts/v1/carts.proto","protobuffet/example/checkout/v1/checkout.proto","protobuffet/example/common/types/v1/money.proto","protobuffet/example/currency/v1/currency.proto","protobuffet/example/payment/v1/payment.proto","protobuffet/example/productcatalog/v1/productcatalog.proto","protobuffet/example/recommendations/v1/recommendations.proto","protobuffet/example/shipping/v1/shipping.proto"]}]};
   

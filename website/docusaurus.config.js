@@ -24,7 +24,7 @@ module.exports = {
           position: 'left',
         },
         {
-          to: 'protodocs/Booking.proto',
+          to: 'protodocs/protobuffet/example/ad/v1/ads.proto',
           activeBasePath: 'protodocs',
           label: 'Example Workspace',
           position: 'left',

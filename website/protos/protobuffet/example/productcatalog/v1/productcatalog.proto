@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+package protobuffet.example.productcatalog.v1;
+
+import "protobuffet/example/common/types/v1/money.proto";
+
+// Product catalog management service. APIs oriented around product lookup for a given
+// context.
+service ProductCatalogService {
+  // List all products in the catalog.
+  rpc ListProducts(Empty) returns (ListProductsResponse) {}
+  // Get a specific product from our catalog.
+  rpc GetProduct(GetProductRequest) returns (Product) {}
+  // Search for products within the catalog matching a given query.
+  rpc SearchProducts(SearchProductsRequest) returns (SearchProductsResponse) {}
+}
+
+// Represents a single product within our catalog. Each product should be visible by default,
+// unavailable products are not represented by this object.
+message Product {
+  // Identifier for this product.
+  string id = 1;
+  // Name of this product. Often provided by the retailer or some third-party.
+  string name = 2;
+  // Description of this product. Often provided by the retailer or some third-party.
+  string description = 3;
+  // Picture of this product. Often provided by some third-party.
+  string picture = 4;
+  // Price of this product at this given time. Calculations can vary with time, so caching should respect this.
+  protobuffet.example.common.types.v1.Money price_usd = 5;
+  // Categories such as "vintage" or "gardening" that can be used to look up other related products.
+  repeated string categories = 6;
+}
+
+// Response containing a list of retrieved products.
+message ListProductsResponse {
+  // List of products.
+  repeated Product products = 1;
+}
+
+// Request to get a single product.
+message GetProductRequest {
+  // Identifier to use for product lookup.
+  string id = 1;
+}
+
+// Request to search for products given a query.
+message SearchProductsRequest {
+  // Query of terms to search for within the catalog. See implementation docs for formatting.
+  string query = 1;
+}
+
+// Response containing a list of product search results.
+message SearchProductsResponse {
+  // List of products.
+  repeated Product results = 1;
+}
+
+// Represents no data required.
+message Empty {}

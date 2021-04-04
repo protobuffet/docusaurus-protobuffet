@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package protobuffet.example.shipping.v1;
+
+import "protobuffet/example/carts/v1/carts.proto";
+import "protobuffet/example/common/types/v1/money.proto";
+
+// Shipment management service. This is a service created for the purpose of demonstration.
+service ShippingService {
+  // Fetch a quote (cost) for a proposed shipment.
+  rpc GetQuote(GetQuoteRequest) returns (GetQuoteResponse) {}
+  // Trigger a new order to be shipped.
+  rpc ShipOrder(ShipOrderRequest) returns (ShipOrderResponse) {}
+}
+
+// Request to fetch a quote for a proposed shipment/order.
+message GetQuoteRequest {
+  // Address for proposed order.
+  Address address = 1;
+  // Items within proposed order.
+  repeated protobuffet.example.carts.v1.CartItem items = 2;
+}
+
+// Response for a proposed shipment quote.
+message GetQuoteResponse {
+  // Shipment quote. See implementation docs for unique responses.
+  protobuffet.example.common.types.v1.Money cost_usd = 1;
+}
+
+// Request to trigger a new order to be shipped.
+message ShipOrderRequest {
+  // Address order should be shipped to.
+  Address address = 1;
+  // Items the proposed order contains.
+  repeated protobuffet.example.carts.v1.CartItem items = 2;
+}
+
+// Response for a successfully created order.
+message ShipOrderResponse {
+  // Tracking ID for the created order.
+  string tracking_id = 1;
+}
+
+// Represents an Address that we ship to.
+message Address {
+  // Address Line 1. If a unit number is present, it should prefix the street number eg. 613-54 Albert St.
+  string street_address = 1;
+  // City the address is within. See implementation docs for expected formatting.
+  string city = 2;
+  // State the address is within. See implementation docs for expected formatting.
+  string state = 3;
+  // Country the address is within. See implementation docs for expected formatting.
+  string country = 4;
+  // Postal area the address is within. See implementation docs for expected formatting.
+  string zip_code = 5;
+}

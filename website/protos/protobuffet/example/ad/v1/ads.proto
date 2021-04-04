@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package protobuffet.example.ad.v1;
+
+// Ads management service. Exposes APIs oriented around displaying ads for 
+// our users.
+service AdService {
+  // Fetch ads to display for a given context.
+  rpc GetAds(AdRequest) returns (AdResponse) {}
+}
+
+// Request to fetch ads for a given context.
+message AdRequest {
+  // List of important key words from the current page describing the context.
+  repeated string context_keys = 1;
+}
+
+// Response containing ads to display to the user.
+message AdResponse {
+  // List of all ads to display. The service responds with many ads, so it is up to the client
+  // to handle how many should be displayed to the user at a time.
+  repeated Ad ads = 1;
+}
+
+// Represents an Ad that can be displayed to a user. These are generated from a given context.
+message Ad {
+  // url to redirect to when an ad is clicked.
+  string redirect_url = 1;
+
+  // short advertisement text to display.
+  string text = 2;
+}

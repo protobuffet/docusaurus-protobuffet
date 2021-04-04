@@ -1,0 +1,52 @@
+---
+title: pro.exa.cur.v1.currency.proto
+hide_title: true
+---
+
+import { ProtoMessage, ProtoServiceMethod, ProtoEnum } from '@theme/ProtoFile';
+
+## `currency.proto`
+_**path** protobuffet/example/currency/v1/currency.proto_
+
+_**package** protobuffet.example.currency.v1_
+
+
+
+---
+
+## Messages
+
+
+### `CurrencyConversionRequest`
+<ProtoMessage key={0} message={{"name":"CurrencyConversionRequest","longName":"CurrencyConversionRequest","fullName":"protobuffet.example.currency.v1.CurrencyConversionRequest","description":"Request for converting a given amount to a different currency.","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"from","description":"Money that should be converted.","label":"","type":"Money","longType":"protobuffet.example.common.types.v1.Money","fullType":"protobuffet.example.common.types.v1.Money","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":"","typeLink":"/protodocs/protobuffet/example/common/types/v1/money.proto#money"},{"name":"to_code","description":"The 3-letter currency code defined in ISO 4217.","label":"","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""}]}} />
+
+
+### `Empty`
+<ProtoMessage key={1} message={{"name":"Empty","longName":"Empty","fullName":"protobuffet.example.currency.v1.Empty","description":"Represents successful response with no data required.","hasExtensions":false,"hasFields":false,"hasOneofs":false,"extensions":[],"fields":[]}} />
+
+
+### `GetSupportedCurrenciesResponse`
+<ProtoMessage key={2} message={{"name":"GetSupportedCurrenciesResponse","longName":"GetSupportedCurrenciesResponse","fullName":"protobuffet.example.currency.v1.GetSupportedCurrenciesResponse","description":"Response containing supported currencies.","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"currency_codes","description":"The 3-letter currency code defined in ISO 4217.","label":"repeated","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""}]}} />
+
+---
+## Services
+
+
+### `CurrencyService`
+
+Currency management service. Keep currency calculations encapsulated within this service
+to avoid this complexity leaking to other domains.
+
+
+#### `GetSupportedCurrencies`
+<ProtoServiceMethod key={'GetSupportedCurrencies-0'} method={{"name":"GetSupportedCurrencies","description":"Fetch all supported currencies.","requestType":"Empty","requestLongType":"Empty","requestFullType":"protobuffet.example.currency.v1.Empty","requestStreaming":false,"responseType":"GetSupportedCurrenciesResponse","responseLongType":"GetSupportedCurrenciesResponse","responseFullType":"protobuffet.example.currency.v1.GetSupportedCurrenciesResponse","responseStreaming":false,"requestTypeLink":"/protodocs/protobuffet/example/currency/v1/currency.proto#empty","responseTypeLink":"/protodocs/protobuffet/example/currency/v1/currency.proto#getsupportedcurrenciesresponse"}} />
+
+
+#### `Convert`
+<ProtoServiceMethod key={'Convert-1'} method={{"name":"Convert","description":"Convert an amount to a different currency.","requestType":"CurrencyConversionRequest","requestLongType":"CurrencyConversionRequest","requestFullType":"protobuffet.example.currency.v1.CurrencyConversionRequest","requestStreaming":false,"responseType":"Money","responseLongType":".protobuffet.example.common.types.v1.Money","responseFullType":"protobuffet.example.common.types.v1.Money","responseStreaming":false,"requestTypeLink":"/protodocs/protobuffet/example/currency/v1/currency.proto#currencyconversionrequest","responseTypeLink":"/protodocs/protobuffet/example/common/types/v1/money.proto#money"}} />
+
+
+---
+
+
+  

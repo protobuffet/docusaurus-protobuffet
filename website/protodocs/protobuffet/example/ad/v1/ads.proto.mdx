@@ -1,0 +1,48 @@
+---
+title: pro.exa.ad.v1.ads.proto
+hide_title: true
+---
+
+import { ProtoMessage, ProtoServiceMethod, ProtoEnum } from '@theme/ProtoFile';
+
+## `ads.proto`
+_**path** protobuffet/example/ad/v1/ads.proto_
+
+_**package** protobuffet.example.ad.v1_
+
+
+
+---
+
+## Messages
+
+
+### `Ad`
+<ProtoMessage key={0} message={{"name":"Ad","longName":"Ad","fullName":"protobuffet.example.ad.v1.Ad","description":"Represents an Ad that can be displayed to a user. These are generated from a given context.","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"redirect_url","description":"url to redirect to when an ad is clicked.","label":"","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""},{"name":"text","description":"short advertisement text to display.","label":"","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""}]}} />
+
+
+### `AdRequest`
+<ProtoMessage key={1} message={{"name":"AdRequest","longName":"AdRequest","fullName":"protobuffet.example.ad.v1.AdRequest","description":"Request to fetch ads for a given context.","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"context_keys","description":"List of important key words from the current page describing the context.","label":"repeated","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""}]}} />
+
+
+### `AdResponse`
+<ProtoMessage key={2} message={{"name":"AdResponse","longName":"AdResponse","fullName":"protobuffet.example.ad.v1.AdResponse","description":"Response containing ads to display to the user.","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"ads","description":"List of all ads to display. The service responds with many ads, so it is up to the client\nto handle how many should be displayed to the user at a time.","label":"repeated","type":"Ad","longType":"Ad","fullType":"protobuffet.example.ad.v1.Ad","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":"","typeLink":"/protodocs/protobuffet/example/ad/v1/ads.proto#ad"}]}} />
+
+---
+## Services
+
+
+### `AdService`
+
+Ads management service. Exposes APIs oriented around displaying ads for 
+our users.
+
+
+#### `GetAds`
+<ProtoServiceMethod key={'GetAds-0'} method={{"name":"GetAds","description":"Fetch ads to display for a given context.","requestType":"AdRequest","requestLongType":"AdRequest","requestFullType":"protobuffet.example.ad.v1.AdRequest","requestStreaming":false,"responseType":"AdResponse","responseLongType":"AdResponse","responseFullType":"protobuffet.example.ad.v1.AdResponse","responseStreaming":false,"requestTypeLink":"/protodocs/protobuffet/example/ad/v1/ads.proto#adrequest","responseTypeLink":"/protodocs/protobuffet/example/ad/v1/ads.proto#adresponse"}} />
+
+
+---
+
+
+  

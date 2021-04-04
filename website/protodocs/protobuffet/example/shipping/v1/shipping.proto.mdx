@@ -1,0 +1,59 @@
+---
+title: pro.exa.shi.v1.shipping.proto
+hide_title: true
+---
+
+import { ProtoMessage, ProtoServiceMethod, ProtoEnum } from '@theme/ProtoFile';
+
+## `shipping.proto`
+_**path** protobuffet/example/shipping/v1/shipping.proto_
+
+_**package** protobuffet.example.shipping.v1_
+
+
+
+---
+
+## Messages
+
+
+### `Address`
+<ProtoMessage key={0} message={{"name":"Address","longName":"Address","fullName":"protobuffet.example.shipping.v1.Address","description":"Represents an Address that we ship to.","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"street_address","description":"Address Line 1. If a unit number is present, it should prefix the street number eg. 613-54 Albert St.","label":"","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""},{"name":"city","description":"City the address is within. See implementation docs for expected formatting.","label":"","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""},{"name":"state","description":"State the address is within. See implementation docs for expected formatting.","label":"","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""},{"name":"country","description":"Country the address is within. See implementation docs for expected formatting.","label":"","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""},{"name":"zip_code","description":"Postal area the address is within. See implementation docs for expected formatting.","label":"","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""}]}} />
+
+
+### `GetQuoteRequest`
+<ProtoMessage key={1} message={{"name":"GetQuoteRequest","longName":"GetQuoteRequest","fullName":"protobuffet.example.shipping.v1.GetQuoteRequest","description":"Request to fetch a quote for a proposed shipment/order.","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"address","description":"Address for proposed order.","label":"","type":"Address","longType":"Address","fullType":"protobuffet.example.shipping.v1.Address","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":"","typeLink":"/protodocs/protobuffet/example/shipping/v1/shipping.proto#address"},{"name":"items","description":"Items within proposed order.","label":"repeated","type":"CartItem","longType":"protobuffet.example.carts.v1.CartItem","fullType":"protobuffet.example.carts.v1.CartItem","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":"","typeLink":"/protodocs/protobuffet/example/carts/v1/carts.proto#cartitem"}]}} />
+
+
+### `GetQuoteResponse`
+<ProtoMessage key={2} message={{"name":"GetQuoteResponse","longName":"GetQuoteResponse","fullName":"protobuffet.example.shipping.v1.GetQuoteResponse","description":"Response for a proposed shipment quote.","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"cost_usd","description":"Shipment quote. See implementation docs for unique responses.","label":"","type":"Money","longType":"protobuffet.example.common.types.v1.Money","fullType":"protobuffet.example.common.types.v1.Money","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":"","typeLink":"/protodocs/protobuffet/example/common/types/v1/money.proto#money"}]}} />
+
+
+### `ShipOrderRequest`
+<ProtoMessage key={3} message={{"name":"ShipOrderRequest","longName":"ShipOrderRequest","fullName":"protobuffet.example.shipping.v1.ShipOrderRequest","description":"Request to trigger a new order to be shipped.","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"address","description":"Address order should be shipped to.","label":"","type":"Address","longType":"Address","fullType":"protobuffet.example.shipping.v1.Address","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":"","typeLink":"/protodocs/protobuffet/example/shipping/v1/shipping.proto#address"},{"name":"items","description":"Items the proposed order contains.","label":"repeated","type":"CartItem","longType":"protobuffet.example.carts.v1.CartItem","fullType":"protobuffet.example.carts.v1.CartItem","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":"","typeLink":"/protodocs/protobuffet/example/carts/v1/carts.proto#cartitem"}]}} />
+
+
+### `ShipOrderResponse`
+<ProtoMessage key={4} message={{"name":"ShipOrderResponse","longName":"ShipOrderResponse","fullName":"protobuffet.example.shipping.v1.ShipOrderResponse","description":"Response for a successfully created order.","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"tracking_id","description":"Tracking ID for the created order.","label":"","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""}]}} />
+
+---
+## Services
+
+
+### `ShippingService`
+
+Shipment management service. This is a service created for the purpose of demonstration.
+
+
+#### `GetQuote`
+<ProtoServiceMethod key={'GetQuote-0'} method={{"name":"GetQuote","description":"Fetch a quote (cost) for a proposed shipment.","requestType":"GetQuoteRequest","requestLongType":"GetQuoteRequest","requestFullType":"protobuffet.example.shipping.v1.GetQuoteRequest","requestStreaming":false,"responseType":"GetQuoteResponse","responseLongType":"GetQuoteResponse","responseFullType":"protobuffet.example.shipping.v1.GetQuoteResponse","responseStreaming":false,"requestTypeLink":"/protodocs/protobuffet/example/shipping/v1/shipping.proto#getquoterequest","responseTypeLink":"/protodocs/protobuffet/example/shipping/v1/shipping.proto#getquoteresponse"}} />
+
+
+#### `ShipOrder`
+<ProtoServiceMethod key={'ShipOrder-1'} method={{"name":"ShipOrder","description":"Trigger a new order to be shipped.","requestType":"ShipOrderRequest","requestLongType":"ShipOrderRequest","requestFullType":"protobuffet.example.shipping.v1.ShipOrderRequest","requestStreaming":false,"responseType":"ShipOrderResponse","responseLongType":"ShipOrderResponse","responseFullType":"protobuffet.example.shipping.v1.ShipOrderResponse","responseStreaming":false,"requestTypeLink":"/protodocs/protobuffet/example/shipping/v1/shipping.proto#shiporderrequest","responseTypeLink":"/protodocs/protobuffet/example/shipping/v1/shipping.proto#shiporderresponse"}} />
+
+
+---
+
+
+  

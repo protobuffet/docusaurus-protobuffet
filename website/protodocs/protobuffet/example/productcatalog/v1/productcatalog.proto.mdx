@@ -1,0 +1,68 @@
+---
+title: pro.exa.pro.v1.productcatalog.proto
+hide_title: true
+---
+
+import { ProtoMessage, ProtoServiceMethod, ProtoEnum } from '@theme/ProtoFile';
+
+## `productcatalog.proto`
+_**path** protobuffet/example/productcatalog/v1/productcatalog.proto_
+
+_**package** protobuffet.example.productcatalog.v1_
+
+
+
+---
+
+## Messages
+
+
+### `Empty`
+<ProtoMessage key={0} message={{"name":"Empty","longName":"Empty","fullName":"protobuffet.example.productcatalog.v1.Empty","description":"Represents no data required.","hasExtensions":false,"hasFields":false,"hasOneofs":false,"extensions":[],"fields":[]}} />
+
+
+### `GetProductRequest`
+<ProtoMessage key={1} message={{"name":"GetProductRequest","longName":"GetProductRequest","fullName":"protobuffet.example.productcatalog.v1.GetProductRequest","description":"Request to get a single product.","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"id","description":"Identifier to use for product lookup.","label":"","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""}]}} />
+
+
+### `ListProductsResponse`
+<ProtoMessage key={2} message={{"name":"ListProductsResponse","longName":"ListProductsResponse","fullName":"protobuffet.example.productcatalog.v1.ListProductsResponse","description":"Response containing a list of retrieved products.","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"products","description":"List of products.","label":"repeated","type":"Product","longType":"Product","fullType":"protobuffet.example.productcatalog.v1.Product","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":"","typeLink":"/protodocs/protobuffet/example/productcatalog/v1/productcatalog.proto#product"}]}} />
+
+
+### `Product`
+<ProtoMessage key={3} message={{"name":"Product","longName":"Product","fullName":"protobuffet.example.productcatalog.v1.Product","description":"Represents a single product within our catalog. Each product should be visible by default,\nunavailable products are not represented by this object.","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"id","description":"Identifier for this product.","label":"","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""},{"name":"name","description":"Name of this product. Often provided by the retailer or some third-party.","label":"","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""},{"name":"description","description":"Description of this product. Often provided by the retailer or some third-party.","label":"","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""},{"name":"picture","description":"Picture of this product. Often provided by some third-party.","label":"","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""},{"name":"price_usd","description":"Price of this product at this given time. Calculations can vary with time, so caching should respect this.","label":"","type":"Money","longType":"protobuffet.example.common.types.v1.Money","fullType":"protobuffet.example.common.types.v1.Money","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":"","typeLink":"/protodocs/protobuffet/example/common/types/v1/money.proto#money"},{"name":"categories","description":"Categories such as \"vintage\" or \"gardening\" that can be used to look up other related products.","label":"repeated","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""}]}} />
+
+
+### `SearchProductsRequest`
+<ProtoMessage key={4} message={{"name":"SearchProductsRequest","longName":"SearchProductsRequest","fullName":"protobuffet.example.productcatalog.v1.SearchProductsRequest","description":"Request to search for products given a query.","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"query","description":"Query of terms to search for within the catalog. See implementation docs for formatting.","label":"","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""}]}} />
+
+
+### `SearchProductsResponse`
+<ProtoMessage key={5} message={{"name":"SearchProductsResponse","longName":"SearchProductsResponse","fullName":"protobuffet.example.productcatalog.v1.SearchProductsResponse","description":"Response containing a list of product search results.","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"results","description":"List of products.","label":"repeated","type":"Product","longType":"Product","fullType":"protobuffet.example.productcatalog.v1.Product","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":"","typeLink":"/protodocs/protobuffet/example/productcatalog/v1/productcatalog.proto#product"}]}} />
+
+---
+## Services
+
+
+### `ProductCatalogService`
+
+Product catalog management service. APIs oriented around product lookup for a given
+context.
+
+
+#### `ListProducts`
+<ProtoServiceMethod key={'ListProducts-0'} method={{"name":"ListProducts","description":"List all products in the catalog.","requestType":"Empty","requestLongType":"Empty","requestFullType":"protobuffet.example.productcatalog.v1.Empty","requestStreaming":false,"responseType":"ListProductsResponse","responseLongType":"ListProductsResponse","responseFullType":"protobuffet.example.productcatalog.v1.ListProductsResponse","responseStreaming":false,"requestTypeLink":"/protodocs/protobuffet/example/productcatalog/v1/productcatalog.proto#empty","responseTypeLink":"/protodocs/protobuffet/example/productcatalog/v1/productcatalog.proto#listproductsresponse"}} />
+
+
+#### `GetProduct`
+<ProtoServiceMethod key={'GetProduct-1'} method={{"name":"GetProduct","description":"Get a specific product from our catalog.","requestType":"GetProductRequest","requestLongType":"GetProductRequest","requestFullType":"protobuffet.example.productcatalog.v1.GetProductRequest","requestStreaming":false,"responseType":"Product","responseLongType":"Product","responseFullType":"protobuffet.example.productcatalog.v1.Product","responseStreaming":false,"requestTypeLink":"/protodocs/protobuffet/example/productcatalog/v1/productcatalog.proto#getproductrequest","responseTypeLink":"/protodocs/protobuffet/example/productcatalog/v1/productcatalog.proto#product"}} />
+
+
+#### `SearchProducts`
+<ProtoServiceMethod key={'SearchProducts-2'} method={{"name":"SearchProducts","description":"Search for products within the catalog matching a given query.","requestType":"SearchProductsRequest","requestLongType":"SearchProductsRequest","requestFullType":"protobuffet.example.productcatalog.v1.SearchProductsRequest","requestStreaming":false,"responseType":"SearchProductsResponse","responseLongType":"SearchProductsResponse","responseFullType":"protobuffet.example.productcatalog.v1.SearchProductsResponse","responseStreaming":false,"requestTypeLink":"/protodocs/protobuffet/example/productcatalog/v1/productcatalog.proto#searchproductsrequest","responseTypeLink":"/protodocs/protobuffet/example/productcatalog/v1/productcatalog.proto#searchproductsresponse"}} />
+
+
+---
+
+
+  

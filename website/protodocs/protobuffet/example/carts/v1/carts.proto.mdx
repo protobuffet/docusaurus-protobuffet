@@ -1,0 +1,67 @@
+---
+title: pro.exa.car.v1.carts.proto
+hide_title: true
+---
+
+import { ProtoMessage, ProtoServiceMethod, ProtoEnum } from '@theme/ProtoFile';
+
+## `carts.proto`
+_**path** protobuffet/example/carts/v1/carts.proto_
+
+_**package** protobuffet.example.carts.v1_
+
+
+
+---
+
+## Messages
+
+
+### `AddItemRequest`
+<ProtoMessage key={0} message={{"name":"AddItemRequest","longName":"AddItemRequest","fullName":"protobuffet.example.carts.v1.AddItemRequest","description":"Request to add an item to a user's cart. This will automatically initialize a cart for\nthe user if no existing.","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"user_id","description":"User to use for cart lookup.","label":"","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""},{"name":"item","description":"Item to add to cart.","label":"","type":"CartItem","longType":"CartItem","fullType":"protobuffet.example.carts.v1.CartItem","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":"","typeLink":"/protodocs/protobuffet/example/carts/v1/carts.proto#cartitem"}]}} />
+
+
+### `Cart`
+<ProtoMessage key={1} message={{"name":"Cart","longName":"Cart","fullName":"protobuffet.example.carts.v1.Cart","description":"Represents an existing cart for a specific user.","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"user_id","description":"User tied to this cart.","label":"","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""},{"name":"items","description":"Items this cart contains.","label":"repeated","type":"CartItem","longType":"CartItem","fullType":"protobuffet.example.carts.v1.CartItem","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":"","typeLink":"/protodocs/protobuffet/example/carts/v1/carts.proto#cartitem"}]}} />
+
+
+### `CartItem`
+<ProtoMessage key={2} message={{"name":"CartItem","longName":"CartItem","fullName":"protobuffet.example.carts.v1.CartItem","description":"Single item within a cart. This includes a reference to our\ncatalog and user-provided selection.","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"product_id","description":"Product catalog reference.","label":"","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""},{"name":"quantity","description":"User-provided quantity for this item.","label":"","type":"int32","longType":"int32","fullType":"int32","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""}]}} />
+
+
+### `Empty`
+<ProtoMessage key={3} message={{"name":"Empty","longName":"Empty","fullName":"protobuffet.example.carts.v1.Empty","description":"Represents successful response with no data required.","hasExtensions":false,"hasFields":false,"hasOneofs":false,"extensions":[],"fields":[]}} />
+
+
+### `EmptyCartRequest`
+<ProtoMessage key={4} message={{"name":"EmptyCartRequest","longName":"EmptyCartRequest","fullName":"protobuffet.example.carts.v1.EmptyCartRequest","description":"Request to clear out a user's existing cart. No-op if\nno cart is initialized for the user.","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"user_id","description":"User to use for cart lookup.","label":"","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""}]}} />
+
+
+### `GetCartRequest`
+<ProtoMessage key={5} message={{"name":"GetCartRequest","longName":"GetCartRequest","fullName":"protobuffet.example.carts.v1.GetCartRequest","description":"Request to fetch a user's existing cart.","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"user_id","description":"User to use for cart lookup.","label":"","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""}]}} />
+
+---
+## Services
+
+
+### `CartService`
+
+Cart management service. this is a service created for the purpose of demonstration.
+
+
+#### `AddItem`
+<ProtoServiceMethod key={'AddItem-0'} method={{"name":"AddItem","description":"Add an item to a specified cart.","requestType":"AddItemRequest","requestLongType":"AddItemRequest","requestFullType":"protobuffet.example.carts.v1.AddItemRequest","requestStreaming":false,"responseType":"Empty","responseLongType":"Empty","responseFullType":"protobuffet.example.carts.v1.Empty","responseStreaming":false,"requestTypeLink":"/protodocs/protobuffet/example/carts/v1/carts.proto#additemrequest","responseTypeLink":"/protodocs/protobuffet/example/carts/v1/carts.proto#empty"}} />
+
+
+#### `GetCart`
+<ProtoServiceMethod key={'GetCart-1'} method={{"name":"GetCart","description":"Get the details for a specified cart.","requestType":"GetCartRequest","requestLongType":"GetCartRequest","requestFullType":"protobuffet.example.carts.v1.GetCartRequest","requestStreaming":false,"responseType":"Cart","responseLongType":"Cart","responseFullType":"protobuffet.example.carts.v1.Cart","responseStreaming":false,"requestTypeLink":"/protodocs/protobuffet/example/carts/v1/carts.proto#getcartrequest","responseTypeLink":"/protodocs/protobuffet/example/carts/v1/carts.proto#cart"}} />
+
+
+#### `EmptyCart`
+<ProtoServiceMethod key={'EmptyCart-2'} method={{"name":"EmptyCart","description":"Clear out the specified cart.","requestType":"EmptyCartRequest","requestLongType":"EmptyCartRequest","requestFullType":"protobuffet.example.carts.v1.EmptyCartRequest","requestStreaming":false,"responseType":"Empty","responseLongType":"Empty","responseFullType":"protobuffet.example.carts.v1.Empty","responseStreaming":false,"requestTypeLink":"/protodocs/protobuffet/example/carts/v1/carts.proto#emptycartrequest","responseTypeLink":"/protodocs/protobuffet/example/carts/v1/carts.proto#empty"}} />
+
+
+---
+
+
+  

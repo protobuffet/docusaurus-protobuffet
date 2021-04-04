@@ -1,0 +1,52 @@
+---
+title: pro.exa.che.v1.checkout.proto
+hide_title: true
+---
+
+import { ProtoMessage, ProtoServiceMethod, ProtoEnum } from '@theme/ProtoFile';
+
+## `checkout.proto`
+_**path** protobuffet/example/checkout/v1/checkout.proto_
+
+_**package** protobuffet.example.checkout.v1_
+
+
+
+---
+
+## Messages
+
+
+### `OrderItem`
+<ProtoMessage key={0} message={{"name":"OrderItem","longName":"OrderItem","fullName":"protobuffet.example.checkout.v1.OrderItem","description":"Represents a single item within an order.","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"item","description":"Associated item within a cart.","label":"","type":"CartItem","longType":"protobuffet.example.carts.v1.CartItem","fullType":"protobuffet.example.carts.v1.CartItem","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":"","typeLink":"/protodocs/protobuffet/example/carts/v1/carts.proto#cartitem"},{"name":"cost","description":"Cost for this order item record.","label":"","type":"Money","longType":"protobuffet.example.common.types.v1.Money","fullType":"protobuffet.example.common.types.v1.Money","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":"","typeLink":"/protodocs/protobuffet/example/common/types/v1/money.proto#money"}]}} />
+
+
+### `OrderResult`
+<ProtoMessage key={1} message={{"name":"OrderResult","longName":"OrderResult","fullName":"protobuffet.example.checkout.v1.OrderResult","description":"Represents a successfully placed order.","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"order_id","description":"Identifier for this placed order.","label":"","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""},{"name":"shipping_tracking_id","description":"Reference to help track this placed order through its shipment.","label":"","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""},{"name":"shipping_cost","description":"Cost for us to ship this order.","label":"","type":"Money","longType":"protobuffet.example.common.types.v1.Money","fullType":"protobuffet.example.common.types.v1.Money","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":"","typeLink":"/protodocs/protobuffet/example/common/types/v1/money.proto#money"},{"name":"shipping_address","description":"Address the order is being shipped to.","label":"","type":"Address","longType":"protobuffet.example.shipping.v1.Address","fullType":"protobuffet.example.shipping.v1.Address","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":"","typeLink":"/protodocs/protobuffet/example/shipping/v1/shipping.proto#address"},{"name":"items","description":"Items the order contains.","label":"repeated","type":"OrderItem","longType":"OrderItem","fullType":"protobuffet.example.checkout.v1.OrderItem","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":"","typeLink":"/protodocs/protobuffet/example/checkout/v1/checkout.proto#orderitem"}]}} />
+
+
+### `PlaceOrderRequest`
+<ProtoMessage key={2} message={{"name":"PlaceOrderRequest","longName":"PlaceOrderRequest","fullName":"protobuffet.example.checkout.v1.PlaceOrderRequest","description":"Request to place an order for a given user.","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"user_id","description":"User to place order for.","label":"","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""},{"name":"user_currency","description":"The currency that the user would like to pay in. See implementation docs for supported values.","label":"","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""},{"name":"address","description":"Address the user would like the order to be shipped to.","label":"","type":"Address","longType":"protobuffet.example.shipping.v1.Address","fullType":"protobuffet.example.shipping.v1.Address","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":"","typeLink":"/protodocs/protobuffet/example/shipping/v1/shipping.proto#address"},{"name":"email","description":"Email the user would like order updates to be sent to. See implementation docs for formatting.","label":"","type":"string","longType":"string","fullType":"string","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":""},{"name":"credit_card","description":"The user's credit card to charge for this order.","label":"","type":"CreditCardInfo","longType":"protobuffet.example.payment.v1.CreditCardInfo","fullType":"protobuffet.example.payment.v1.CreditCardInfo","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":"","typeLink":"/protodocs/protobuffet/example/payment/v1/payment.proto#creditcardinfo"}]}} />
+
+
+### `PlaceOrderResponse`
+<ProtoMessage key={3} message={{"name":"PlaceOrderResponse","longName":"PlaceOrderResponse","fullName":"protobuffet.example.checkout.v1.PlaceOrderResponse","description":"Response containing a successfully placed order.","hasExtensions":false,"hasFields":true,"hasOneofs":false,"extensions":[],"fields":[{"name":"order","description":"Successfully placed order.","label":"","type":"OrderResult","longType":"OrderResult","fullType":"protobuffet.example.checkout.v1.OrderResult","ismap":false,"isoneof":false,"oneofdecl":"","defaultValue":"","typeLink":"/protodocs/protobuffet/example/checkout/v1/checkout.proto#orderresult"}]}} />
+
+---
+## Services
+
+
+### `CheckoutService`
+
+Checkout management service. Given a user's action of checking out for an order,
+we orchestrate the necessary dependency calls to make that happen in our system.
+
+
+#### `PlaceOrder`
+<ProtoServiceMethod key={'PlaceOrder-0'} method={{"name":"PlaceOrder","description":"Action taken on user checkout, place the provided order for the user.","requestType":"PlaceOrderRequest","requestLongType":"PlaceOrderRequest","requestFullType":"protobuffet.example.checkout.v1.PlaceOrderRequest","requestStreaming":false,"responseType":"PlaceOrderResponse","responseLongType":"PlaceOrderResponse","responseFullType":"protobuffet.example.checkout.v1.PlaceOrderResponse","responseStreaming":false,"requestTypeLink":"/protodocs/protobuffet/example/checkout/v1/checkout.proto#placeorderrequest","responseTypeLink":"/protodocs/protobuffet/example/checkout/v1/checkout.proto#placeorderresponse"}} />
+
+
+---
+
+
+  
