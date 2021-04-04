@@ -3,7 +3,7 @@ title: Installation
 slug: /how/installation
 ---
 
-This section assumes installing [`docusaurus-protobuffet`](https://github.com/protobuffet/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet) in an existing Docusaurus project. For those without an existing project, you can use [`docusaurus-protobuffet-init`](/docs/how/usage#docusaurus-protobuffet-init) to scaffold a Docusaurus project with this preset installed.
+This section assumes installing [`docusaurus-protobuffet`](https://github.com/protobuffet/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet) in an existing Docusaurus project. For those without an existing project, you can **use [`docusaurus-protobuffet-init`](/docs/how/usage#docusaurus-protobuffet-init) to scaffold a Docusaurus project with this preset** installed.
 
 NOTE: These commands should be run from your Docusaurus project directory.
 

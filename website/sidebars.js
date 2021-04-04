@@ -5,8 +5,6 @@ module.exports = {
       label: 'What is Protobuffet?',
       items: [
         'what/overview',
-        'what/docusaurus',
-        'what/protobuf',
         'what/features',
         'what/demo',
         'what/motivation',

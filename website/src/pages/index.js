@@ -64,7 +64,7 @@ export default function Home() {
       <header className={clsx('hero', styles.heroBanner)}>
         <div className={clsx('container', styles.heroBannerInner)}>
           <h1 className={clsx('hero__title', styles.heroTitleTextHtml)}>
-            Build <b>complete</b> protobuf documentation <b>quickly</b>, focus on your <b>services</b>
+            Toolset for <b>building</b> your <b>protobuf</b> documentation
           </h1>
           <div className={styles.buttons}>
             <Link
