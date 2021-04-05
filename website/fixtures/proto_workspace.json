@@ -1,6 +1,236 @@
 {
   "files": [
     {
+      "name": "google/protobuf/wrappers.proto",
+      "description": "",
+      "package": "google.protobuf",
+      "hasEnums": false,
+      "hasExtensions": false,
+      "hasMessages": true,
+      "hasServices": false,
+      "enums": [],
+      "extensions": [],
+      "messages": [
+        {
+          "name": "BoolValue",
+          "longName": "BoolValue",
+          "fullName": "google.protobuf.BoolValue",
+          "description": "Wrapper message for `bool`.\n\nThe JSON representation for `BoolValue` is JSON `true` and `false`.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "value",
+              "description": "The bool value.",
+              "label": "",
+              "type": "bool",
+              "longType": "bool",
+              "fullType": "bool",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "BytesValue",
+          "longName": "BytesValue",
+          "fullName": "google.protobuf.BytesValue",
+          "description": "Wrapper message for `bytes`.\n\nThe JSON representation for `BytesValue` is JSON string.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "value",
+              "description": "The bytes value.",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "DoubleValue",
+          "longName": "DoubleValue",
+          "fullName": "google.protobuf.DoubleValue",
+          "description": "Wrapper message for `double`.\n\nThe JSON representation for `DoubleValue` is JSON number.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "value",
+              "description": "The double value.",
+              "label": "",
+              "type": "double",
+              "longType": "double",
+              "fullType": "double",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "FloatValue",
+          "longName": "FloatValue",
+          "fullName": "google.protobuf.FloatValue",
+          "description": "Wrapper message for `float`.\n\nThe JSON representation for `FloatValue` is JSON number.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "value",
+              "description": "The float value.",
+              "label": "",
+              "type": "float",
+              "longType": "float",
+              "fullType": "float",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "Int32Value",
+          "longName": "Int32Value",
+          "fullName": "google.protobuf.Int32Value",
+          "description": "Wrapper message for `int32`.\n\nThe JSON representation for `Int32Value` is JSON number.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "value",
+              "description": "The int32 value.",
+              "label": "",
+              "type": "int32",
+              "longType": "int32",
+              "fullType": "int32",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "Int64Value",
+          "longName": "Int64Value",
+          "fullName": "google.protobuf.Int64Value",
+          "description": "Wrapper message for `int64`.\n\nThe JSON representation for `Int64Value` is JSON string.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "value",
+              "description": "The int64 value.",
+              "label": "",
+              "type": "int64",
+              "longType": "int64",
+              "fullType": "int64",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "StringValue",
+          "longName": "StringValue",
+          "fullName": "google.protobuf.StringValue",
+          "description": "Wrapper message for `string`.\n\nThe JSON representation for `StringValue` is JSON string.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "value",
+              "description": "The string value.",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "UInt32Value",
+          "longName": "UInt32Value",
+          "fullName": "google.protobuf.UInt32Value",
+          "description": "Wrapper message for `uint32`.\n\nThe JSON representation for `UInt32Value` is JSON number.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "value",
+              "description": "The uint32 value.",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "UInt64Value",
+          "longName": "UInt64Value",
+          "fullName": "google.protobuf.UInt64Value",
+          "description": "Wrapper message for `uint64`.\n\nThe JSON representation for `UInt64Value` is JSON string.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "value",
+              "description": "The uint64 value.",
+              "label": "",
+              "type": "uint64",
+              "longType": "uint64",
+              "fullType": "uint64",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        }
+      ],
+      "services": []
+    },
+    {
       "name": "protobuffet/example/ad/v1/ads.proto",
       "description": "",
       "package": "protobuffet.example.ad.v1",
