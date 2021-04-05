@@ -117,25 +117,16 @@ const generateSidebarObject = (docFiles: GeneratedDocFile[]) => {
 }
 
 const generateSidebarFileCategory = (docFiles: GeneratedDocFile[])  => {
-  const printFileDirectory = (node: FileDirectory) => {
-    console.log(node.fullName)
-    if (node.files) {
-      node.files.forEach(file => console.log(file.fileName));
-    }
-
-    if (node.nested) {
-      Object.keys(node.nested).forEach(nestedKey => printFileDirectory(node.nested![nestedKey]));
-    }
-  }
-
   const fileDirectory = buildFileDirectory(docFiles);
-  printFileDirectory(fileDirectory);
   compactFileDirectory(fileDirectory);
+
+  const sidebarObject = convertDirectoryToSidebar(fileDirectory);
+  const sidebarItems = sidebarObject.label == '/' ? sidebarObject.items : [sidebarObject];
 
   return {
     type: 'category',
     label: 'Files',
-    items: [convertDirectoryToSidebar(fileDirectory)],
+    items: sidebarItems,
   };
 };
 
