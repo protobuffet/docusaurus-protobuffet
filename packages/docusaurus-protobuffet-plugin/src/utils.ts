@@ -10,7 +10,5 @@ export const shortenFileName = (fileName: string): string => {
 
 // convert google/protobuf/any.proto to any.proto
 export const getLeafFileName = (fileName: string): string => {
-  const splitName = fileName.split("/");
-
-  return splitName[splitName.length - 1];
+  return fileName.split("/").pop()!;
 }

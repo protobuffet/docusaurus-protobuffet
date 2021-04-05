@@ -1,5 +1,5 @@
 import { Enum, FileDescriptor, FileDescriptors, GeneratedDocFile, Message, Service } from './types';
-import { getLeafFileName, shortenFileName } from './utils';
+import { getLeafFileName } from './utils';
 
 export const generateDocFiles = (fileDescriptors: FileDescriptors): GeneratedDocFile[] => {
   const { files }  = fileDescriptors;
@@ -16,7 +16,7 @@ const generateDocFileContents = (fileDescriptor: FileDescriptor): string => {
   // TODO: run through prettier for consistent formatting.
   return (
   `---
-title: ${shortenFileName(fileDescriptor.name).replace(/\//g, '.')}
+title: ${getLeafFileName(fileDescriptor.name)}
 hide_title: true
 ---
 
