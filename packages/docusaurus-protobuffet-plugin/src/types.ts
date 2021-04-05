@@ -71,4 +71,5 @@ export interface FileDescriptors {
 export interface GeneratedDocFile {
   fileContents: string;
   fileName: string;
+  fileDescriptor: FileDescriptor;
 }
