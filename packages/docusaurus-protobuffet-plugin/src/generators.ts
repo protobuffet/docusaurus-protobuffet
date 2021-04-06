@@ -222,7 +222,7 @@ const convertDirectoryToSidebar = (fileDir: FileDirectory) => {
     sidebarItem.items.push(...fileDir.files.map(file => ({
       type: 'doc',
       id: file.fileName,
-      label: file.fileName.split("/").pop()
+      // label: file.fileName.split("/").pop()
     })));
   }
 
