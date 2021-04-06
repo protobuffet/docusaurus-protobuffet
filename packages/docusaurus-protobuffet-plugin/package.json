@@ -1,6 +1,6 @@
 {
   "name": "docusaurus-protobuffet-plugin",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Protobuf documentation plugin for Docusaurus",
   "author": "Anthony Bobsin",
   "license": "ISC",
