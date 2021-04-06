@@ -144,6 +144,9 @@ interface SidebarItem {
   items?: SidebarItem[]
 }
 
+// build nested file directory map
+// eg. /one/two/hello.proto
+// => { name: 'one', nested: [{ name: 'two', files: ['hello.proto'] }] }
 const buildFileDirectory = (files: GeneratedDocFile[]): FileDirectory => {
   const root: FileDirectory = { name: '', fullName: '' };
 
@@ -169,6 +172,11 @@ const buildFileDirectory = (files: GeneratedDocFile[]): FileDirectory => {
   return root;
 }
 
+// compact file directory so that each directory has either
+// - two or more subfolders OR
+// - contains at least one file
+// eg. /one/two/hello.proto
+// { name: 'one/two', files: ['hello.proto'] }
 const compactFileDirectory = (fileDir: FileDirectory) => {
   if (!(fileDir && fileDir.nested)) return;
 
@@ -199,6 +207,7 @@ const compactFileDirectory = (fileDir: FileDirectory) => {
   }
 }
 
+// convert FileDirectory to a docusaurus sidebar object
 const convertDirectoryToSidebar = (fileDir: FileDirectory) => {
   // construct category
   const sidebarItem: SidebarItem = {
