@@ -64,7 +64,7 @@ Pass in all plugin options. See [`docusaurus-protobuffet-plugin`](https://github
 
 | Option | Description | Required | Default |
 | --- | --- | --- | --- |
-| `fileDescriptorsPath` | Path to JSON file containing generated proto documentation through [protoc-gen-doc](https://github.com/pseudomuto/protoc-gen-doc). See [usage section](#generating-the-filedescriptorspath-file) for details. | ✅ | `./fixtures/proto_workspace.json` |
+| `fileDescriptorsPath` | Path to JSON file containing generated proto documentation through [protoc-gen-doc](https://github.com/pseudomuto/protoc-gen-doc). See [usage section](#generating-the-filedescriptorspath-file) for details. | ✅ | N/A |
 | `protoDocsPath` | Directory where CLI will create doc files. |  | `./protodocs` |
 | `sidebarPath` | Path to file where CLI will write the generated Sidebar object. |  | `./sidebarsProtodocs.js` |
 ---
