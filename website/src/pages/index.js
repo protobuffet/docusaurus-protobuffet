@@ -11,7 +11,7 @@ const features = [
     title: 'Documentation Generators',
     description: (
       <>
-        Use our CLI to parse your Protobuf files and build
+        Use our CLI to parse your <Link to='/docs/what/overview#protobuf'>Protobuf</Link> files and build
         deep linked markdown documentation. Sidebar and search support 
         to improve discovery within your docs.
       </>
@@ -21,7 +21,7 @@ const features = [
     title: 'Component Library',
     description: (
       <>
-        React components for documenting Protobuf file descriptors.
+        React components for documenting <Link to='/docs/what/overview#protobuf'>Protobuf</Link> file descriptors.
         Component library includes message, service, and enum views.
       </>
     ),
@@ -30,7 +30,7 @@ const features = [
     title: 'Modern Technologies',
     description: (
       <>
-        Built as an extension of the Docusaurus platform, Protobuffet
+        Built as an extension of the <Link to='/docs/what/overview#docusaurus'>Docusaurus</Link> platform, Protobuffet
         follows industry standards and best practices. Emphasis on developer-driven,
         extensible documentation.
       </>

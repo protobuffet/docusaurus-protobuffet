@@ -73,9 +73,7 @@ Pass in all plugin options. See [`docusaurus-protobuffet-plugin`](https://github
 
 For those without an existing Docusaurus project, this package can **scaffold a new site with Protobuffet packages installed** in a recommended setup.
 
-Note: These commands should be run from your root directory where you would like the site to be created.
-
-Run the generator. This will create a directory for your site with the generated files. You must specify the `project_name` variable.
+Run the generator in the folder you would like the project to be created. This will create a directory for your site with the generated files. You must specify the `project_name` variable.
 
 ```sh
 npx docusaurus-protobuffet-init init <project_name>

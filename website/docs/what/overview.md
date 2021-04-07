@@ -7,7 +7,7 @@ slug: /what/overview
 
 Documentation should be **driven by the code that it documents while being easily extensible** through a structured framework. [Protobuf](#protobuf) contracts help document objects and exposed APIs for your services. These contracts alone provide many benefits, but gaps still remain in the documentation requirements of these services. Protobuffet provides the **toolset to build complete documentation of your Protobuf file workspace**.
 
-Our documentation starts with an **enhanced view of Protobuf contracts**. The [Protobuffet CLI](https://github.com/protobuffet/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet#cli-commands) parses your Protobuf file workspace to generate modern documentation pages for your organization. This **automated, granular documentation is deep linked and extensible** with our toolset.
+Our documentation starts with an **enhanced view of Protobuf contracts**. The [Protobuffet CLI](/docs/how/usage#cli-commands) parses your Protobuf file workspace to generate modern documentation pages for your organization. This **automated, granular documentation is deep linked and extensible** with our toolset.
 
 ## Quick Links
 - 🍿 View the [example workspace](/protodocs/protobuffet/example/ad/v1/ads.proto) for a demo.
@@ -28,6 +28,10 @@ I highly encourage you to get familiar with their [great documentation](https://
 - Solid React and MDX foundation.
 - Support of plugins and themes that allow for easy extension.
 - Emphasis on developer-driven documentation.
+
+:::info
+This documentation site is also built with Docusaurus!
+:::
 
 ## Protobuf
 
