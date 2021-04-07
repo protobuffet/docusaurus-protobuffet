@@ -36,6 +36,10 @@ export default async function init(
 
   fs.copyFileSync(path.resolve(__dirname, 'templates/docusaurus.config.js'), `${siteName}/docusaurus.config.js`);
   fs.copyFileSync(path.resolve(__dirname, 'templates/proto_workspace.json'), `${siteName}/fixtures/proto_workspace.json`);
+  fs.copyFileSync(path.resolve(__dirname, 'templates/landing_page.js'), `${siteName}/src/pages/index.js`);
+  fs.copyFileSync(path.resolve(__dirname, 'templates/landing_page.module.css'), `${siteName}/src/pages/styles.module.css`);
+  fs.copyFileSync(path.resolve(__dirname, 'templates/logo.png'), `${siteName}/static/img/logo.png`);
+  fs.copyFileSync(path.resolve(__dirname, 'templates/favicon.ico'), `${siteName}/static/img/favicon.ico`);
 
   console.log(chalk.cyan('Generating Proto doc files for sample fixtures.'));
 

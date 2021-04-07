@@ -1,24 +1,24 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'My Protobuf Documentation',
-  tagline: 'The tagline of my Protobuf documentation',
-  url: 'https://your-docusaurus-test-site.com',
+  title: 'Protobuffet',
+  tagline: 'Documentation Toolset for Your Protobuf Workspace',
+  url: 'https://protobuffet.com',
   baseUrl: '/',
+  organizationName: 'protobuffet', // Usually your GitHub org/user name.
+  projectName: 'protobuffet.github.io', // Usually your repo name.
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'My Protobuf Documentation',
+      title: 'Protobuffet',
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        alt: 'Protobuffet Logo',
+        src: 'img/logo.png',
       },
       items: [
         {
-          to: 'protodocs/Booking.proto',
+          to: 'protodocs/protobuffet/example/ad/v1/ads.proto',
           activeBasePath: 'protodocs',
           label: 'Protodocs',
           position: 'left',
@@ -41,11 +41,32 @@ module.exports = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Protobuffet',
           items: [
             {
-              label: 'Getting Started',
-              to: 'docs/',
+              label: 'Overview',
+              to: 'https://protobuffet.com/docs/what/overview',
+            },
+            {
+              label: 'Features',
+              to: 'https://protobuffet.com/docs/what/features',
+            },
+            {
+              label: 'Motivation',
+              to: 'https://protobuffet.com/docs/what/motivation',
+            },
+          ],
+        },
+        {
+          title: 'Guides',
+          items: [
+            {
+              label: 'Installation',
+              to: 'https://protobuffet.com/docs/how/installation',
+            },
+            {
+              label: 'Usage',
+              to: 'https://protobuffet.com/docs/how/usage'
             },
           ],
         },
@@ -53,34 +74,13 @@ module.exports = {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: 'blog',
-            },
-            {
               label: 'GitHub',
               href: 'https://github.com/protobuffet/docusaurus-protobuffet',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Protobuf Documentation, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Protobuffet. Built with Docusaurus.`,
     },
   },
   presets: [

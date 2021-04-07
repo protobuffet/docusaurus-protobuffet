@@ -38,7 +38,7 @@ Since this is a normal Docusaurus project, you can follow their documentation fo
 ## Configuration
 The default setup configures `fileDescriptorsPath` to `./fixtures/proto_workspace.json`. You can override this with your own Protobuf workspace file or update the options passed to `docusaurus-protobuffet` within your `docusaurus.config.js` file. Please see [`docusaurus-protobuffet` documentation](https://github.com/protobuffet/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet#configuration) for details.
 
-The navbar configuration within `docusaurus.config.js` points to one of the generated files of the sample fixture (`Booking.proto`). You will need to update this route when using your own Protobuf workspace file.
+The navbar configuration within `docusaurus.config.js` points to one of the generated files of the sample fixture. You will need to update this route when using your own Protobuf workspace file.
 
 ## Contributing
 

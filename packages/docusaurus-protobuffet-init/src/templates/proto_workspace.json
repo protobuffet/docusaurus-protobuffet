@@ -1,237 +1,9 @@
 {
   "files": [
     {
-      "name": "Booking.proto",
-      "description": "Booking related messages.\n\nThis file is really just an example. The data model is completely\nfictional.",
-      "package": "com.example",
-      "hasEnums": false,
-      "hasExtensions": false,
-      "hasMessages": true,
-      "hasServices": true,
-      "enums": [],
-      "extensions": [],
-      "messages": [
-        {
-          "name": "Booking",
-          "longName": "Booking",
-          "fullName": "com.example.Booking",
-          "description": "Represents the booking of a vehicle.\n\nVehicles are some cool shit. But drive carefully!",
-          "hasExtensions": false,
-          "hasFields": true,
-          "hasOneofs": false,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "vehicle_id",
-              "description": "ID of booked vehicle.",
-              "label": "",
-              "type": "int32",
-              "longType": "int32",
-              "fullType": "int32",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "customer_id",
-              "description": "Customer that booked the vehicle.",
-              "label": "",
-              "type": "int32",
-              "longType": "int32",
-              "fullType": "int32",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "status",
-              "description": "Status of the booking.",
-              "label": "",
-              "type": "BookingStatus",
-              "longType": "BookingStatus",
-              "fullType": "com.example.BookingStatus",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "confirmation_sent",
-              "description": "Has booking confirmation been sent?",
-              "label": "",
-              "type": "bool",
-              "longType": "bool",
-              "fullType": "bool",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "payment_received",
-              "description": "Has payment been received?",
-              "label": "",
-              "type": "bool",
-              "longType": "bool",
-              "fullType": "bool",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "color_preference",
-              "description": "Color preference of the customer.",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": "",
-              "options": {
-                "deprecated": true
-              }
-            }
-          ]
-        },
-        {
-          "name": "BookingStatus",
-          "longName": "BookingStatus",
-          "fullName": "com.example.BookingStatus",
-          "description": "Represents the status of a vehicle booking.",
-          "hasExtensions": false,
-          "hasFields": true,
-          "hasOneofs": false,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "id",
-              "description": "Unique booking status ID.",
-              "label": "",
-              "type": "int32",
-              "longType": "int32",
-              "fullType": "int32",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "description",
-              "description": "Booking status description. E.g. \"Active\".",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": "",
-              "options": {
-                "validator.field": [
-                  {
-                    "name": "string_not_empty",
-                    "value": true
-                  },
-                  {
-                    "name": "length_lt",
-                    "value": 255
-                  }
-                ]
-              }
-            }
-          ]
-        },
-        {
-          "name": "BookingStatusID",
-          "longName": "BookingStatusID",
-          "fullName": "com.example.BookingStatusID",
-          "description": "Represents the booking status ID.",
-          "hasExtensions": false,
-          "hasFields": true,
-          "hasOneofs": false,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "id",
-              "description": "Unique booking status ID.",
-              "label": "",
-              "type": "int32",
-              "longType": "int32",
-              "fullType": "int32",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            }
-          ]
-        },
-        {
-          "name": "EmptyBookingMessage",
-          "longName": "EmptyBookingMessage",
-          "fullName": "com.example.EmptyBookingMessage",
-          "description": "An empty message for testing",
-          "hasExtensions": false,
-          "hasFields": false,
-          "hasOneofs": false,
-          "extensions": [],
-          "fields": []
-        }
-      ],
-      "services": [
-        {
-          "name": "BookingService",
-          "longName": "BookingService",
-          "fullName": "com.example.BookingService",
-          "description": "Service for handling vehicle bookings.",
-          "methods": [
-            {
-              "name": "BookVehicle",
-              "description": "Used to book a vehicle. Pass in a Booking and a BookingStatus will be returned.",
-              "requestType": "Booking",
-              "requestLongType": "Booking",
-              "requestFullType": "com.example.Booking",
-              "requestStreaming": false,
-              "responseType": "BookingStatus",
-              "responseLongType": "BookingStatus",
-              "responseFullType": "com.example.BookingStatus",
-              "responseStreaming": false,
-              "options": {
-                "google.api.http": {
-                  "rules": [
-                    {
-                      "method": "POST",
-                      "pattern": "/api/bookings/vehicle/{vehicle_id}",
-                      "body": "*"
-                    }
-                  ]
-                }
-              }
-            },
-            {
-              "name": "BookingUpdates",
-              "description": "Used to subscribe to updates of the BookingStatus.",
-              "requestType": "BookingStatusID",
-              "requestLongType": "BookingStatusID",
-              "requestFullType": "com.example.BookingStatusID",
-              "requestStreaming": false,
-              "responseType": "BookingStatus",
-              "responseLongType": "BookingStatus",
-              "responseFullType": "com.example.BookingStatus",
-              "responseStreaming": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Customer.proto",
-      "description": "This file has messages for describing a customer.",
-      "package": "com.example",
+      "name": "google/protobuf/wrappers.proto",
+      "description": "",
+      "package": "google.protobuf",
       "hasEnums": false,
       "hasExtensions": false,
       "hasMessages": true,
@@ -240,19 +12,278 @@
       "extensions": [],
       "messages": [
         {
-          "name": "Address",
-          "longName": "Address",
-          "fullName": "com.example.Address",
-          "description": "Represents a mail address.",
+          "name": "BoolValue",
+          "longName": "BoolValue",
+          "fullName": "google.protobuf.BoolValue",
+          "description": "Wrapper message for `bool`.\n\nThe JSON representation for `BoolValue` is JSON `true` and `false`.",
           "hasExtensions": false,
           "hasFields": true,
           "hasOneofs": false,
           "extensions": [],
           "fields": [
             {
-              "name": "address_line_1",
-              "description": "First address line.",
-              "label": "required",
+              "name": "value",
+              "description": "The bool value.",
+              "label": "",
+              "type": "bool",
+              "longType": "bool",
+              "fullType": "bool",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "BytesValue",
+          "longName": "BytesValue",
+          "fullName": "google.protobuf.BytesValue",
+          "description": "Wrapper message for `bytes`.\n\nThe JSON representation for `BytesValue` is JSON string.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "value",
+              "description": "The bytes value.",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "DoubleValue",
+          "longName": "DoubleValue",
+          "fullName": "google.protobuf.DoubleValue",
+          "description": "Wrapper message for `double`.\n\nThe JSON representation for `DoubleValue` is JSON number.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "value",
+              "description": "The double value.",
+              "label": "",
+              "type": "double",
+              "longType": "double",
+              "fullType": "double",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "FloatValue",
+          "longName": "FloatValue",
+          "fullName": "google.protobuf.FloatValue",
+          "description": "Wrapper message for `float`.\n\nThe JSON representation for `FloatValue` is JSON number.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "value",
+              "description": "The float value.",
+              "label": "",
+              "type": "float",
+              "longType": "float",
+              "fullType": "float",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "Int32Value",
+          "longName": "Int32Value",
+          "fullName": "google.protobuf.Int32Value",
+          "description": "Wrapper message for `int32`.\n\nThe JSON representation for `Int32Value` is JSON number.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "value",
+              "description": "The int32 value.",
+              "label": "",
+              "type": "int32",
+              "longType": "int32",
+              "fullType": "int32",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "Int64Value",
+          "longName": "Int64Value",
+          "fullName": "google.protobuf.Int64Value",
+          "description": "Wrapper message for `int64`.\n\nThe JSON representation for `Int64Value` is JSON string.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "value",
+              "description": "The int64 value.",
+              "label": "",
+              "type": "int64",
+              "longType": "int64",
+              "fullType": "int64",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "StringValue",
+          "longName": "StringValue",
+          "fullName": "google.protobuf.StringValue",
+          "description": "Wrapper message for `string`.\n\nThe JSON representation for `StringValue` is JSON string.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "value",
+              "description": "The string value.",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "UInt32Value",
+          "longName": "UInt32Value",
+          "fullName": "google.protobuf.UInt32Value",
+          "description": "Wrapper message for `uint32`.\n\nThe JSON representation for `UInt32Value` is JSON number.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "value",
+              "description": "The uint32 value.",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "UInt64Value",
+          "longName": "UInt64Value",
+          "fullName": "google.protobuf.UInt64Value",
+          "description": "Wrapper message for `uint64`.\n\nThe JSON representation for `UInt64Value` is JSON string.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "value",
+              "description": "The uint64 value.",
+              "label": "",
+              "type": "uint64",
+              "longType": "uint64",
+              "fullType": "uint64",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        }
+      ],
+      "services": []
+    },
+    {
+      "name": "protobuffet/example/ad/v1/ads.proto",
+      "description": "",
+      "package": "protobuffet.example.ad.v1",
+      "hasEnums": true,
+      "hasExtensions": false,
+      "hasMessages": true,
+      "hasServices": true,
+      "enums": [
+        {
+          "name": "AdType",
+          "longName": "AdType",
+          "fullName": "protobuffet.example.ad.v1.AdType",
+          "description": "Type of ad to render.",
+          "values": [
+            {
+              "name": "UNKNOWN",
+              "number": "0",
+              "description": "Unknown/undefined ad type."
+            },
+            {
+              "name": "FEATURED_PRODUCT",
+              "number": "1",
+              "description": "Featured product ad type."
+            },
+            {
+              "name": "HEADER_PRODUCT",
+              "number": "2",
+              "description": "Header product ad type."
+            },
+            {
+              "name": "BUY_IT_AGAIN_PRODUCT",
+              "number": "3",
+              "description": "Buy it again ad type."
+            }
+          ]
+        }
+      ],
+      "extensions": [],
+      "messages": [
+        {
+          "name": "Ad",
+          "longName": "Ad",
+          "fullName": "protobuffet.example.ad.v1.Ad",
+          "description": "Represents an Ad that can be displayed to a user. These are generated from a given context.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "redirect_url",
+              "description": "URL to redirect to when an ad is clicked.",
+              "label": "",
               "type": "string",
               "longType": "string",
               "fullType": "string",
@@ -262,9 +293,9 @@
               "defaultValue": ""
             },
             {
-              "name": "address_line_2",
-              "description": "Second address line.",
-              "label": "optional",
+              "name": "text",
+              "description": "Short advertisement text to display.",
+              "label": "",
               "type": "string",
               "longType": "string",
               "fullType": "string",
@@ -274,9 +305,116 @@
               "defaultValue": ""
             },
             {
-              "name": "address_line_3",
-              "description": "Second address line.",
-              "label": "optional",
+              "name": "type",
+              "description": "Type of ad.",
+              "label": "",
+              "type": "AdType",
+              "longType": "AdType",
+              "fullType": "protobuffet.example.ad.v1.AdType",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "AdRequest",
+          "longName": "AdRequest",
+          "fullName": "protobuffet.example.ad.v1.AdRequest",
+          "description": "Request to fetch ads for a given context.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "context_keys",
+              "description": "List of important key words from the current page describing the context.",
+              "label": "repeated",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "AdResponse",
+          "longName": "AdResponse",
+          "fullName": "protobuffet.example.ad.v1.AdResponse",
+          "description": "Response containing ads to display to the user.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "ads",
+              "description": "List of all ads to display. The service responds with many ads, so it is up to the client\nto handle how many should be displayed to the user at a time.",
+              "label": "repeated",
+              "type": "Ad",
+              "longType": "Ad",
+              "fullType": "protobuffet.example.ad.v1.Ad",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        }
+      ],
+      "services": [
+        {
+          "name": "AdService",
+          "longName": "AdService",
+          "fullName": "protobuffet.example.ad.v1.AdService",
+          "description": "Ads management service. Exposes APIs oriented around displaying ads for \nour users.",
+          "methods": [
+            {
+              "name": "GetAds",
+              "description": "Fetch ads to display for a given context.",
+              "requestType": "AdRequest",
+              "requestLongType": "AdRequest",
+              "requestFullType": "protobuffet.example.ad.v1.AdRequest",
+              "requestStreaming": false,
+              "responseType": "AdResponse",
+              "responseLongType": "AdResponse",
+              "responseFullType": "protobuffet.example.ad.v1.AdResponse",
+              "responseStreaming": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "protobuffet/example/carts/v1/carts.proto",
+      "description": "",
+      "package": "protobuffet.example.carts.v1",
+      "hasEnums": false,
+      "hasExtensions": false,
+      "hasMessages": true,
+      "hasServices": true,
+      "enums": [],
+      "extensions": [],
+      "messages": [
+        {
+          "name": "AddItemRequest",
+          "longName": "AddItemRequest",
+          "fullName": "protobuffet.example.carts.v1.AddItemRequest",
+          "description": "Request to add an item to a user's cart. This will automatically initialize a cart for\nthe user if no existing.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "user_id",
+              "description": "User to use for cart lookup.",
+              "label": "",
               "type": "string",
               "longType": "string",
               "fullType": "string",
@@ -286,9 +424,33 @@
               "defaultValue": ""
             },
             {
-              "name": "town",
-              "description": "Address town.",
-              "label": "required",
+              "name": "item",
+              "description": "Item to add to cart.",
+              "label": "",
+              "type": "CartItem",
+              "longType": "CartItem",
+              "fullType": "protobuffet.example.carts.v1.CartItem",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "Cart",
+          "longName": "Cart",
+          "fullName": "protobuffet.example.carts.v1.Cart",
+          "description": "Represents an existing cart for a specific user.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "user_id",
+              "description": "User tied to this cart.",
+              "label": "",
               "type": "string",
               "longType": "string",
               "fullType": "string",
@@ -298,9 +460,1130 @@
               "defaultValue": ""
             },
             {
-              "name": "county",
-              "description": "Address county, if applicable.",
-              "label": "optional",
+              "name": "items",
+              "description": "Items this cart contains.",
+              "label": "repeated",
+              "type": "CartItem",
+              "longType": "CartItem",
+              "fullType": "protobuffet.example.carts.v1.CartItem",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "CartItem",
+          "longName": "CartItem",
+          "fullName": "protobuffet.example.carts.v1.CartItem",
+          "description": "Single item within a cart. This includes a reference to our\ncatalog and user-provided selection.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "product_id",
+              "description": "Product catalog reference.",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "quantity",
+              "description": "User-provided quantity for this item.",
+              "label": "",
+              "type": "int32",
+              "longType": "int32",
+              "fullType": "int32",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "Empty",
+          "longName": "Empty",
+          "fullName": "protobuffet.example.carts.v1.Empty",
+          "description": "Represents successful response with no data required.",
+          "hasExtensions": false,
+          "hasFields": false,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": []
+        },
+        {
+          "name": "EmptyCartRequest",
+          "longName": "EmptyCartRequest",
+          "fullName": "protobuffet.example.carts.v1.EmptyCartRequest",
+          "description": "Request to clear out a user's existing cart. No-op if\nno cart is initialized for the user.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "user_id",
+              "description": "User to use for cart lookup.",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "GetCartRequest",
+          "longName": "GetCartRequest",
+          "fullName": "protobuffet.example.carts.v1.GetCartRequest",
+          "description": "Request to fetch a user's existing cart.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "user_id",
+              "description": "User to use for cart lookup.",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        }
+      ],
+      "services": [
+        {
+          "name": "CartService",
+          "longName": "CartService",
+          "fullName": "protobuffet.example.carts.v1.CartService",
+          "description": "Cart management service. this is a service created for the purpose of demonstration.",
+          "methods": [
+            {
+              "name": "AddItem",
+              "description": "Add an item to a specified cart.",
+              "requestType": "AddItemRequest",
+              "requestLongType": "AddItemRequest",
+              "requestFullType": "protobuffet.example.carts.v1.AddItemRequest",
+              "requestStreaming": false,
+              "responseType": "Empty",
+              "responseLongType": "Empty",
+              "responseFullType": "protobuffet.example.carts.v1.Empty",
+              "responseStreaming": false
+            },
+            {
+              "name": "GetCart",
+              "description": "Get the details for a specified cart.",
+              "requestType": "GetCartRequest",
+              "requestLongType": "GetCartRequest",
+              "requestFullType": "protobuffet.example.carts.v1.GetCartRequest",
+              "requestStreaming": false,
+              "responseType": "Cart",
+              "responseLongType": "Cart",
+              "responseFullType": "protobuffet.example.carts.v1.Cart",
+              "responseStreaming": false
+            },
+            {
+              "name": "EmptyCart",
+              "description": "Clear out the specified cart.",
+              "requestType": "EmptyCartRequest",
+              "requestLongType": "EmptyCartRequest",
+              "requestFullType": "protobuffet.example.carts.v1.EmptyCartRequest",
+              "requestStreaming": false,
+              "responseType": "Empty",
+              "responseLongType": "Empty",
+              "responseFullType": "protobuffet.example.carts.v1.Empty",
+              "responseStreaming": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "protobuffet/example/checkout/v1/checkout.proto",
+      "description": "",
+      "package": "protobuffet.example.checkout.v1",
+      "hasEnums": false,
+      "hasExtensions": false,
+      "hasMessages": true,
+      "hasServices": true,
+      "enums": [],
+      "extensions": [],
+      "messages": [
+        {
+          "name": "OrderItem",
+          "longName": "OrderItem",
+          "fullName": "protobuffet.example.checkout.v1.OrderItem",
+          "description": "Represents a single item within an order.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "item",
+              "description": "Associated item within a cart.",
+              "label": "",
+              "type": "CartItem",
+              "longType": "protobuffet.example.carts.v1.CartItem",
+              "fullType": "protobuffet.example.carts.v1.CartItem",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "cost",
+              "description": "Cost for this order item record.",
+              "label": "",
+              "type": "Money",
+              "longType": "protobuffet.example.common.types.v1.Money",
+              "fullType": "protobuffet.example.common.types.v1.Money",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "OrderResult",
+          "longName": "OrderResult",
+          "fullName": "protobuffet.example.checkout.v1.OrderResult",
+          "description": "Represents a successfully placed order.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "order_id",
+              "description": "Identifier for this placed order.",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "shipping_tracking_id",
+              "description": "Reference to help track this placed order through its shipment.",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "shipping_cost",
+              "description": "Cost for us to ship this order.",
+              "label": "",
+              "type": "Money",
+              "longType": "protobuffet.example.common.types.v1.Money",
+              "fullType": "protobuffet.example.common.types.v1.Money",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "shipping_address",
+              "description": "Address the order is being shipped to.",
+              "label": "",
+              "type": "Address",
+              "longType": "protobuffet.example.shipping.v1.Address",
+              "fullType": "protobuffet.example.shipping.v1.Address",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "items",
+              "description": "Items the order contains.",
+              "label": "repeated",
+              "type": "OrderItem",
+              "longType": "OrderItem",
+              "fullType": "protobuffet.example.checkout.v1.OrderItem",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "PlaceOrderRequest",
+          "longName": "PlaceOrderRequest",
+          "fullName": "protobuffet.example.checkout.v1.PlaceOrderRequest",
+          "description": "Request to place an order for a given user.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "user_id",
+              "description": "User to place order for.",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "user_currency",
+              "description": "The currency that the user would like to pay in. See implementation docs for supported values.",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "address",
+              "description": "Address the user would like the order to be shipped to.",
+              "label": "",
+              "type": "Address",
+              "longType": "protobuffet.example.shipping.v1.Address",
+              "fullType": "protobuffet.example.shipping.v1.Address",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "email",
+              "description": "Email the user would like order updates to be sent to. See implementation docs for formatting.",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "credit_card",
+              "description": "The user's credit card to charge for this order.",
+              "label": "",
+              "type": "CreditCardInfo",
+              "longType": "protobuffet.example.payment.v1.CreditCardInfo",
+              "fullType": "protobuffet.example.payment.v1.CreditCardInfo",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "PlaceOrderResponse",
+          "longName": "PlaceOrderResponse",
+          "fullName": "protobuffet.example.checkout.v1.PlaceOrderResponse",
+          "description": "Response containing a successfully placed order.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "order",
+              "description": "Successfully placed order.",
+              "label": "",
+              "type": "OrderResult",
+              "longType": "OrderResult",
+              "fullType": "protobuffet.example.checkout.v1.OrderResult",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        }
+      ],
+      "services": [
+        {
+          "name": "CheckoutService",
+          "longName": "CheckoutService",
+          "fullName": "protobuffet.example.checkout.v1.CheckoutService",
+          "description": "Checkout management service. Given a user's action of checking out for an order,\nwe orchestrate the necessary dependency calls to make that happen in our system.",
+          "methods": [
+            {
+              "name": "PlaceOrder",
+              "description": "Action taken on user checkout, place the provided order for the user.",
+              "requestType": "PlaceOrderRequest",
+              "requestLongType": "PlaceOrderRequest",
+              "requestFullType": "protobuffet.example.checkout.v1.PlaceOrderRequest",
+              "requestStreaming": false,
+              "responseType": "PlaceOrderResponse",
+              "responseLongType": "PlaceOrderResponse",
+              "responseFullType": "protobuffet.example.checkout.v1.PlaceOrderResponse",
+              "responseStreaming": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "protobuffet/example/common/types/v1/money.proto",
+      "description": "",
+      "package": "protobuffet.example.common.types.v1",
+      "hasEnums": false,
+      "hasExtensions": false,
+      "hasMessages": true,
+      "hasServices": false,
+      "enums": [],
+      "extensions": [],
+      "messages": [
+        {
+          "name": "Money",
+          "longName": "Money",
+          "fullName": "protobuffet.example.common.types.v1.Money",
+          "description": "Represents an amount of money with its currency type.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "currency_code",
+              "description": "The 3-letter currency code defined in ISO 4217.",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "units",
+              "description": "The whole units of the amount.\nFor example if `currencyCode` is `\"USD\"`, then 1 unit is one US dollar.",
+              "label": "",
+              "type": "int64",
+              "longType": "int64",
+              "fullType": "int64",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "nanos",
+              "description": "Number of nano (10^-9) units of the amount.\nThe value must be between -999,999,999 and +999,999,999 inclusive.\nIf `units` is positive, `nanos` must be positive or zero.\nIf `units` is zero, `nanos` can be positive, zero, or negative.\nIf `units` is negative, `nanos` must be negative or zero.\nFor example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000.",
+              "label": "",
+              "type": "int32",
+              "longType": "int32",
+              "fullType": "int32",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        }
+      ],
+      "services": []
+    },
+    {
+      "name": "protobuffet/example/currency/v1/currency.proto",
+      "description": "",
+      "package": "protobuffet.example.currency.v1",
+      "hasEnums": false,
+      "hasExtensions": false,
+      "hasMessages": true,
+      "hasServices": true,
+      "enums": [],
+      "extensions": [],
+      "messages": [
+        {
+          "name": "CurrencyConversionRequest",
+          "longName": "CurrencyConversionRequest",
+          "fullName": "protobuffet.example.currency.v1.CurrencyConversionRequest",
+          "description": "Request for converting a given amount to a different currency.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "from",
+              "description": "Money that should be converted.",
+              "label": "",
+              "type": "Money",
+              "longType": "protobuffet.example.common.types.v1.Money",
+              "fullType": "protobuffet.example.common.types.v1.Money",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "to_code",
+              "description": "The 3-letter currency code defined in ISO 4217.",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "Empty",
+          "longName": "Empty",
+          "fullName": "protobuffet.example.currency.v1.Empty",
+          "description": "Represents successful response with no data required.",
+          "hasExtensions": false,
+          "hasFields": false,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": []
+        },
+        {
+          "name": "GetSupportedCurrenciesResponse",
+          "longName": "GetSupportedCurrenciesResponse",
+          "fullName": "protobuffet.example.currency.v1.GetSupportedCurrenciesResponse",
+          "description": "Response containing supported currencies.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "currency_codes",
+              "description": "The 3-letter currency code defined in ISO 4217.",
+              "label": "repeated",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        }
+      ],
+      "services": [
+        {
+          "name": "CurrencyService",
+          "longName": "CurrencyService",
+          "fullName": "protobuffet.example.currency.v1.CurrencyService",
+          "description": "Currency management service. Keep currency calculations encapsulated within this service\nto avoid this complexity leaking to other domains.",
+          "methods": [
+            {
+              "name": "GetSupportedCurrencies",
+              "description": "Fetch all supported currencies.",
+              "requestType": "Empty",
+              "requestLongType": "Empty",
+              "requestFullType": "protobuffet.example.currency.v1.Empty",
+              "requestStreaming": false,
+              "responseType": "GetSupportedCurrenciesResponse",
+              "responseLongType": "GetSupportedCurrenciesResponse",
+              "responseFullType": "protobuffet.example.currency.v1.GetSupportedCurrenciesResponse",
+              "responseStreaming": false
+            },
+            {
+              "name": "Convert",
+              "description": "Convert an amount to a different currency.",
+              "requestType": "CurrencyConversionRequest",
+              "requestLongType": "CurrencyConversionRequest",
+              "requestFullType": "protobuffet.example.currency.v1.CurrencyConversionRequest",
+              "requestStreaming": false,
+              "responseType": "Money",
+              "responseLongType": ".protobuffet.example.common.types.v1.Money",
+              "responseFullType": "protobuffet.example.common.types.v1.Money",
+              "responseStreaming": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "protobuffet/example/payment/v1/payment.proto",
+      "description": "",
+      "package": "protobuffet.example.payment.v1",
+      "hasEnums": false,
+      "hasExtensions": false,
+      "hasMessages": true,
+      "hasServices": true,
+      "enums": [],
+      "extensions": [],
+      "messages": [
+        {
+          "name": "ChargeRequest",
+          "longName": "ChargeRequest",
+          "fullName": "protobuffet.example.payment.v1.ChargeRequest",
+          "description": "Request to charge a credit card.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "amount",
+              "description": "Amount to charge. This is expected to be in the user's preferred currency.",
+              "label": "",
+              "type": "Money",
+              "longType": "protobuffet.example.common.types.v1.Money",
+              "fullType": "protobuffet.example.common.types.v1.Money",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "credit_card",
+              "description": "Credit card to charge.",
+              "label": "",
+              "type": "CreditCardInfo",
+              "longType": "CreditCardInfo",
+              "fullType": "protobuffet.example.payment.v1.CreditCardInfo",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "ChargeResponse",
+          "longName": "ChargeResponse",
+          "fullName": "protobuffet.example.payment.v1.ChargeResponse",
+          "description": "Response of a successful charge.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "transaction_id",
+              "description": "Identifier of this successful charge transaction.",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "CreditCardInfo",
+          "longName": "CreditCardInfo",
+          "fullName": "protobuffet.example.payment.v1.CreditCardInfo",
+          "description": "Represents credit card information that we can charge.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "credit_card_number",
+              "description": "Number of credit card.",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "credit_card_cvv",
+              "description": "CVV of credit card.",
+              "label": "",
+              "type": "int32",
+              "longType": "int32",
+              "fullType": "int32",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "credit_card_expiration_year",
+              "description": "Card expiration (year). Expected formatting YYYY, eg. 2021.",
+              "label": "",
+              "type": "int32",
+              "longType": "int32",
+              "fullType": "int32",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "credit_card_expiration_month",
+              "description": "Card expiration (month). Expected formatting M, eg. 8, 12.",
+              "label": "",
+              "type": "int32",
+              "longType": "int32",
+              "fullType": "int32",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        }
+      ],
+      "services": [
+        {
+          "name": "PaymentService",
+          "longName": "PaymentService",
+          "fullName": "protobuffet.example.payment.v1.PaymentService",
+          "description": "Payments management service. This should be the only domain that knows how to charge customers to keep a clean audit trail.",
+          "methods": [
+            {
+              "name": "Charge",
+              "description": "Charge a credit card by the specified amount.",
+              "requestType": "ChargeRequest",
+              "requestLongType": "ChargeRequest",
+              "requestFullType": "protobuffet.example.payment.v1.ChargeRequest",
+              "requestStreaming": false,
+              "responseType": "ChargeResponse",
+              "responseLongType": "ChargeResponse",
+              "responseFullType": "protobuffet.example.payment.v1.ChargeResponse",
+              "responseStreaming": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "protobuffet/example/productcatalog/v1/productcatalog.proto",
+      "description": "",
+      "package": "protobuffet.example.productcatalog.v1",
+      "hasEnums": false,
+      "hasExtensions": false,
+      "hasMessages": true,
+      "hasServices": true,
+      "enums": [],
+      "extensions": [],
+      "messages": [
+        {
+          "name": "Empty",
+          "longName": "Empty",
+          "fullName": "protobuffet.example.productcatalog.v1.Empty",
+          "description": "Represents no data required.",
+          "hasExtensions": false,
+          "hasFields": false,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": []
+        },
+        {
+          "name": "GetProductRequest",
+          "longName": "GetProductRequest",
+          "fullName": "protobuffet.example.productcatalog.v1.GetProductRequest",
+          "description": "Request to get a single product.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "id",
+              "description": "Identifier to use for product lookup.",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "ListProductsResponse",
+          "longName": "ListProductsResponse",
+          "fullName": "protobuffet.example.productcatalog.v1.ListProductsResponse",
+          "description": "Response containing a list of retrieved products.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "products",
+              "description": "List of products.",
+              "label": "repeated",
+              "type": "Product",
+              "longType": "Product",
+              "fullType": "protobuffet.example.productcatalog.v1.Product",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "Product",
+          "longName": "Product",
+          "fullName": "protobuffet.example.productcatalog.v1.Product",
+          "description": "Represents a single product within our catalog. Each product should be visible by default,\nunavailable products are not represented by this object.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "id",
+              "description": "Identifier for this product.",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "name",
+              "description": "Name of this product. Often provided by the retailer or some third-party.",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "description",
+              "description": "Description of this product. Often provided by the retailer or some third-party.",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "picture",
+              "description": "Picture of this product. Often provided by some third-party.",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "price_usd",
+              "description": "Price of this product at this given time. Calculations can vary with time, so caching should respect this.",
+              "label": "",
+              "type": "Money",
+              "longType": "protobuffet.example.common.types.v1.Money",
+              "fullType": "protobuffet.example.common.types.v1.Money",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "categories",
+              "description": "Categories such as \"vintage\" or \"gardening\" that can be used to look up other related products.",
+              "label": "repeated",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "SearchProductsRequest",
+          "longName": "SearchProductsRequest",
+          "fullName": "protobuffet.example.productcatalog.v1.SearchProductsRequest",
+          "description": "Request to search for products given a query.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "query",
+              "description": "Query of terms to search for within the catalog. See implementation docs for formatting.",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "SearchProductsResponse",
+          "longName": "SearchProductsResponse",
+          "fullName": "protobuffet.example.productcatalog.v1.SearchProductsResponse",
+          "description": "Response containing a list of product search results.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "results",
+              "description": "List of products.",
+              "label": "repeated",
+              "type": "Product",
+              "longType": "Product",
+              "fullType": "protobuffet.example.productcatalog.v1.Product",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        }
+      ],
+      "services": [
+        {
+          "name": "ProductCatalogService",
+          "longName": "ProductCatalogService",
+          "fullName": "protobuffet.example.productcatalog.v1.ProductCatalogService",
+          "description": "Product catalog management service. APIs oriented around product lookup for a given\ncontext.",
+          "methods": [
+            {
+              "name": "ListProducts",
+              "description": "List all products in the catalog.",
+              "requestType": "Empty",
+              "requestLongType": "Empty",
+              "requestFullType": "protobuffet.example.productcatalog.v1.Empty",
+              "requestStreaming": false,
+              "responseType": "ListProductsResponse",
+              "responseLongType": "ListProductsResponse",
+              "responseFullType": "protobuffet.example.productcatalog.v1.ListProductsResponse",
+              "responseStreaming": false
+            },
+            {
+              "name": "GetProduct",
+              "description": "Get a specific product from our catalog.",
+              "requestType": "GetProductRequest",
+              "requestLongType": "GetProductRequest",
+              "requestFullType": "protobuffet.example.productcatalog.v1.GetProductRequest",
+              "requestStreaming": false,
+              "responseType": "Product",
+              "responseLongType": "Product",
+              "responseFullType": "protobuffet.example.productcatalog.v1.Product",
+              "responseStreaming": false
+            },
+            {
+              "name": "SearchProducts",
+              "description": "Search for products within the catalog matching a given query.",
+              "requestType": "SearchProductsRequest",
+              "requestLongType": "SearchProductsRequest",
+              "requestFullType": "protobuffet.example.productcatalog.v1.SearchProductsRequest",
+              "requestStreaming": false,
+              "responseType": "SearchProductsResponse",
+              "responseLongType": "SearchProductsResponse",
+              "responseFullType": "protobuffet.example.productcatalog.v1.SearchProductsResponse",
+              "responseStreaming": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "protobuffet/example/recommendations/v1/recommendations.proto",
+      "description": "",
+      "package": "protobuffet.example.recommendations.v1",
+      "hasEnums": false,
+      "hasExtensions": false,
+      "hasMessages": true,
+      "hasServices": true,
+      "enums": [],
+      "extensions": [],
+      "messages": [
+        {
+          "name": "ListRecommendationsRequest",
+          "longName": "ListRecommendationsRequest",
+          "fullName": "protobuffet.example.recommendations.v1.ListRecommendationsRequest",
+          "description": "Request to get product recommendations for a user.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "user_id",
+              "description": "User to lookup recommendations for.",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "product_ids",
+              "description": "Product IDs for the current user context that we are recommending for.",
+              "label": "repeated",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "ListRecommendationsResponse",
+          "longName": "ListRecommendationsResponse",
+          "fullName": "protobuffet.example.recommendations.v1.ListRecommendationsResponse",
+          "description": "Response containing product recommendations.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "product_ids",
+              "description": "IDs referencing products that we recommend for the received request.\nSee implementation docs for details on formatting.",
+              "label": "repeated",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        }
+      ],
+      "services": [
+        {
+          "name": "RecommendationService",
+          "longName": "RecommendationService",
+          "fullName": "protobuffet.example.recommendations.v1.RecommendationService",
+          "description": "Further product recommendations for user given a set of product IDs.",
+          "methods": [
+            {
+              "name": "ListRecommendations",
+              "description": "List recommendations for a given user and context.",
+              "requestType": "ListRecommendationsRequest",
+              "requestLongType": "ListRecommendationsRequest",
+              "requestFullType": "protobuffet.example.recommendations.v1.ListRecommendationsRequest",
+              "requestStreaming": false,
+              "responseType": "ListRecommendationsResponse",
+              "responseLongType": "ListRecommendationsResponse",
+              "responseFullType": "protobuffet.example.recommendations.v1.ListRecommendationsResponse",
+              "responseStreaming": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "protobuffet/example/shipping/v1/shipping.proto",
+      "description": "",
+      "package": "protobuffet.example.shipping.v1",
+      "hasEnums": false,
+      "hasExtensions": false,
+      "hasMessages": true,
+      "hasServices": true,
+      "enums": [],
+      "extensions": [],
+      "messages": [
+        {
+          "name": "Address",
+          "longName": "Address",
+          "fullName": "protobuffet.example.shipping.v1.Address",
+          "description": "Represents an Address that we ship to.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "street_address",
+              "description": "Address Line 1. If a unit number is present, it should prefix the street number eg. 613-54 Albert St.",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "city",
+              "description": "City the address is within. See implementation docs for expected formatting.",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "state",
+              "description": "State the address is within. See implementation docs for expected formatting.",
+              "label": "",
               "type": "string",
               "longType": "string",
               "fullType": "string",
@@ -311,8 +1594,20 @@
             },
             {
               "name": "country",
-              "description": "Address country.",
-              "label": "required",
+              "description": "Country the address is within. See implementation docs for expected formatting.",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "zip_code",
+              "description": "Postal area the address is within. See implementation docs for expected formatting.",
+              "label": "",
               "type": "string",
               "longType": "string",
               "fullType": "string",
@@ -324,275 +1619,34 @@
           ]
         },
         {
-          "name": "Customer",
-          "longName": "Customer",
-          "fullName": "com.example.Customer",
-          "description": "Represents a customer.",
+          "name": "GetQuoteRequest",
+          "longName": "GetQuoteRequest",
+          "fullName": "protobuffet.example.shipping.v1.GetQuoteRequest",
+          "description": "Request to fetch a quote for a proposed shipment/order.",
           "hasExtensions": false,
           "hasFields": true,
           "hasOneofs": false,
           "extensions": [],
           "fields": [
             {
-              "name": "id",
-              "description": "Unique customer ID.",
-              "label": "required",
-              "type": "int32",
-              "longType": "int32",
-              "fullType": "int32",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "first_name",
-              "description": "Customer first name.",
-              "label": "required",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "last_name",
-              "description": "Customer last name.",
-              "label": "required",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "details",
-              "description": "Customer details.",
-              "label": "optional",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "email_address",
-              "description": "Customer e-mail address.",
-              "label": "optional",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "phone_number",
-              "description": "Customer phone numbers, primary first.",
-              "label": "repeated",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "mail_addresses",
-              "description": "Customer mail addresses, primary first.",
-              "label": "repeated",
+              "name": "address",
+              "description": "Address for proposed order.",
+              "label": "",
               "type": "Address",
               "longType": "Address",
-              "fullType": "com.example.Address",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            }
-          ]
-        }
-      ],
-      "services": []
-    },
-    {
-      "name": "Vehicle.proto",
-      "description": "Messages describing manufacturers / vehicles.",
-      "package": "com.example",
-      "hasEnums": false,
-      "hasExtensions": true,
-      "hasMessages": true,
-      "hasServices": false,
-      "enums": [
-        {
-          "name": "Category",
-          "longName": "Manufacturer.Category",
-          "fullName": "com.example.Manufacturer.Category",
-          "description": "Manufacturer category. A manufacturer may be either inhouse or external.",
-          "values": [
-            {
-              "name": "CATEGORY_INHOUSE",
-              "number": "0",
-              "description": "The manufacturer is inhouse."
-            },
-            {
-              "name": "CATEGORY_EXTERNAL",
-              "number": "1",
-              "description": "The manufacturer is external."
-            }
-          ]
-        }
-      ],
-      "extensions": [
-        {
-          "name": "country",
-          "longName": "Manufacturer.country",
-          "fullName": "com.example.Manufacturer.country",
-          "description": "Manufacturer country.",
-          "label": "optional",
-          "type": "string",
-          "longType": "string",
-          "fullType": "string",
-          "number": 100,
-          "defaultValue": "China",
-          "containingType": "Manufacturer",
-          "containingLongType": "Manufacturer",
-          "containingFullType": "com.example.Manufacturer"
-        }
-      ],
-      "messages": [
-        {
-          "name": "Manufacturer",
-          "longName": "Manufacturer",
-          "fullName": "com.example.Manufacturer",
-          "description": "Represents a manufacturer of cars.",
-          "hasExtensions": false,
-          "hasFields": true,
-          "hasOneofs": false,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "id",
-              "description": "The unique manufacturer ID.",
-              "label": "required",
-              "type": "int32",
-              "longType": "int32",
-              "fullType": "int32",
+              "fullType": "protobuffet.example.shipping.v1.Address",
               "ismap": false,
               "isoneof": false,
               "oneofdecl": "",
               "defaultValue": ""
             },
             {
-              "name": "code",
-              "description": "A manufacturer code, e.g. \"DKL4P\".",
-              "label": "required",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "details",
-              "description": "Manufacturer details (minimum orders et.c.).",
-              "label": "optional",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "category",
-              "description": "Manufacturer category.",
-              "label": "optional",
-              "type": "Category",
-              "longType": "Manufacturer.Category",
-              "fullType": "com.example.Manufacturer.Category",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": "CATEGORY_EXTERNAL"
-            }
-          ]
-        },
-        {
-          "name": "Model",
-          "longName": "Model",
-          "fullName": "com.example.Model",
-          "description": "Represents a vehicle model.",
-          "hasExtensions": false,
-          "hasFields": true,
-          "hasOneofs": false,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "id",
-              "description": "The unique model ID.",
-              "label": "required",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "model_code",
-              "description": "The car model code, e.g. \"PZ003\".",
-              "label": "required",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "model_name",
-              "description": "The car model name, e.g. \"Z3\".",
-              "label": "required",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "daily_hire_rate_dollars",
-              "description": "Dollars per day.",
-              "label": "required",
-              "type": "sint32",
-              "longType": "sint32",
-              "fullType": "sint32",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "daily_hire_rate_cents",
-              "description": "Cents per day.",
-              "label": "required",
-              "type": "sint32",
-              "longType": "sint32",
-              "fullType": "sint32",
+              "name": "items",
+              "description": "Items within proposed order.",
+              "label": "repeated",
+              "type": "CartItem",
+              "longType": "protobuffet.example.carts.v1.CartItem",
+              "fullType": "protobuffet.example.carts.v1.CartItem",
               "ismap": false,
               "isoneof": false,
               "oneofdecl": "",
@@ -601,113 +1655,22 @@
           ]
         },
         {
-          "name": "Vehicle",
-          "longName": "Vehicle",
-          "fullName": "com.example.Vehicle",
-          "description": "Represents a vehicle that can be hired.",
-          "hasExtensions": true,
+          "name": "GetQuoteResponse",
+          "longName": "GetQuoteResponse",
+          "fullName": "protobuffet.example.shipping.v1.GetQuoteResponse",
+          "description": "Response for a proposed shipment quote.",
+          "hasExtensions": false,
           "hasFields": true,
           "hasOneofs": false,
-          "extensions": [
-            {
-              "name": "series",
-              "longName": "Model.series",
-              "fullName": "com.example.Model.series",
-              "description": "Vehicle model series.",
-              "label": "optional",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "number": 100,
-              "defaultValue": "",
-              "containingType": "Model",
-              "containingLongType": "Model",
-              "containingFullType": "com.example.Model",
-              "scopeType": "Vehicle",
-              "scopeLongType": "Vehicle",
-              "scopeFullType": "com.example.Vehicle"
-            }
-          ],
+          "extensions": [],
           "fields": [
             {
-              "name": "id",
-              "description": "Unique vehicle ID.",
-              "label": "required",
-              "type": "int32",
-              "longType": "int32",
-              "fullType": "int32",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "model",
-              "description": "Vehicle model.",
-              "label": "required",
-              "type": "Model",
-              "longType": "Model",
-              "fullType": "com.example.Model",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "reg_number",
-              "description": "Vehicle registration number.",
-              "label": "required",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "mileage",
-              "description": "Current vehicle mileage, if known.",
-              "label": "optional",
-              "type": "sint32",
-              "longType": "sint32",
-              "fullType": "sint32",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "category",
-              "description": "Vehicle category.",
-              "label": "optional",
-              "type": "Category",
-              "longType": "Vehicle.Category",
-              "fullType": "com.example.Vehicle.Category",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "daily_hire_rate_dollars",
-              "description": "Dollars per day.",
-              "label": "optional",
-              "type": "sint32",
-              "longType": "sint32",
-              "fullType": "sint32",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": "50"
-            },
-            {
-              "name": "daily_hire_rate_cents",
-              "description": "Cents per day.",
-              "label": "optional",
-              "type": "sint32",
-              "longType": "sint32",
-              "fullType": "sint32",
+              "name": "cost_usd",
+              "description": "Shipment quote. See implementation docs for unique responses.",
+              "label": "",
+              "type": "Money",
+              "longType": "protobuffet.example.common.types.v1.Money",
+              "fullType": "protobuffet.example.common.types.v1.Money",
               "ismap": false,
               "isoneof": false,
               "oneofdecl": "",
@@ -716,31 +1679,55 @@
           ]
         },
         {
-          "name": "Category",
-          "longName": "Vehicle.Category",
-          "fullName": "com.example.Vehicle.Category",
-          "description": "Represents a vehicle category. E.g. \"Sedan\" or \"Truck\".",
+          "name": "ShipOrderRequest",
+          "longName": "ShipOrderRequest",
+          "fullName": "protobuffet.example.shipping.v1.ShipOrderRequest",
+          "description": "Request to trigger a new order to be shipped.",
           "hasExtensions": false,
           "hasFields": true,
           "hasOneofs": false,
           "extensions": [],
           "fields": [
             {
-              "name": "code",
-              "description": "Category code. E.g. \"S\".",
-              "label": "required",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
+              "name": "address",
+              "description": "Address order should be shipped to.",
+              "label": "",
+              "type": "Address",
+              "longType": "Address",
+              "fullType": "protobuffet.example.shipping.v1.Address",
               "ismap": false,
               "isoneof": false,
               "oneofdecl": "",
               "defaultValue": ""
             },
             {
-              "name": "description",
-              "description": "Category name. E.g. \"Sedan\".",
-              "label": "required",
+              "name": "items",
+              "description": "Items the proposed order contains.",
+              "label": "repeated",
+              "type": "CartItem",
+              "longType": "protobuffet.example.carts.v1.CartItem",
+              "fullType": "protobuffet.example.carts.v1.CartItem",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "ShipOrderResponse",
+          "longName": "ShipOrderResponse",
+          "fullName": "protobuffet.example.shipping.v1.ShipOrderResponse",
+          "description": "Response for a successfully created order.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "tracking_id",
+              "description": "Tracking ID for the created order.",
+              "label": "",
               "type": "string",
               "longType": "string",
               "fullType": "string",
@@ -752,7 +1739,40 @@
           ]
         }
       ],
-      "services": []
+      "services": [
+        {
+          "name": "ShippingService",
+          "longName": "ShippingService",
+          "fullName": "protobuffet.example.shipping.v1.ShippingService",
+          "description": "Shipment management service. This is a service created for the purpose of demonstration.",
+          "methods": [
+            {
+              "name": "GetQuote",
+              "description": "Fetch a quote (cost) for a proposed shipment.",
+              "requestType": "GetQuoteRequest",
+              "requestLongType": "GetQuoteRequest",
+              "requestFullType": "protobuffet.example.shipping.v1.GetQuoteRequest",
+              "requestStreaming": false,
+              "responseType": "GetQuoteResponse",
+              "responseLongType": "GetQuoteResponse",
+              "responseFullType": "protobuffet.example.shipping.v1.GetQuoteResponse",
+              "responseStreaming": false
+            },
+            {
+              "name": "ShipOrder",
+              "description": "Trigger a new order to be shipped.",
+              "requestType": "ShipOrderRequest",
+              "requestLongType": "ShipOrderRequest",
+              "requestFullType": "protobuffet.example.shipping.v1.ShipOrderRequest",
+              "requestStreaming": false,
+              "responseType": "ShipOrderResponse",
+              "responseLongType": "ShipOrderResponse",
+              "responseFullType": "protobuffet.example.shipping.v1.ShipOrderResponse",
+              "responseStreaming": false
+            }
+          ]
+        }
+      ]
     }
   ],
   "scalarValueTypes": [
@@ -923,4 +1943,3 @@
     }
   ]
 }
-
