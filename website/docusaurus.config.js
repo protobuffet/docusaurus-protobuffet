@@ -10,6 +10,9 @@ module.exports = {
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   themeConfig: {
+    googleAnalytics: {
+      trackingID: 'G-SXLTT7JBT8',
+    },
     navbar: {
       title: 'Protobuffet',
       logo: {
