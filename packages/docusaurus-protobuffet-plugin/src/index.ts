@@ -1,6 +1,5 @@
 import { Plugin, LoadContext } from "@docusaurus/types"
-import { mkdirSync, readFileSync, writeFileSync } from 'fs';
-import { existsSync, lstatSync } from 'node:fs';
+import { existsSync, lstatSync, mkdirSync, readFileSync, writeFileSync } from 'fs';
 import path from 'path';
 
 import { generateDocFiles, generateSidebarFileContents } from './generators';
