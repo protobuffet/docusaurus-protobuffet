@@ -1,5 +1,6 @@
 import { Plugin, LoadContext } from "@docusaurus/types"
 import { mkdirSync, readFileSync, writeFileSync } from 'fs';
+import { existsSync, lstatSync } from 'node:fs';
 import path from 'path';
 
 import { generateDocFiles, generateSidebarFileContents } from './generators';
@@ -11,13 +12,23 @@ export interface PluginOptions {
   sidebarPath: string;
 }
 
-export type LoadedContent = never
+export function validateOptions({ options, validate }: { options: PluginOptions, validate: () => void }): PluginOptions {
+  const { fileDescriptorsPath, protoDocsPath, sidebarPath } = options;
 
-export function validateOptions({ options, validate }: { options: PluginOptions, validate: () => void }) {
-  // TODO: add validations. use joi
   // fileDescriptorsPath is an existing json file
-  // protoDocsPath is a directory
+  if (fileDescriptorsPath === undefined || !existsSync(fileDescriptorsPath)) {
+    throw "Usage: Expected fileDescriptorsPath option to reference a present file.";
+  }
+
+  // protoDocsPath is a directory. we only check if it's a directory if it already exists.
+  if (protoDocsPath === undefined || (existsSync(protoDocsPath) && !lstatSync(protoDocsPath).isDirectory())) {
+    throw "Usage: Expected protoDocsPath option to reference a directory.";
+  }
+
   // sidebarPath is a js file
+  if (sidebarPath === undefined) {
+    throw "Usage: Expected sidebarPath option to reference a file.";
+  }
 
   return options;
 };
@@ -25,7 +36,7 @@ export function validateOptions({ options, validate }: { options: PluginOptions,
 export default function plugin(
   context: LoadContext,
   options: PluginOptions,
-): Plugin<LoadedContent> {
+): Plugin<never> {
   return {
     name: "docusaurus-protobuffet-plugin",
 
