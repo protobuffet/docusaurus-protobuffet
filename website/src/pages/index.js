@@ -59,7 +59,7 @@ export default function Home() {
   const {siteConfig = {}} = context;
   return (
     <Layout
-      title={`${siteConfig.title}`}
+      title='Home'
       description="Documentation Toolset for Your Protobuf File Workspace">
       <header className={clsx('hero', styles.heroBanner)}>
         <div className={clsx('container', styles.heroBannerInner)}>
