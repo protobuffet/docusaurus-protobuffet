@@ -15,18 +15,18 @@ export function validateOptions({ options, validate }: { options: PluginOptions,
   const { fileDescriptorsPath, protoDocsPath, sidebarPath } = options;
 
   // fileDescriptorsPath is an existing json file
-  if (fileDescriptorsPath === undefined || !existsSync(fileDescriptorsPath)) {
-    throw "Usage: Expected fileDescriptorsPath option to reference a present file.";
+  if (!fileDescriptorsPath || !existsSync(fileDescriptorsPath)) {
+    throw new Error('Expected fileDescriptorsPath option to reference a present file.');
   }
 
   // protoDocsPath is a directory. we only check if it's a directory if it already exists.
-  if (protoDocsPath === undefined || (existsSync(protoDocsPath) && !lstatSync(protoDocsPath).isDirectory())) {
-    throw "Usage: Expected protoDocsPath option to reference a directory.";
+  if (!protoDocsPath || (existsSync(protoDocsPath) && !lstatSync(protoDocsPath).isDirectory())) {
+    throw new Error('Expected protoDocsPath option to reference a directory.');
   }
 
-  // sidebarPath is a js file
-  if (sidebarPath === undefined) {
-    throw "Usage: Expected sidebarPath option to reference a file.";
+  // sidebarPath is a present file
+  if (!sidebarPath) {
+    throw new Error('Expected sidebarPath option to reference a file.');
   }
 
   return options;
