@@ -107,7 +107,10 @@ module.exports = {
           fileDescriptorsPath: './fixtures/proto_workspace.json',
           protoDocsPath: './protodocs',
           sidebarPath: './sidebarsProtodocs.js',
-        }
+        },
+        docs: {
+          sidebarPath: './sidebarsProtodocs.js',
+        },
       }
     ]
   ],
