@@ -1,6 +1,6 @@
 {
   "name": "docusaurus-protobuffet",
-  "version": "0.2.9",
+  "version": "0.2.10",
   "description": "Protobuf documentation toolset for Docusaurus",
   "repository": {
     "type": "git",
