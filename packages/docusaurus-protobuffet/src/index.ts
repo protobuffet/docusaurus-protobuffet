@@ -11,8 +11,13 @@ const pluginOptionDefaults = {
   sidebarPath: './sidebarsProtodocs.js',
 }
 
+interface ContentDocOptions {
+  sidebarPath?: string;
+}
+
 interface PresetOptions {
   protobuffet: PluginOptions;
+  docs?: ContentDocOptions;
 }
 
 export default function preset(
@@ -23,6 +28,7 @@ export default function preset(
     ...pluginOptionDefaults,
     ...options.protobuffet
   };
+  const docSidebarPath = options.docs?.sidebarPath || pluginOptions.sidebarPath;
 
   const config = {
     plugins: [
@@ -36,7 +42,7 @@ export default function preset(
           id: 'protodocs',
           path: 'protodocs',
           routeBasePath: 'protodocs',
-          sidebarPath: pluginOptions.sidebarPath,
+          sidebarPath: docSidebarPath,
         },
       ],
     ],
