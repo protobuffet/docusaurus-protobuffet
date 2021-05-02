@@ -106,7 +106,7 @@ module.exports = {
         protobuffet: {
           fileDescriptorsPath: './fixtures/proto_workspace.json',
           protoDocsPath: './protodocs',
-          sidebarPath: './sidebarsProtodocs.js',
+          sidebarPath: './generatedSidebarsProtodocs.js',
         },
         docs: {
           sidebarPath: './sidebarsProtodocs.js',
