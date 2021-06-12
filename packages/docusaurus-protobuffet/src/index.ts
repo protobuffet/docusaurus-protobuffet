@@ -42,11 +42,15 @@ export default function preset(
     ...pluginOptionDefaults,
     ...options.protobuffet
   };
-  const contentDocOptions: ContentDocOptions = {
+
+  const docOptions = {
+    id: 'protodocs',
+    path: pluginOptions.protoDocsPath,
     ...contentDocOptionsDefaults,
     ...options.docs,
-  }
-  pluginOptions.routeBasePath = contentDocOptions.routeBasePath;
+  };
+
+  pluginOptions.routeBasePath = docOptions.routeBasePath;
 
   const config = {
     plugins: [
@@ -56,12 +60,7 @@ export default function preset(
       ],
       [
         '@docusaurus/plugin-content-docs',
-        {
-          id: 'protodocs',
-          path: pluginOptions.protoDocsPath,
-          routeBasePath: contentDocOptions.routeBasePath,
-          sidebarPath: contentDocOptions.sidebarPath,
-        },
+        docOptions,
       ],
     ],
   };
