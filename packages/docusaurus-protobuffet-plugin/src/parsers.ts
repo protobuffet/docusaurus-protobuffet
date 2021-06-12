@@ -4,7 +4,7 @@ interface LinkMap {
   [key: string]: string;
 }
 
-export const parseFileDescriptors = (source: object): FileDescriptors => {
+export const parseFileDescriptors = (source: object, routeBasePath: string): FileDescriptors => {
   // TODO: add joi validations
   const parsed = source as FileDescriptors;
 
@@ -13,8 +13,7 @@ export const parseFileDescriptors = (source: object): FileDescriptors => {
   const enumLinkMap: LinkMap = {}
 
   const generateLink = (fileName: string, objName: string): string => {
-    // TODO: reference option for base path
-    return `/protodocs/${fileName}#${objName.toLowerCase().replace(/\./g, '')}`
+    return `${routeBasePath === '/' ? '' : routeBasePath}/${fileName}#${objName.toLowerCase().replace(/\./g, '')}`
   }
 
   // derive link maps

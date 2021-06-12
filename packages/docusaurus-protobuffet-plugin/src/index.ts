@@ -6,9 +6,14 @@ import { generateDocFiles, generateSidebarFileContents } from './generators';
 import { parseFileDescriptors } from './parsers';
 
 export interface PluginOptions {
+  // Path to Protobuf file descriptors JSON file. See: https://protobuffet.com/docs/how/usage#generating-the-filedescriptorspath-file
   fileDescriptorsPath: string
+  // Path to generate data on filesystem relative to site dir.
   protoDocsPath: string;
+  // Path to sidebar configuration for showing a list of markdown pages.
   sidebarPath: string;
+  // URL route for the docs section of your site.
+  routeBasePath: string;
 }
 
 export function validateOptions({ options, validate }: { options: PluginOptions, validate: () => void }): PluginOptions {
@@ -46,7 +51,7 @@ export default function plugin(
         .action(() => {
           // read file descriptors JSON file
           const fileDescriptorsInput = JSON.parse(readFileSync(options.fileDescriptorsPath).toString());
-          const fileDescriptors = parseFileDescriptors(fileDescriptorsInput);
+          const fileDescriptors = parseFileDescriptors(fileDescriptorsInput, options.routeBasePath);
 
           // generate markdown files for each in fileDescriptors
           const docFiles = generateDocFiles(fileDescriptors);
