@@ -7,7 +7,7 @@ interface PluginOptions {
   protoDocsPath?: string;
   // Path to sidebar configuration for showing a list of markdown pages.
   sidebarPath?: string;
-  // URL route for the docs section of your site. Not configurable by user, is assigned using doc option's routeBasePath.
+  // URL base route for the Protobuffet docs section of your site. Not configurable by user here, is assigned using doc option's routeBasePath.
   routeBasePath?: string;
 }
 
@@ -18,7 +18,7 @@ const pluginOptionDefaults = {
 
 // NOTE: these are options exposed by docusaurus plugin-content-docs: https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs
 interface ContentDocOptions {
-  // URL route for the docs section of your site.
+  // URL base route for the Protobuffet docs section of your site.
   routeBasePath?: string;
   // Path to sidebar configuration for showing a list of markdown pages.
   sidebarPath?: string;

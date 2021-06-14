@@ -50,7 +50,11 @@ module.exports = {
         protobuffet: {
           fileDescriptorsPath: './fixtures/proto_workspace.json',
           protoDocsPath: './protodocs',
-          sidebarPath: './sidebarsProtodocs.js'
+          sidebarPath: './generatedSidebarsProtodocs.js'
+        },
+        docs: {
+          routeBasePath: 'protodocs',
+          sidebarPath: './sidebarsProtodocs.js',
         }
       }
     ]
@@ -67,7 +71,14 @@ Pass in all plugin options. See [`docusaurus-protobuffet-plugin`](https://github
 | `fileDescriptorsPath` | Path to JSON file containing generated proto documentation through [protoc-gen-doc](https://github.com/pseudomuto/protoc-gen-doc). See [usage section](#generating-the-filedescriptorspath-file) for details. | ✅ | N/A |
 | `protoDocsPath` | Directory where CLI will create doc files. |  | `./protodocs` |
 | `sidebarPath` | Path to file where CLI will write the generated Sidebar object. |  | `./sidebarsProtodocs.js` |
----
+
+#### `docs`
+Pass in options for the [`@docusaurus/plugin-content-docs`](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs) plugin. This preset assigns some recommended defaults for missing options.
+
+| Option | Description | Required | Default |
+| --- | --- | --- | --- |
+| `routeBasePath` | URL base route for the Protobuffet docs section of your site. |  | `protodocs` |
+| `sidebarPath` | Path to file where docs plugin will read the Sidebar object. |  | `./sidebarsProtodocs.js` |
 
 ## [`docusaurus-protobuffet-init`](https://github.com/protobuffet/docusaurus-protobuffet/tree/master/packages/docusaurus-protobuffet-init)
 
