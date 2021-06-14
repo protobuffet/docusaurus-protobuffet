@@ -13,7 +13,9 @@ export const parseFileDescriptors = (source: object, routeBasePath: string): Fil
   const enumLinkMap: LinkMap = {}
 
   const generateLink = (fileName: string, objName: string): string => {
-    return `${routeBasePath === '/' ? '' : routeBasePath}/${fileName}#${objName.toLowerCase().replace(/\./g, '')}`
+    // NOTE: ensure prefixed with '/'
+    const routeBase = routeBasePath.startsWith('/') ? routeBasePath : `/${routeBasePath}`;
+    return `${routeBase === '/' ? '' : routeBase}/${fileName}#${objName.toLowerCase().replace(/\./g, '')}`
   }
 
   // derive link maps
