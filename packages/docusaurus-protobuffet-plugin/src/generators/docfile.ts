@@ -22,7 +22,7 @@ hide_title: true
 
 import { ProtoMessage, ProtoServiceMethod, ProtoEnum } from '@theme/ProtoFile';
 
-## \`${getLeafFileName(fileDescriptor.name)}\`
+# \`${getLeafFileName(fileDescriptor.name)}\`
 _**path** ${fileDescriptor.name}_
 
 _**package** ${fileDescriptor.package}_
