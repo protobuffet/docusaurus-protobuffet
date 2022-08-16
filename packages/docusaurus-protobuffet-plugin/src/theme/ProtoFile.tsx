@@ -144,6 +144,9 @@ const ProtoMessageFields = (props: MessageFieldsProps) => {
     );
 
     return (
+      { if(field.label != "") {
+        return <code>{field.label</code> 
+      }
       field.typeLink === undefined ? rawCell : <Link to={field.typeLink}>{rawCell}</Link>
     );
   }
