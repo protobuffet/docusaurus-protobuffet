@@ -139,9 +139,9 @@ const ProtoMessageFields = (props: MessageFieldsProps) => {
   )
 
   const FieldTypeCell = ({ field }: { field: MessageField}) => {
-    const label = field.label != "" ? <i>{field.label}</i>&nbsp : "";
+    const label = field.label != "" ? <i>{field.label}&nbsp;</i> : "";
     const rawCell = (
-      {label}<code>{field.longType}</code>
+      <span>{label}<code>{field.longType}</code></span>
     );
 
     return (
