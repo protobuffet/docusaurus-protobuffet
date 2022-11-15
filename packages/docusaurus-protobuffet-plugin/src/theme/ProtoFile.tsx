@@ -139,14 +139,12 @@ const ProtoMessageFields = (props: MessageFieldsProps) => {
   )
 
   const FieldTypeCell = ({ field }: { field: MessageField}) => {
+    const label = field.label != "" ? <i>{field.label}</i>&nbsp : "";
     const rawCell = (
-      <code>{field.longType}</code>
+      {label}<code>{field.longType}</code>
     );
 
     return (
-      { if(field.label != "") {
-        return <code>{field.label</code> 
-      }
       field.typeLink === undefined ? rawCell : <Link to={field.typeLink}>{rawCell}</Link>
     );
   }
