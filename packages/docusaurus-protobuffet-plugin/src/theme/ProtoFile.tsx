@@ -150,7 +150,7 @@ const ProtoMessageFields = (props: MessageFieldsProps) => {
       </span>
     )
   }
-  
+
   const FieldRows = () => (
     <tbody>
       {fields.map(field => (
