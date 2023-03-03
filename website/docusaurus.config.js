@@ -10,9 +10,6 @@ module.exports = {
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   themeConfig: {
-    gtag: {
-      trackingID: 'G-SXLTT7JBT8',
-    },
     navbar: {
       title: 'Protobuffet',
       logo: {
@@ -97,6 +94,9 @@ module.exports = {
         blog: false,
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
+        },
+        gtag: {
+          trackingID: 'G-SXLTT7JBT8',
         },
       },
     ],
