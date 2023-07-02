@@ -1,4 +1,4 @@
-import { LoadContext } from '@docusaurus/types';
+import { LoadContext } from "@docusaurus/types";
 
 interface PluginOptions {
   // Path to Protobuf file descriptors JSON file. See: https://protobuffet.com/docs/how/usage#generating-the-filedescriptorspath-file
@@ -9,6 +9,8 @@ interface PluginOptions {
   sidebarPath?: string;
   // URL base route for the Protobuffet docs section of your site. Not configurable by user here, is assigned using doc option's routeBasePath.
   routeBasePath?: string;
+  // Optional: Path to the custom document template file. The template uses the Handlebars format.
+  templatePath?: string;
 }
 
 const pluginOptionDefaults = {
